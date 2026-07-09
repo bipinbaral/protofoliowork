@@ -1,0 +1,145 @@
+"use client";
+
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
+import { Briefcase, Folder, Quote, Mail, ArrowUpRight } from "lucide-react";
+
+const navItems = [
+  { id: "home", label: "Home", href: "#", isLogo: true, color: "from-purple-500 to-pink-500" },
+  { id: "services", label: "Services", href: "#services", icon: Briefcase, color: "from-blue-400 to-cyan-400" },
+  { id: "projects", label: "Projects", href: "#projects", icon: Folder, color: "from-amber-400 to-orange-500" },
+  { id: "testimonials", label: "Testimonials", href: "#testimonials", icon: Quote, color: "from-green-400 to-emerald-500" },
+  { id: "contact", label: "Contact", href: "#contact", icon: Mail, color: "from-rose-400 to-red-500" },
+];
+
+function DockItem({ item, mouseX, activeSection }: any) {
+  const ref = useRef<HTMLAnchorElement>(null);
+  
+  // Calculate distance from mouse to the center of the icon
+  const distance = useTransform(mouseX, (val: number) => {
+    const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
+    return val - bounds.x - bounds.width / 2;
+  });
+
+  // Scale and translate based on distance
+  const scaleSync = useTransform(distance, [-150, 0, 150], [1, 1.5, 1]);
+  const scale = useSpring(scaleSync, { mass: 0.1, stiffness: 150, damping: 12 });
+  const ySync = useTransform(distance, [-150, 0, 150], [0, -15, 0]);
+  const y = useSpring(ySync, { mass: 0.1, stiffness: 150, damping: 12 });
+
+  const isActive = activeSection === item.id || (item.id === "home" && activeSection === "");
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div className="relative flex flex-col items-center">
+      {/* Tooltip */}
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.8 }}
+            className="absolute -top-12 px-3 py-1.5 bg-black/80 backdrop-blur-md text-white text-xs rounded-lg whitespace-nowrap border border-white/10 shadow-xl z-50 font-sans pointer-events-none"
+          >
+            {item.label}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <motion.a
+        href={item.href}
+        ref={ref}
+        style={{ scale, y }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className={`relative flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300 ${
+          isActive ? "bg-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.2)]" : "bg-white/[0.03] hover:bg-white/[0.08]"
+        }`}
+      >
+        {item.isLogo ? (
+          <span className="font-satoshi text-xl font-bold bg-gradient-to-br from-purple-500 to-pink-500 text-transparent bg-clip-text">
+            B
+          </span>
+        ) : (
+          <item.icon className={`w-5 h-5 transition-colors duration-300 ${isActive ? 'text-white' : 'text-white/60'}`} />
+        )}
+        
+        {/* Active Gradient Fill (Subtle) */}
+        {isActive && (
+          <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${item.color} opacity-20 pointer-events-none`} />
+        )}
+      </motion.a>
+
+      {/* Active Dot */}
+      <div className="h-2 flex items-center mt-1">
+        {isActive && <div className="w-1 h-1 rounded-full bg-white shadow-[0_0_5px_rgba(255,255,255,0.8)]" />}
+      </div>
+    </div>
+  );
+}
+
+export const DockNavbar: React.FC = () => {
+  const mouseX = useMotionValue(-9999);
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const sections = document.querySelectorAll("section[id]");
+    sections.forEach((section) => observer.observe(section));
+
+    const handleScroll = () => {
+      if (window.scrollY < 200) {
+        setActiveSection("home");
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none">
+      <div className="pointer-events-auto flex items-end gap-2 p-3 rounded-[2rem] bg-black/20 backdrop-blur-[40px] saturate-[200%] border border-white/10 shadow-2xl"
+           onMouseMove={(e) => mouseX.set(e.pageX)}
+           onMouseLeave={() => mouseX.set(-9999)}
+      >
+        {navItems.map((item) => (
+          <DockItem key={item.id} item={item} mouseX={mouseX} activeSection={activeSection} />
+        ))}
+
+        {/* Separator */}
+        <div className="w-[1px] h-10 bg-white/10 mx-2 self-center rounded-full" />
+
+        {/* Contact Me CTA */}
+        <div className="relative flex flex-col items-center">
+          <a
+            href="#contact"
+            className="group relative flex items-center justify-center gap-2 h-12 px-5 ml-1 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 transition-opacity"
+          >
+            <span className="font-sans font-medium text-sm text-white whitespace-nowrap">Contact Me</span>
+            <ArrowUpRight className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            {/* Glow */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 blur-md opacity-40 group-hover:opacity-60 transition-opacity -z-10" />
+          </a>
+          <div className="h-2 flex items-center mt-1" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default DockNavbar;
