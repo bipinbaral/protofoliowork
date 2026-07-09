@@ -115,12 +115,17 @@ html, body {
 
 /* Section transitions */
 .section-padding {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+  padding-top: clamp(4rem, 10vw, 8rem);
+  padding-bottom: clamp(4rem, 10vw, 8rem);
 }
-@media (max-width: 768px) {
-  .section-padding {
-    padding-top: 5rem;
+
+/* Safe area for fixed dock navbar on mobile */
+@media (max-width: 640px) {
+  main {
     padding-bottom: 5rem;
   }
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
 }
+

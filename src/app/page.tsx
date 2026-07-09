@@ -23,7 +23,7 @@ export default function Home() {
       {/* Deep Space Background */}
       <PageBackground />
 
-      <main className="relative flex-1 flex flex-col w-full bg-transparent overflow-x-hidden">
+      <main className="relative z-10 flex-1 flex flex-col w-full bg-transparent overflow-x-hidden">
         {/* Hero Section */}
         <Hero />
 

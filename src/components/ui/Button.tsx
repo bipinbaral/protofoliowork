@@ -21,15 +21,15 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles =
-    "inline-flex items-center justify-center font-jakarta font-medium text-sm transition-all duration-300 rounded-full select-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/20";
+    "inline-flex items-center justify-center font-jakarta font-medium text-sm transition-all duration-300 rounded-full select-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/20 min-h-[44px]";
   
   const variants = {
     primary:
-      "bg-foreground text-background hover:bg-[#eaeaea] px-6 py-3.5 shadow-lg",
+      "bg-foreground text-background hover:bg-[#eaeaea] px-6 py-3 shadow-lg",
     secondary:
-      "bg-transparent text-foreground border border-white/15 hover:bg-white/5 hover:border-white/25 px-6 py-3.5",
+      "bg-transparent text-foreground border border-white/15 hover:bg-white/5 hover:border-white/25 px-6 py-3",
     accent:
-      "bg-gold text-background hover:opacity-90 px-6 py-3.5 font-bold shadow-[0_0_15px_rgba(255,215,0,0.3)]",
+      "bg-gold text-background hover:opacity-90 px-6 py-3 font-bold shadow-[0_0_15px_rgba(255,215,0,0.3)]",
     ghost:
       "bg-transparent text-foreground hover:bg-white/5 px-4 py-2",
   };

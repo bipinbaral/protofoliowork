@@ -42,11 +42,11 @@ export const Services: React.FC = () => {
               className="!mb-0"
             />
           </div>
-          <div className="lg:col-span-4 flex gap-4 lg:justify-end">
-            <Button variant="primary" href="#contact">
+          <div className="lg:col-span-4 flex flex-col sm:flex-row gap-4 lg:justify-end">
+            <Button variant="primary" href="#contact" className="w-full sm:w-auto px-8 py-3.5 sm:py-3 min-h-[44px]">
               Book a Free Call
             </Button>
-            <Button variant="secondary" href="#projects">
+            <Button variant="secondary" href="#projects" className="w-full sm:w-auto px-8 py-3.5 sm:py-3 min-h-[44px]">
               See Projects
             </Button>
           </div>
@@ -59,7 +59,7 @@ export const Services: React.FC = () => {
               key={service.id}
               type="slideUp"
               delay={i * 0.05}
-              className="flex flex-col p-8 rounded-3xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] hover:border-white/10 transition-all duration-300 group"
+              className="flex flex-col p-6 sm:p-8 rounded-3xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] hover:border-white/10 transition-all duration-300 group"
             >
               <div className="w-12 h-12 flex items-center justify-center rounded-2xl bg-white/5 border border-white/5 group-hover:border-gold/20 group-hover:bg-gold/5 transition-colors duration-300 mb-6">
                 {getIcon(service.id)}

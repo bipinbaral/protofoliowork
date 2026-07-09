@@ -29,12 +29,15 @@ export const CTA: React.FC = () => {
             </div>
 
             {/* Main Headline */}
-            <h2 className="font-satoshi text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-10 max-w-3xl">
-              Curious about what we can create together? Let’s bring something extraordinary to life!
+            <h2
+              className="font-satoshi font-bold tracking-tight text-white leading-[1.1] mb-8 sm:mb-10 max-w-3xl px-2 sm:px-0"
+              style={{ fontSize: "clamp(1.75rem, 5vw, 4.5rem)" }}
+            >
+              Curious about what we can create together? Let&apos;s bring something extraordinary to life!
             </h2>
 
             {/* CTA Action Controls */}
-            <div className="flex flex-col gap-8 items-center justify-center mb-12 w-full">
+            <div className="flex flex-col gap-6 sm:gap-8 items-center justify-center mb-10 sm:mb-12 w-full max-w-sm sm:max-w-none px-4 sm:px-0">
               <Button variant="accent" href="https://wa.me/9843506305" className="w-full sm:w-auto px-10 py-4 group relative overflow-hidden transition-all duration-300">
                 <span className="flex items-center gap-2 transition-transform duration-300 group-hover:-translate-y-12">
                   <Calendar className="w-4 h-4 text-background" /> Book a Free Call
@@ -44,24 +47,24 @@ export const CTA: React.FC = () => {
                 </span>
               </Button>
 
-              <div className="flex items-center gap-6 mt-4">
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mt-4">
                 {/* Behance */}
-                <a href="https://behance.net/bipincreates" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors">
+                <a href="https://behance.net/bipincreates" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors p-2 min-w-[44px] min-h-[44px] flex items-center justify-center">
                   <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.546-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V3.005h7.126c1.544 0 4.009.283 5.36 1.64 1.365 1.377 1.353 3.489-.01 5.044-1.182 1.35-3.004 1.456-3.804 1.488 1.838.164 4.397 1.156 4.397 4.145 0 3.037-2.617 4.666-6.603 4.666zm-3.966-5.88h3.332c1.788 0 3.197-.577 3.197-2.585 0-2.46-2.195-2.261-3.235-2.261H2.5v4.846zm0-7.391v4.992h3.181c1.196 0 2.76-.23 2.76-2.238 0-2.316-2.128-2.754-3.568-2.754H2.5z"/></svg>
                 </a>
                 <span className="w-px h-6 bg-white/10"></span>
                 {/* X / Twitter */}
-                <a href="https://x.com/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors">
+                <a href="https://x.com/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors p-2 min-w-[44px] min-h-[44px] flex items-center justify-center">
                   <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                 </a>
                 <span className="w-px h-6 bg-white/10"></span>
                 {/* Email */}
-                <a href="mailto:bipincreates03@gmail.com" className="text-white/50 hover:text-white transition-colors">
+                <a href="mailto:bipincreates03@gmail.com" className="text-white/50 hover:text-white transition-colors p-2 min-w-[44px] min-h-[44px] flex items-center justify-center">
                   <Mail className="w-6 h-6" />
                 </a>
                 <span className="w-px h-6 bg-white/10"></span>
                 {/* Dribbble */}
-                <a href="https://dribbble.com/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors">
+                <a href="https://dribbble.com/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors p-2 min-w-[44px] min-h-[44px] flex items-center justify-center">
                   <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308 2.3-1.555 3.936-4.02 4.392-6.87zm-6.115 7.808c-.153-.9-.75-4.032-2.19-7.77l-.066.02c-5.79 2.015-7.86 6.025-8.04 6.4 1.73 1.358 3.926 2.166 6.29 2.166 1.42 0 2.77-.31 4.006-.816zm-10.677-2.76c.25-.422 2.816-4.525 8.282-6.672-.347-.796-.73-1.58-1.13-2.344-6.674 2.01-11.233 2.015-11.456 2.012-.046.613-.07 1.23-.07 1.86 0 2.16.71 4.15 1.905 5.764zm-.85-8.48c.196 0 4.29-.02 10.364-2.11-.326-.64-.672-1.27-1.04-1.88-5.34.88-9.45 2.59-9.84 2.76.22-1.26.75-2.42 1.51-3.41zm10.23-4.103c-1.85-.75-3.92-1.16-6.07-1.16-1.54 0-3.01.29-4.36.81 4.6 1.79 9.51 1.05 9.8 1.01-.29-1.25-.66-2.45-1.12-3.56zm1.38 4.09c.33.02 4.35.34 7.6-1.85-.92-1.82-2.4-3.3-4.17-4.27-.4.99-.85 2.17-1.34 3.49-.6.18-1.4.4-2.09.63zm.97 4.14c4.13-.57 7.02-.15 7.33-.11-.4-2.31-1.63-4.33-3.38-5.74-3.4 1.94-7.23 1.72-7.55 1.7.35.73.68 1.47.98 2.22.84-.11 1.7-.17 2.62-.07z"/></svg>
                 </a>
               </div>

@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
-import { ArrowUpRight } from "lucide-react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { ArrowUpRight, Heart } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Project } from "@/data/projects";
 
 interface ProjectCardProps {
@@ -11,6 +11,34 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
+  const [isLiked, setIsLiked] = useState(false);
+  // Deterministic random-looking number based on index to avoid SSR hydration mismatch
+  const initialLikes = 124 + (index * 13) + (project.title.length * 3);
+  const [likeCount, setLikeCount] = useState(initialLikes);
+
+  useEffect(() => {
+    const savedLikes = localStorage.getItem(`project-likes-${project.id}`);
+    if (savedLikes) {
+      setLikeCount(parseInt(savedLikes, 10));
+    }
+  }, [project.id]);
+
+  const handleLike = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!isLiked) {
+      setIsLiked(true);
+      const newCount = likeCount + 1;
+      setLikeCount(newCount);
+      localStorage.setItem(`project-likes-${project.id}`, newCount.toString());
+    } else {
+      setIsLiked(false);
+      const newCount = likeCount - 1;
+      setLikeCount(newCount);
+      localStorage.setItem(`project-likes-${project.id}`, newCount.toString());
+    }
+  };
+
   return (
     <motion.a
       href={project.link || `/project/${project.id}`}
@@ -50,12 +78,44 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
 
       {/* Text Block */}
       <div className="flex flex-col px-1">
-        <h3 className="font-sans text-lg font-bold text-white mb-1">
-          {project.title}
-        </h3>
-        <span className="text-white/50 font-sans text-sm mb-4">
-          {project.category}
-        </span>
+        <div className="flex items-start justify-between mb-1">
+          <div className="flex flex-col">
+            <h3 className="font-sans text-lg font-bold text-white">
+              {project.title}
+            </h3>
+            <span className="text-white/50 font-sans text-sm mb-4 mt-1">
+              {project.category}
+            </span>
+          </div>
+          
+          <div className="flex flex-col items-center">
+            <button 
+              onClick={handleLike}
+              className="relative group/like p-2 -mr-2 rounded-full hover:bg-white/10 transition-colors z-20 focus:outline-none"
+              aria-label="Like project"
+            >
+              <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-black/90 text-white text-[10px] rounded opacity-0 group-hover/like:opacity-100 transition-opacity pointer-events-none whitespace-nowrap backdrop-blur-md border border-white/10 font-sans shadow-lg">
+                {isLiked ? "Unlike" : "Like"}
+              </div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={isLiked ? "liked" : "unliked"}
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.8, opacity: 0 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  <Heart 
+                    className={`w-5 h-5 transition-colors ${isLiked ? "fill-red-500 text-red-500" : "text-white/70 hover:text-white"}`} 
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </button>
+            <span className="text-white/50 text-xs font-sans -mr-2 mt-[-4px]">
+              {likeCount}
+            </span>
+          </div>
+        </div>
         
         {/* Tech Tags */}
         {project.tags && project.tags.length > 0 && (
@@ -75,3 +135,4 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
   );
 };
 export default ProjectCard;
+

@@ -36,11 +36,11 @@ export const PortfolioGrid: React.FC = () => {
         </div>
 
         {/* Footer actions inside section */}
-        <AnimatedWrapper type="slideUp" delay={0.2} className="mt-16 flex flex-row items-center justify-center gap-4">
-          <Button variant="secondary" href="https://www.behance.net/">
+        <AnimatedWrapper type="slideUp" delay={0.2} className="mt-12 sm:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 px-4 sm:px-0">
+          <Button variant="secondary" href="https://www.behance.net/" className="w-full sm:w-auto px-8 py-3.5 sm:py-3 min-h-[44px]">
             All Projects
           </Button>
-          <Button variant="accent" href="#contact">
+          <Button variant="accent" href="#contact" className="w-full sm:w-auto px-8 py-3.5 sm:py-3 min-h-[44px]">
             Book a Free Call
           </Button>
         </AnimatedWrapper>

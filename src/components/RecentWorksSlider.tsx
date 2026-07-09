@@ -105,7 +105,7 @@ export const RecentWorksSlider: React.FC = () => {
               <div
                 key={`${project.id}-${idx}`}
                 onClick={() => openLightbox(idx)}
-                className="snap-center shrink-0 w-[300px] md:w-[320px] flex flex-col group cursor-pointer"
+                className="snap-center shrink-0 w-[calc(100vw-4rem)] sm:w-[300px] md:w-[320px] flex flex-col group cursor-pointer"
               >
                 {/* Simplified Image Block Only */}
                 <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 shadow-lg">

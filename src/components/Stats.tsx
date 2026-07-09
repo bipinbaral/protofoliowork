@@ -50,7 +50,7 @@ export const Stats: React.FC = () => {
 
             return (
               <div
-                key={stat.id}
+                key={i}
                 className="flex flex-col items-center p-6 rounded-2xl border border-white/[0.02] bg-white/[0.005] hover:bg-white/[0.015] transition-all duration-300"
               >
                 <span className="font-satoshi text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-2 text-gold">

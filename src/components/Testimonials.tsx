@@ -25,7 +25,7 @@ export const Testimonials: React.FC = () => {
     <section id="testimonials" className="section-padding bg-transparent border-t border-white/5 overflow-hidden">
       <Container>
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 sm:mb-16 gap-4 sm:gap-6">
           <SectionHeading
             label="Reviews"
             title="Client Reviews"
@@ -57,7 +57,7 @@ export const Testimonials: React.FC = () => {
           {testimonials.map((t, idx) => (
             <div
               key={`${t.id}-${idx}`}
-              className="snap-center shrink-0 flex flex-col p-8 rounded-3xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-all duration-300 relative group w-[350px] md:w-[400px]"
+              className="snap-center shrink-0 flex flex-col p-6 sm:p-8 rounded-3xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-all duration-300 relative group w-[calc(100vw-3rem)] sm:w-[350px] md:w-[400px] max-w-[400px]"
             >
               {/* Rating Star Group */}
               <div className="flex items-center gap-1 mb-6">

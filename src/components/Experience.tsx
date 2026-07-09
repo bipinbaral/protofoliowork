@@ -21,10 +21,10 @@ export const Experience: React.FC = () => {
         />
 
         {/* Timeline Layout */}
-        <div className="relative max-w-3xl mx-auto mt-16 pl-6 sm:pl-0">
+        <div className="relative max-w-3xl mx-auto mt-12 sm:mt-16 pl-8 sm:pl-0">
           
-          {/* Vertical central line (desktop) */}
-          <div className="absolute left-1.5 sm:left-1/2 top-0 bottom-0 w-0.5 bg-white/10 -translate-x-[0.5px]" />
+          {/* Vertical line – left on mobile, centered on desktop */}
+          <div className="absolute left-3 sm:left-1/2 top-0 bottom-0 w-0.5 bg-white/10 -translate-x-[0.5px]" />
 
           <AnimatedWrapper type="stagger" delay={0.1} className="space-y-12">
             {experience.map((item, index) => {
@@ -39,7 +39,7 @@ export const Experience: React.FC = () => {
                 >
                   
                   {/* Circle Indicator on the line */}
-                  <div className="absolute left-0 sm:left-1/2 top-1.5 sm:top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full border-2 border-gold bg-black z-10 shadow-[0_0_8px_#ffd700]" />
+                  <div className="absolute left-3 sm:left-1/2 top-3 sm:top-1/2 -translate-x-1/2 sm:-translate-y-1/2 w-3.5 h-3.5 rounded-full border-2 border-gold bg-black z-10 shadow-[0_0_8px_#ffd700]" />
 
                   {/* Empty spacer column (desktop) */}
                   <div className="hidden sm:block w-1/2" />
@@ -48,7 +48,7 @@ export const Experience: React.FC = () => {
                   <AnimatedWrapper
                     type={isEven ? "slideLeft" : "slideRight"}
                     delay={index * 0.1}
-                    className="w-full sm:w-1/2 pl-6 sm:pl-0 sm:px-8"
+                    className="w-full sm:w-1/2 sm:px-8"
                   >
                     <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-all duration-300 relative group">
                       

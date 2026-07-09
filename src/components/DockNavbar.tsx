@@ -39,7 +39,7 @@ function DockItem({ item, mouseX, activeSection }: any) {
             initial={{ opacity: 0, y: 10, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.8 }}
-            className="absolute -top-12 px-3 py-1.5 bg-black/80 backdrop-blur-md text-white text-xs rounded-lg whitespace-nowrap border border-white/10 shadow-xl z-50 font-sans pointer-events-none"
+            className="absolute -top-12 px-3 py-1.5 bg-black/80 backdrop-blur-md text-white text-xs rounded-lg whitespace-nowrap border border-white/10 shadow-xl z-50 font-sans pointer-events-none hidden sm:block"
           >
             {item.label}
           </motion.div>
@@ -52,16 +52,16 @@ function DockItem({ item, mouseX, activeSection }: any) {
         style={{ scale, y }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`relative flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300 ${
+        className={`relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-2xl transition-colors duration-300 ${
           isActive ? "bg-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.2)]" : "bg-white/[0.03] hover:bg-white/[0.08]"
         }`}
       >
         {item.isLogo ? (
-          <span className="font-satoshi text-xl font-bold bg-gradient-to-br from-purple-500 to-pink-500 text-transparent bg-clip-text">
+          <span className="font-satoshi text-lg sm:text-xl font-bold bg-gradient-to-br from-purple-500 to-pink-500 text-transparent bg-clip-text">
             B
           </span>
         ) : (
-          <item.icon className={`w-5 h-5 transition-colors duration-300 ${isActive ? 'text-white' : 'text-white/60'}`} />
+          <item.icon className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-300 ${isActive ? 'text-white' : 'text-white/60'}`} />
         )}
         
         {/* Active Gradient Fill (Subtle) */}
@@ -112,8 +112,8 @@ export const DockNavbar: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none">
-      <div className="pointer-events-auto flex items-end gap-2 p-3 rounded-[2rem] bg-black/20 backdrop-blur-[40px] saturate-[200%] border border-white/10 shadow-2xl"
+    <div className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none w-full max-w-full px-4 sm:px-0 flex justify-center">
+      <div className="pointer-events-auto flex items-end gap-1.5 sm:gap-2 p-2 sm:p-3 rounded-[2rem] bg-black/40 sm:bg-black/20 backdrop-blur-[40px] saturate-[200%] border border-white/10 shadow-2xl"
            onMouseMove={(e) => mouseX.set(e.pageX)}
            onMouseLeave={() => mouseX.set(-9999)}
       >
@@ -122,10 +122,10 @@ export const DockNavbar: React.FC = () => {
         ))}
 
         {/* Separator */}
-        <div className="w-[1px] h-10 bg-white/10 mx-2 self-center rounded-full" />
+        <div className="hidden sm:block w-[1px] h-10 bg-white/10 mx-2 self-center rounded-full" />
 
         {/* Contact Me CTA */}
-        <div className="relative flex flex-col items-center">
+        <div className="hidden sm:flex relative flex-col items-center">
           <a
             href="#contact"
             className="group relative flex items-center justify-center gap-2 h-12 px-5 ml-1 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 transition-opacity"
@@ -143,3 +143,4 @@ export const DockNavbar: React.FC = () => {
 };
 
 export default DockNavbar;
+
