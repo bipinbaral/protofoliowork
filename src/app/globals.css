@@ -129,3 +129,21 @@ html, body {
   }
 }
 
+/* Align edge-to-edge sliders with max-w-[1440px] container */
+.pad-to-container {
+  padding-left: max(1rem, calc((100vw - 1440px) / 2 + 1rem));
+  padding-right: max(1rem, calc((100vw - 1440px) / 2 + 1rem));
+}
+@media (min-width: 640px) {
+  .pad-to-container {
+    padding-left: max(1.5rem, calc((100vw - 1440px) / 2 + 1.5rem));
+    padding-right: max(1.5rem, calc((100vw - 1440px) / 2 + 1.5rem));
+  }
+}
+@media (min-width: 768px) {
+  .pad-to-container {
+    padding-left: max(2rem, calc((100vw - 1440px) / 2 + 2rem));
+    padding-right: max(2rem, calc((100vw - 1440px) / 2 + 2rem));
+  }
+}
+

@@ -31,7 +31,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     { id: 5, title: "Variant 5: Branding Concept", image: project.image },
     { id: 6, title: "Variant 6: Typography", image: project.image },
   ];
-
   return (
     <>
       <Navbar />

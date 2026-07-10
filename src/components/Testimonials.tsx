@@ -10,15 +10,24 @@ import { motion } from "framer-motion";
 export const Testimonials: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const scrollLeft = () => {
+  const slide = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -400, behavior: 'smooth' });
-    }
-  };
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      const scrollAmount = 400 + 24; // card width + gap
 
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+      if (direction === 'left') {
+        if (scrollLeft <= 0) {
+          scrollRef.current.scrollTo({ left: scrollWidth, behavior: "smooth" });
+        } else {
+          scrollRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        }
+      } else {
+        if (scrollLeft >= scrollWidth - clientWidth - 5) {
+          scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        }
+      }
     }
   };
   return (
@@ -32,28 +41,31 @@ export const Testimonials: React.FC = () => {
             subtitle="Real feedback from clients who trusted my design expertise to elevate their brands successfully."
             className="!mb-0"
           />
-          <div className="hidden md:flex gap-4 pb-2">
-            <button onClick={scrollLeft} className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
-              <ChevronLeft className="w-6 h-6 text-white" />
-            </button>
-            <button onClick={scrollRight} className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
-              <ChevronRight className="w-6 h-6 text-white" />
-            </button>
-          </div>
         </div>
-      </Container>
 
-      {/* Testimonials Marquee */}
-      <div className="relative w-full overflow-hidden flex">
-        {/* Gradient fades for edges */}
-        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+        {/* Testimonials Marquee */}
+        <div className="relative w-full overflow-hidden flex group">
+          {/* Left Arrow (Floating) */}
+          <button
+            onClick={() => slide('left')}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 w-10 h-10 rounded-full border border-white/20 bg-black/50 backdrop-blur-md flex items-center justify-center text-white z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white/10"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
 
-        <div 
-          ref={scrollRef}
-          className="flex gap-6 overflow-x-auto px-4 sm:px-6 md:px-8 pb-8 pt-4 snap-x snap-mandatory"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
+          {/* Right Arrow (Floating) */}
+          <button
+            onClick={() => slide('right')}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 w-10 h-10 rounded-full border border-white/20 bg-black/50 backdrop-blur-md flex items-center justify-center text-white z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white/10"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+
+          <div 
+            ref={scrollRef}
+            className="flex gap-6 overflow-x-auto pb-8 pt-4 snap-x snap-mandatory px-4 md:px-8"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
           {testimonials.map((t, idx) => (
             <div
               key={`${t.id}-${idx}`}
@@ -91,7 +103,8 @@ export const Testimonials: React.FC = () => {
             </div>
           ))}
         </div>
-      </div>
+        </div>
+      </Container>
     </section>
   );
 };
