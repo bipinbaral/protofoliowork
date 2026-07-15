@@ -3,6 +3,7 @@
 import React from "react";
 import { Container } from "./ui/Container";
 import { SectionHeading } from "./ui/SectionHeading";
+import { FaBehance, FaCalendarAlt } from "react-icons/fa";
 import { AnimatedWrapper } from "./ui/AnimatedWrapper";
 import { ProjectCard } from "./ProjectCard";
 import { projects } from "@/data/projects";
@@ -38,10 +39,10 @@ export const PortfolioGrid: React.FC = () => {
         {/* Footer actions inside section */}
         <AnimatedWrapper type="slideUp" delay={0.2} className="mt-12 sm:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 px-4 sm:px-0">
           <Button variant="secondary" href="https://www.behance.net/" className="w-full sm:w-auto px-8 py-3.5 sm:py-3 min-h-[44px]">
-            All Projects
+            <span className="flex items-center gap-2"><FaBehance className="w-4 h-4" /> All Projects</span>
           </Button>
           <Button variant="accent" href="#contact" className="w-full sm:w-auto px-8 py-3.5 sm:py-3 min-h-[44px]">
-            Book a Free Call
+            <span className="flex items-center gap-2"><FaCalendarAlt className="w-4 h-4 text-background" /> Book a Free Call</span>
           </Button>
         </AnimatedWrapper>
 

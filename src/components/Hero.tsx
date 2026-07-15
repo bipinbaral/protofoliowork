@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ArrowDown } from "lucide-react";
 import { Container } from "./ui/Container";
 import { Button } from "./ui/Button";
+import { FaArrowRight, FaEye } from "react-icons/fa";
 import { AnimatedWrapper } from "./ui/AnimatedWrapper";
 
 const logos = [
@@ -53,10 +54,10 @@ export const Hero: React.FC = () => {
           {/* Actions */}
           <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center w-full max-w-sm sm:max-w-none px-4 sm:px-0">
             <Button variant="primary" href="#contact" className="w-full sm:w-auto px-8">
-              Get Started Now
+              <span className="flex items-center gap-2"><FaArrowRight className="w-4 h-4" /> Get Started Now</span>
             </Button>
             <Button variant="secondary" href="#projects" className="w-full sm:w-auto px-8">
-              See Projects
+              <span className="flex items-center gap-2"><FaEye className="w-4 h-4" /> See Projects</span>
             </Button>
           </div>
         </AnimatedWrapper>

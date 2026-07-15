@@ -14,7 +14,7 @@ const navItems = [
 
 function DockItem({ item, mouseX, activeSection }: any) {
   const ref = useRef<HTMLAnchorElement>(null);
-  
+
   // Calculate distance from mouse to the center of the icon
   const distance = useTransform(mouseX, (val: number) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
@@ -52,9 +52,8 @@ function DockItem({ item, mouseX, activeSection }: any) {
         style={{ scale, y }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-2xl transition-colors duration-300 ${
-          isActive ? "bg-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.2)]" : "bg-white/[0.03] hover:bg-white/[0.08]"
-        }`}
+        className={`relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-2xl transition-colors duration-300 ${isActive ? "bg-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.2)]" : "bg-white/[0.03] hover:bg-white/[0.08]"
+          }`}
       >
         {item.isLogo ? (
           <span className="font-satoshi text-lg sm:text-xl font-bold bg-gradient-to-br from-purple-500 to-pink-500 text-transparent bg-clip-text">
@@ -63,7 +62,7 @@ function DockItem({ item, mouseX, activeSection }: any) {
         ) : (
           <item.icon className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-300 ${isActive ? 'text-white' : 'text-white/60'}`} />
         )}
-        
+
         {/* Active Gradient Fill (Subtle) */}
         {isActive && (
           <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${item.color} opacity-20 pointer-events-none`} />
@@ -113,9 +112,9 @@ export const DockNavbar: React.FC = () => {
 
   return (
     <div className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none w-full max-w-full px-4 sm:px-0 flex justify-center">
-      <div className="pointer-events-auto flex items-end gap-1.5 sm:gap-2 p-2 sm:p-3 rounded-[2rem] bg-black/40 sm:bg-black/20 backdrop-blur-[40px] saturate-[200%] border border-white/10 shadow-2xl"
-           onMouseMove={(e) => mouseX.set(e.pageX)}
-           onMouseLeave={() => mouseX.set(-9999)}
+      <div className="pointer-events-auto flex items-end gap-1.5 sm:gap-2 p-2 sm:p-3 rounded-[1.5rem] bg-black/40 sm:bg-black/20 backdrop-blur-[40px] saturate-[200%] border border-white/10 shadow-2xl"
+        onMouseMove={(e) => mouseX.set(e.pageX)}
+        onMouseLeave={() => mouseX.set(-9999)}
       >
         {navItems.map((item) => (
           <DockItem key={item.id} item={item} mouseX={mouseX} activeSection={activeSection} />

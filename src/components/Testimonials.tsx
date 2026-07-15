@@ -44,7 +44,7 @@ export const Testimonials: React.FC = () => {
         </div>
 
         {/* Testimonials Marquee */}
-        <div className="relative w-full overflow-hidden flex group">
+        <div className="relative w-full group">
           {/* Left Arrow (Floating) */}
           <button
             onClick={() => slide('left')}
