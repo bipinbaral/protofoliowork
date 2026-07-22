@@ -8,9 +8,10 @@ import { Project } from "@/data/projects";
 interface ProjectCardProps {
   project: Project;
   index: number;
+  onClick?: (e: React.MouseEvent) => void;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick }) => {
   const [isLiked, setIsLiked] = useState(false);
   // Deterministic random-looking number based on index to avoid SSR hydration mismatch
   const initialLikes = 124 + (index * 13) + (project.title.length * 3);
@@ -45,11 +46,19 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
   const isExternal = project.link && !project.link.startsWith('/') && !project.link.startsWith('#');
   const href = project.link || `#`;
 
+  const handleClick = (e: React.MouseEvent) => {
+    if (onClick) {
+      e.preventDefault();
+      onClick(e);
+    }
+  };
+
   return (
     <motion.a
       href={href}
-      target={isExternal ? "_blank" : undefined}
-      rel={isExternal ? "noopener noreferrer" : undefined}
+      target={isExternal && !onClick ? "_blank" : undefined}
+      rel={isExternal && !onClick ? "noopener noreferrer" : undefined}
+      onClick={handleClick}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

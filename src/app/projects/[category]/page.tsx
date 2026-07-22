@@ -6,8 +6,8 @@ import DockNavbar from "@/components/DockNavbar";
 import PageBackground from "@/components/PageBackground";
 import Footer from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
-import { ProjectCard } from "@/components/ProjectCard";
 import { collectionLogoDesign, projects } from "@/data/projects";
+import { CollectionGallery } from "@/components/CollectionGallery";
 
 interface CollectionPageProps {
   params: Promise<{
@@ -69,16 +69,8 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
               </div>
             </div>
 
-            {/* Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-4">
-              {collectionLogoDesign.map((project, idx) => (
-                <ProjectCard
-                  key={project.id}
-                  project={{...project, link: `/projects/${category}/${project.id}`}} // Force link to case study in new path
-                  index={idx}
-                />
-              ))}
-            </div>
+            {/* Grid with Client-Side Modal */}
+            <CollectionGallery projects={collectionLogoDesign} category={category} />
           </div>
         </Container>
       </main>

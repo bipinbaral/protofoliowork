@@ -27,6 +27,7 @@ export interface CaseStudyData {
 
 export interface DetailedProject extends Project {
   caseStudy?: CaseStudyData;
+  galleryImages?: string[];
 }
 
 export const collectionLogoDesign: DetailedProject[] = [
@@ -76,7 +77,15 @@ export const collectionLogoDesign: DetailedProject[] = [
         "Social Media Templates (Figma + 12 templates)",
         "Website Design (UI/UX for 12 screens)"
       ]
-    }
+    },
+    galleryImages: [
+      "/images/Logos.jpg",
+      "/images/Posters.jpg",
+      "/images/Thumbnail.jpg",
+      "/images/Videos.jpg",
+      "/images/printmedia.jpg",
+      "/images/uiux.png"
+    ]
   },
   {
     id: "harbour-learning",
