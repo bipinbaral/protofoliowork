@@ -42,11 +42,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
     }
   };
 
+  const isExternal = project.link && !project.link.startsWith('/') && !project.link.startsWith('#');
+  const href = project.link || `#`;
+
   return (
     <motion.a
-      href={project.link || `/project/${project.id}`}
-      target={project.link ? "_blank" : undefined}
-      rel={project.link ? "noopener noreferrer" : undefined}
+      href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -82,16 +85,28 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       {/* Text Block */}
       <div className="flex flex-col px-1">
         <div className="flex items-start justify-between mb-1">
-          <div className="flex flex-col">
-            <h3 className="font-sans text-lg font-bold text-white">
-              {project.title}
-            </h3>
-            <span className="text-white/50 font-sans text-sm mb-4 mt-1">
+          <div className="flex flex-col w-full pr-4">
+            <div className="flex items-center justify-between w-full">
+              <h3 className="font-sans text-lg font-bold text-white">
+                {project.title}
+              </h3>
+              {project.year && (
+                <span className="text-white/40 text-xs font-mono">
+                  {project.year}
+                </span>
+              )}
+            </div>
+            <span className="text-white/50 font-sans text-sm mt-1">
               {project.category}
             </span>
+            {project.link && !project.isCollection && (
+              <span className="text-white/40 font-sans text-xs mt-2 truncate max-w-[90%]">
+                {project.link.replace(/^https?:\/\//, '')}
+              </span>
+            )}
           </div>
           
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center shrink-0">
             <button 
               onClick={handleLike}
               className="relative group/like p-2 -mr-2 rounded-full hover:bg-white/10 transition-colors z-20 focus:outline-none"
