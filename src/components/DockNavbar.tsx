@@ -2,7 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
-import { Briefcase, Folder, Quote, Mail, ArrowUpRight } from "lucide-react";
+import { Briefcase, Folder, Quote, Mail, ArrowUpRight, LucideIcon } from "lucide-react";
 
 const navItems = [
   { id: "home", label: "Home", href: "#", isLogo: true, color: "from-purple-500 to-pink-500" },
@@ -12,7 +12,22 @@ const navItems = [
   { id: "contact", label: "Contact", href: "#contact", icon: Mail, color: "from-rose-400 to-red-500" },
 ];
 
-function DockItem({ item, mouseX, activeSection }: any) {
+interface NavItemType {
+  id: string;
+  label: string;
+  href: string;
+  isLogo?: boolean;
+  icon?: LucideIcon;
+  color: string;
+}
+
+interface DockItemProps {
+  item: NavItemType;
+  mouseX: ReturnType<typeof useMotionValue<number>>;
+  activeSection: string;
+}
+
+function DockItem({ item, mouseX, activeSection }: DockItemProps) {
   const ref = useRef<HTMLAnchorElement>(null);
 
   // Calculate distance from mouse to the center of the icon
@@ -60,7 +75,7 @@ function DockItem({ item, mouseX, activeSection }: any) {
             B
           </span>
         ) : (
-          <item.icon className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-300 ${isActive ? 'text-white' : 'text-white/60'}`} />
+          item.icon && <item.icon className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-300 ${isActive ? 'text-white' : 'text-white/60'}`} />
         )}
 
         {/* Active Gradient Fill (Subtle) */}

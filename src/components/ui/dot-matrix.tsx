@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useEffect, useCallback } from 'react';
-import { motion, useMotionValue } from 'framer-motion';
+import { useMotionValue } from 'framer-motion';
 
 export interface DotMatrixProps {
     dotColor?: string;

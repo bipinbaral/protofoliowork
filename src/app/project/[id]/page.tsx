@@ -1,6 +1,5 @@
 import React from "react";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import { projects } from "@/data/projects";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";

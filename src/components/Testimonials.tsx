@@ -5,7 +5,6 @@ import { Container } from "./ui/Container";
 import { SectionHeading } from "./ui/SectionHeading";
 import { testimonials } from "@/data/testimonials";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
 
 export const Testimonials: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);

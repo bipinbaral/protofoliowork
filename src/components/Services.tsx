@@ -6,7 +6,7 @@ import { SectionHeading } from "./ui/SectionHeading";
 import { AnimatedWrapper } from "./ui/AnimatedWrapper";
 import { Button } from "./ui/Button";
 import { FaCalendarAlt, FaEye } from "react-icons/fa";
-import { services, secondaryServices, tools } from "@/data/services";
+import { services, secondaryServices } from "@/data/services";
 import { Award, Box, PenTool, Layout, Video, Globe } from "lucide-react";
 
 export const Services: React.FC = () => {

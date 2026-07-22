@@ -19,7 +19,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
   useEffect(() => {
     const savedLikes = localStorage.getItem(`project-likes-${project.id}`);
     if (savedLikes) {
-      setLikeCount(parseInt(savedLikes, 10));
+      const parsed = parseInt(savedLikes, 10);
+      requestAnimationFrame(() => {
+        setLikeCount(parsed);
+      });
     }
   }, [project.id]);
 
