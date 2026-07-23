@@ -53,7 +53,7 @@ export const ProjectViewerModal: React.FC<ProjectViewerModalProps> = ({ project,
   // Keyboard navigation for lightbox
   useEffect(() => {
     if (lightboxIndex === null) return;
-    
+
     const handleLightboxKeys = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") {
         setLightboxIndex((prev) => (prev !== null && prev > 0 ? prev - 1 : (project?.galleryImages?.length || 1) - 1));
@@ -61,7 +61,7 @@ export const ProjectViewerModal: React.FC<ProjectViewerModalProps> = ({ project,
         setLightboxIndex((prev) => (prev !== null && prev < (project?.galleryImages?.length || 1) - 1 ? prev + 1 : 0));
       }
     };
-    
+
     window.addEventListener("keydown", handleLightboxKeys);
     return () => window.removeEventListener("keydown", handleLightboxKeys);
   }, [lightboxIndex, project]);
@@ -91,16 +91,12 @@ export const ProjectViewerModal: React.FC<ProjectViewerModalProps> = ({ project,
         </div>
 
         {/* Gallery Scroll Content */}
-        <div className="flex-1 w-full max-w-5xl mx-auto px-4 pb-24 pt-12 flex flex-col gap-8">
+        <div className="flex-1 w-full max-w-5xl mx-auto px-4 pb-24 pt-12 flex flex-col gap-0">
           {project.galleryImages?.length ? (
             project.galleryImages.map((img, idx) => (
-              <motion.div
+              <div
                 key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6 }}
-                className="w-full relative rounded-2xl overflow-hidden cursor-zoom-in border border-white/5 shadow-2xl"
+                className="w-full relative overflow-hidden cursor-zoom-in shadow-2xl"
                 onClick={() => setLightboxIndex(idx)}
               >
                 <img
@@ -109,7 +105,7 @@ export const ProjectViewerModal: React.FC<ProjectViewerModalProps> = ({ project,
                   className="w-full h-auto object-contain"
                   loading={idx < 2 ? "eager" : "lazy"}
                 />
-              </motion.div>
+              </div>
             ))
           ) : (
             <div className="flex-1 flex items-center justify-center text-white/50">
