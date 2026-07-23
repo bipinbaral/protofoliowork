@@ -6,7 +6,7 @@ import DockNavbar from "@/components/DockNavbar";
 import PageBackground from "@/components/PageBackground";
 import Footer from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
-import { collectionLogoDesign, projects } from "@/data/projects";
+import { categoryCollections, projects } from "@/data/projects";
 import { CollectionGallery } from "@/components/CollectionGallery";
 
 interface CollectionPageProps {
@@ -18,8 +18,9 @@ interface CollectionPageProps {
 export default async function CollectionPage({ params }: CollectionPageProps) {
   const { category } = await params;
 
-  // We only have logo-design implemented for now
-  if (category !== "logo-design") {
+  const activeCollection = categoryCollections[category];
+
+  if (!activeCollection) {
     notFound();
   }
 
@@ -70,7 +71,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
             </div>
 
             {/* Grid with Client-Side Modal */}
-            <CollectionGallery projects={collectionLogoDesign} category={category} />
+            <CollectionGallery projects={activeCollection} category={category} />
           </div>
         </Container>
       </main>

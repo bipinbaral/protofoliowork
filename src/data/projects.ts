@@ -113,6 +113,75 @@ export const collectionLogoDesign: DetailedProject[] = [
   }
 ];
 
+export const collectionPosterDesigns: DetailedProject[] = [
+  {
+    id: "poster-sample-1",
+    title: "Sample Poster Project",
+    category: "Design",
+    image: "/images/Posters.jpg",
+    link: "example.com",
+    year: "2023",
+    galleryImages: ["/images/Posters.jpg"]
+  }
+];
+
+export const collectionPrintMedia: DetailedProject[] = [
+  {
+    id: "print-sample-1",
+    title: "Sample Print Project",
+    category: "Print",
+    image: "/images/printmedia.jpg",
+    link: "example.com",
+    year: "2024",
+    galleryImages: ["/images/printmedia.jpg"]
+  }
+];
+
+export const collectionPathStudyInUSA: DetailedProject[] = [
+  {
+    id: "path-sample-1",
+    title: "Sample Path Study Project",
+    category: "Education",
+    image: "/images/Path Study in USA.jpg",
+    link: "example.com",
+    year: "2024",
+    galleryImages: ["/images/Path Study in USA.jpg"]
+  }
+];
+
+export const collectionUIUXDesign: DetailedProject[] = [
+  {
+    id: "uiux-sample-1",
+    title: "Sample UI/UX Project",
+    category: "Digital",
+    image: "/images/uiux.png",
+    link: "example.com",
+    year: "2022",
+    galleryImages: ["/images/uiux.png"]
+  }
+];
+
+export const collectionProgramsInAus: DetailedProject[] = [
+  {
+    id: "aus-sample-1",
+    title: "Sample AUS Program Project",
+    category: "Education",
+    image: "/images/Diploma Bachelor Masters AUS.jpg",
+    link: "example.com",
+    year: "2022",
+    galleryImages: ["/images/Diploma Bachelor Masters AUS.jpg"]
+  }
+];
+
+export const categoryCollections: Record<string, DetailedProject[]> = {
+  "logo-design": collectionLogoDesign,
+  "poster-designs": collectionPosterDesigns,
+  "print-media": collectionPrintMedia,
+  "path-study-in-usa": collectionPathStudyInUSA,
+  "uiux-design": collectionUIUXDesign,
+  "programs-in-aus": collectionProgramsInAus,
+};
+
 export const projects: Project[] = [
   {
     id: "logo-design",
@@ -125,43 +194,53 @@ export const projects: Project[] = [
     isCollection: true,
   },
   {
-    id: "2",
+    id: "poster-designs",
     title: "Poster Designs",
     category: "Programs",
     image: "/images/Posters.jpg",
+    link: "/projects/poster-designs",
     year: "2023",
     tags: ["UI/UX", "Web"],
+    isCollection: true,
   },
   {
-    id: "3",
+    id: "print-media",
     title: "Print Media",
     category: "Test Prep",
     image: "/images/printmedia.jpg",
+    link: "/projects/print-media",
     year: "2024",
     tags: ["Print", "Social Media"],
+    isCollection: true,
   },
   {
-    id: "4",
+    id: "path-study-in-usa",
     title: "Path Study in USA",
     category: "Destination",
     image: "/images/Path Study in USA.jpg",
+    link: "/projects/path-study-in-usa",
     year: "2024",
     tags: ["Identity", "Digital"],
+    isCollection: true,
   },
   {
-    id: "5",
+    id: "uiux-design",
     title: "UI/UX Design",
     category: "Destination",
     image: "/images/uiux.png",
+    link: "/projects/uiux-design",
     year: "2022",
     tags: ["Strategy", "Design"],
+    isCollection: true,
   },
   {
-    id: "6",
+    id: "programs-in-aus",
     title: "Programs in AUS",
     category: "Programs",
     image: "/images/Diploma Bachelor Masters AUS.jpg",
+    link: "/projects/programs-in-aus",
     year: "2022",
     tags: ["Illustration", "Ad"],
+    isCollection: true,
   },
 ];

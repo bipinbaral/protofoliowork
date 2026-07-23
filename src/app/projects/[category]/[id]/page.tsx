@@ -2,7 +2,7 @@ import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { collectionLogoDesign, projects } from "@/data/projects";
+import { categoryCollections, projects } from "@/data/projects";
 import DockNavbar from "@/components/DockNavbar";
 import PageBackground from "@/components/PageBackground";
 import Footer from "@/components/Footer";
@@ -18,8 +18,9 @@ interface ProjectPageProps {
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { category, id } = await params;
   
-  // Find project in the logo design collection first, otherwise check main projects
-  let project = collectionLogoDesign.find((p) => p.id === id);
+  // Find project in the specific collection first, otherwise check main projects
+  const activeCollection = categoryCollections[category] || [];
+  let project = activeCollection.find((p) => p.id === id);
   if (!project) {
     project = projects.find((p) => p.id === id) as any;
   }
@@ -47,7 +48,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               href={`/projects/${category}`}
               className="inline-flex items-center gap-2 text-white/50 hover:text-white transition-colors w-fit text-sm font-medium"
             >
-              <ArrowLeft className="w-4 h-4" /> Logo Design & Construction
+              <ArrowLeft className="w-4 h-4" /> Back to Collection
             </Link>
 
             {/* Hero Banner Section */}
