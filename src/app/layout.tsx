@@ -53,7 +53,6 @@ export const metadata: Metadata = {
   },
 };
 
-import Header from "@/components/Header";
 import CustomCursor from "@/components/CustomCursor";
 
 export default function RootLayout({
@@ -73,7 +72,6 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground scroll-smooth">
         <CustomCursor />
-        <Header />
         {children}
       </body>
     </html>
