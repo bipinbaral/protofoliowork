@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import { Container } from "./ui/Container";
@@ -145,7 +145,7 @@ Best Regards,
             >
               <button
                 onClick={() => setShowModal(false)}
-                className="absolute top-4 right-4 text-white/40 hover:text-white transition-colors"
+                className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />

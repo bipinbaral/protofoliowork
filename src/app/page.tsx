@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import dynamic from "next/dynamic";
 import DockNavbar from "@/components/DockNavbar";
 import PageBackground from "@/components/PageBackground";

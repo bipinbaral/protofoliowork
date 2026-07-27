@@ -84,6 +84,13 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Hide default cursor on non-touch (pointer: fine) devices for custom cursor */
+@media (pointer: fine) {
+  html, body, * {
+    cursor: none !important;
+  }
+}
+
 /* Glassmorphism utility */
 .glass {
   background: rgba(13, 13, 13, 0.7);

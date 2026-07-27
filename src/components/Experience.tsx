@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { Container } from "./ui/Container";
@@ -23,7 +23,7 @@ export const Experience: React.FC = () => {
         {/* Timeline Layout */}
         <div className="relative max-w-3xl mx-auto mt-12 sm:mt-16 pl-8 sm:pl-0">
           
-          {/* Vertical line – left on mobile, centered on desktop */}
+          {/* Vertical line â€“ left on mobile, centered on desktop */}
           <div className="absolute left-3 sm:left-1/2 top-0 bottom-0 w-0.5 bg-white/10 -translate-x-[0.5px]" />
 
           <AnimatedWrapper type="stagger" delay={0.1} className="space-y-12">

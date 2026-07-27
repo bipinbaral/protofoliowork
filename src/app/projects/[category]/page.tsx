@@ -47,7 +47,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
               </Link>
               
               <div className="mt-4">
-                <span className="text-xs font-mono uppercase tracking-widest text-white/40 mb-3 block">
+                <span className="text-xs font-mono uppercase tracking-widest text-white/70 mb-3 block">
                   COLLECTION
                 </span>
                 <h1 className="font-sans text-4xl sm:text-5xl font-bold text-white mb-4">

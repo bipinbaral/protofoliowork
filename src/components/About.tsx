@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -63,7 +63,7 @@ export const About: React.FC = () => {
 
               {/* Skills Tags */}
               <div className="mb-6 sm:mb-8">
-                <h4 className="text-xs uppercase font-mono tracking-wider text-white/40 mb-3">Expertise</h4>
+                <h4 className="text-xs uppercase font-mono tracking-wider text-white/70 mb-3">Expertise</h4>
                 <div className="flex flex-wrap gap-2">
                   {skills.map((skill) => (
                     <span
@@ -78,7 +78,7 @@ export const About: React.FC = () => {
 
               {/* Tools Tags */}
               <div className="mb-8 sm:mb-10">
-                <h4 className="text-xs uppercase font-mono tracking-wider text-white/40 mb-3">Tools</h4>
+                <h4 className="text-xs uppercase font-mono tracking-wider text-white/70 mb-3">Tools</h4>
                 <div className="flex flex-wrap gap-2">
                   {tools.map((tool) => (
                     <span

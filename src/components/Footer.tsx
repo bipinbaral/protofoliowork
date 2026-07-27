@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { Container } from "./ui/Container";
@@ -222,7 +222,7 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm text-white/50">
             <span>&copy; {new Date().getFullYear()} Bipin Baral. All rights reserved.</span>
             <div className="hidden sm:flex items-center gap-4">
-              <span className="text-white/20">•</span>
+              <span className="text-white/20">â€¢</span>
               {legalLinks.slice(0, 2).map((link) => (
                 <a key={link.label} href={link.href} className="hover:text-white transition-colors">
                   {link.label}
@@ -234,18 +234,18 @@ export const Footer: React.FC = () => {
           {/* Right: Looping Marquee Ticker & Back to top */}
           <div className="flex items-center gap-8">
             <div className="hidden md:block relative max-w-[200px] overflow-hidden mask-gradient">
-              <div className="animate-marquee-infinite text-xs font-mono font-medium tracking-widest text-white/40 uppercase whitespace-nowrap select-none">
+              <div className="animate-marquee-infinite text-xs font-mono font-medium tracking-widest text-white/70 uppercase whitespace-nowrap select-none">
                 <span className="mx-3 flex items-center gap-1.5">
                   <Sparkles className="w-3 h-3 text-amber-400 inline" /> DESIGN
-                  <span className="text-amber-500/50">•</span> DEVELOP
+                  <span className="text-amber-500/50">â€¢</span> DEVELOP
                 </span>
                 <span className="mx-3 flex items-center gap-1.5">
                   <Sparkles className="w-3 h-3 text-amber-400 inline" /> DESIGN
-                  <span className="text-amber-500/50">•</span> DEVELOP
+                  <span className="text-amber-500/50">â€¢</span> DEVELOP
                 </span>
                 <span className="mx-3 flex items-center gap-1.5">
                   <Sparkles className="w-3 h-3 text-amber-400 inline" /> DESIGN
-                  <span className="text-amber-500/50">•</span> DEVELOP
+                  <span className="text-amber-500/50">â€¢</span> DEVELOP
                 </span>
               </div>
             </div>

@@ -15,30 +15,30 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolite – Framer Portfolio Template",
-  description: "Portfolite is a sleek and professionally designed portfolio template recreated in Next.js, built to help creatives and professionals showcase their work effortlessly. With its modern aesthetics and seamless functionality.",
-  metadataBase: new URL("https://portfolite.framer.website/"),
+  title: "Bipin Baral — Graphic Designer, UI/UX & Creative Developer",
+  description: "Bipin Baral is a graphic designer, UI/UX expert, and creative developer based in Nepal, crafting premium brand identities, logos, and digital experiences.",
+  metadataBase: new URL("https://bipinbaral.com"),
   openGraph: {
-    title: "Portfolite – Framer Portfolio Template",
-    description: "Portfolite is a sleek and professionally designed portfolio template recreated in Next.js, built to help creatives and professionals showcase their work effortlessly.",
-    url: "https://portfolite.framer.website/",
-    siteName: "Portfolite",
+    title: "Bipin Baral — Graphic Designer, UI/UX & Creative Developer",
+    description: "Crafting premium brand identities, logos, and digital experiences that elevate businesses worldwide.",
+    url: "https://bipinbaral.com",
+    siteName: "Bipin Baral",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://framerusercontent.com/images/95dUNcvR4MKvuWP9eFVbpV8No0.png",
+        url: "/images/Logos.jpg",
         width: 1200,
         height: 630,
-        alt: "Portfolite – Framer Portfolio Template Preview",
+        alt: "Bipin Baral — Portfolio Preview",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portfolite – Framer Portfolio Template",
-    description: "Portfolite is a sleek and professionally designed portfolio template recreated in Next.js, built to help creatives and professionals showcase their work effortlessly.",
-    images: ["https://framerusercontent.com/images/95dUNcvR4MKvuWP9eFVbpV8No0.png"],
+    title: "Bipin Baral — Graphic Designer, UI/UX & Creative Developer",
+    description: "Crafting premium brand identities, logos, and digital experiences.",
+    images: ["/images/Logos.jpg"],
   },
   robots: {
     index: true,
@@ -52,6 +52,9 @@ export const metadata: Metadata = {
     },
   },
 };
+
+import Header from "@/components/Header";
+import CustomCursor from "@/components/CustomCursor";
 
 export default function RootLayout({
   children,
@@ -68,6 +71,8 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://framerusercontent.com" />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground scroll-smooth">
+        <CustomCursor />
+        <Header />
         {children}
       </body>
     </html>

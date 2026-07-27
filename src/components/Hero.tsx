@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
             Crafting Unique Brand Identities
           </span>
 
-          {/* Headline – fluid clamp */}
+          {/* Headline â€“ fluid clamp */}
           <h1
             className="font-satoshi font-bold tracking-tight text-white leading-[1.05] max-w-5xl"
             style={{ fontSize: "clamp(2.2rem, 8vw, 6rem)" }}
@@ -66,10 +66,10 @@ export const Hero: React.FC = () => {
       {/* Bottom Marquee & Scroll Indicator */}
       <div className="w-full mt-10 sm:mt-12 flex flex-col items-center gap-8 sm:gap-12">
         {/* Scroll down indicator */}
-        <AnimatedWrapper type="fadeIn" delay={0.5} className="flex flex-col items-center gap-2 text-white/40 hover:text-white transition-colors duration-300">
+        <AnimatedWrapper type="fadeIn" delay={0.5} className="flex flex-col items-center gap-2 text-white/70 hover:text-white transition-colors duration-300">
           <a href="#projects" className="flex flex-col items-center gap-1 group">
             <span className="text-[10px] uppercase font-mono tracking-widest">Scroll Down</span>
-            <span className="text-[10px] font-sans text-white/30 group-hover:text-white/60 transition-colors">to see projects</span>
+            <span className="text-[10px] font-sans text-white/60 group-hover:text-white/60 transition-colors">to see projects</span>
             <ArrowDown className="w-3.5 h-3.5 mt-1 animate-bounce text-gold" />
           </a>
         </AnimatedWrapper>

@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "./ui/Container";
+import { motion, AnimatePresence } from "framer-motion";
 import { SectionHeading } from "./ui/SectionHeading";
 import { FaBehance, FaCalendarAlt } from "react-icons/fa";
 import { AnimatedWrapper } from "./ui/AnimatedWrapper";
@@ -11,6 +12,13 @@ import { Button } from "./ui/Button";
 import Stats from "./Stats";
 
 export const PortfolioGrid: React.FC = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+  
+  const categories = ["All", ...Array.from(new Set(projects.map(p => p.category)))];
+
+  const filteredProjects = activeCategory === "All" 
+    ? projects 
+    : projects.filter(p => p.category === activeCategory);
 
   return (
     <section id="projects" className="section-padding bg-transparent border-t border-white/5">
@@ -25,16 +33,43 @@ export const PortfolioGrid: React.FC = () => {
           />
         </div>
 
-        {/* Masonry Grid with CSS Columns */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
-          {projects.map((project, idx) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              index={idx}
-            />
+        {/* Filters */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                activeCategory === cat
+                  ? "bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+                  : "bg-white/5 text-white/70 border border-white/10 hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              {cat}
+            </button>
           ))}
         </div>
+
+        {/* Masonry Grid with CSS Columns */}
+        <motion.div layout className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, idx) => (
+              <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ProjectCard
+                  project={project}
+                  index={idx}
+                />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
 
         {/* Footer actions inside section */}
         <AnimatedWrapper type="slideUp" delay={0.2} className="mt-12 sm:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 px-4 sm:px-0">

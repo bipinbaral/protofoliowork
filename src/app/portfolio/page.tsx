@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { getAllCategories } from "@/data/portfolio";
 import { Container } from "@/components/ui/Container";
 
@@ -26,7 +26,7 @@ export default function PortfolioPage() {
                   {cat.title}
                 </h2>
                 <p className="text-white/50">{cat.description}</p>
-                <div className="mt-6 text-sm font-medium text-white/40 uppercase tracking-wider">
+                <div className="mt-6 text-sm font-medium text-white/70 uppercase tracking-wider">
                   {cat.projects.length} Projects
                 </div>
               </div>

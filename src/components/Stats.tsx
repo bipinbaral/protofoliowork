@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useEffect, useState, useRef } from "react";
 import { Container } from "./ui/Container";
@@ -56,7 +56,7 @@ export const Stats: React.FC = () => {
                 <span className="font-satoshi text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-2 text-gold">
                   {num > 0 ? <AnimatedCounter endValue={num} suffix={suffix} /> : stat.value}
                 </span>
-                <span className="font-mono text-xs uppercase tracking-wider text-white/40 max-w-[200px]">
+                <span className="font-mono text-xs uppercase tracking-wider text-white/70 max-w-[200px]">
                   {stat.label}
                 </span>
               </div>
