@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
@@ -30,7 +30,7 @@ interface DockItemProps {
 }
 
 function DockItem({ item, mouseX, activeSection }: DockItemProps) {
-  const ref = useRef<HTMLAnchorElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   // Calculate distance from mouse to the center of the icon
   const distance = useTransform(mouseX, (val: number) => {
@@ -63,12 +63,15 @@ function DockItem({ item, mouseX, activeSection }: DockItemProps) {
         )}
       </AnimatePresence>
 
-      <Link href={item.href} passHref legacyBehavior scroll={true}>
-        <motion.a
-          ref={ref}
-          style={{ scale, y }}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+      <motion.div
+        ref={ref}
+        style={{ scale, y }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <Link
+          href={item.href}
+          scroll={true}
           className={`relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-2xl transition-colors duration-300 ${isActive ? "bg-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.2)]" : "bg-white/[0.03] hover:bg-white/[0.08]"
             }`}
         >
@@ -84,8 +87,8 @@ function DockItem({ item, mouseX, activeSection }: DockItemProps) {
           {isActive && (
             <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${item.color} opacity-20 pointer-events-none`} />
           )}
-        </motion.a>
-      </Link>
+        </Link>
+      </motion.div>
 
       {/* Active Dot */}
       <div className="h-2 flex items-center mt-1">
