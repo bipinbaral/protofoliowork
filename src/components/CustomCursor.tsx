@@ -59,7 +59,7 @@ export const CustomCursor: React.FC = () => {
           y: position.y - (isHovering ? 36 : 18),
           width: isHovering ? 72 : 36,
           height: isHovering ? 72 : 36,
-          backgroundColor: isHovering ? "rgba(255,255,255,0.08)" : "transparent",
+          backgroundColor: isHovering ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0)",
           backdropFilter: isHovering ? "blur(4px)" : "none",
         }}
         transition={{ type: "spring", stiffness: 300, damping: 30, mass: 0.5 }}
