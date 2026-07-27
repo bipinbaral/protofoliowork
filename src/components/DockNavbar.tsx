@@ -141,7 +141,9 @@ export const DockNavbar: React.FC = () => {
         {/* Contact Me CTA */}
         <div className="hidden sm:flex relative flex-col items-center">
           <a
-            href="#contact"
+            href="https://wa.me/9779843506305"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative flex items-center justify-center gap-2 h-12 px-5 ml-1 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 transition-opacity"
           >
             <span className="font-sans font-medium text-sm text-white whitespace-nowrap">Contact Me</span>
