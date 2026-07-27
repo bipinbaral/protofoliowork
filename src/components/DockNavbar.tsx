@@ -3,13 +3,15 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
 import { Briefcase, Folder, Quote, Mail, ArrowUpRight, LucideIcon } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navItems = [
-  { id: "home", label: "Home", href: "#", isLogo: true, color: "from-purple-500 to-pink-500" },
-  { id: "services", label: "Services", href: "#services", icon: Briefcase, color: "from-blue-400 to-cyan-400" },
-  { id: "projects", label: "Projects", href: "#projects", icon: Folder, color: "from-amber-400 to-orange-500" },
-  { id: "testimonials", label: "Testimonials", href: "#testimonials", icon: Quote, color: "from-green-400 to-emerald-500" },
-  { id: "contact", label: "Contact", href: "#contact", icon: Mail, color: "from-rose-400 to-red-500" },
+  { id: "home", label: "Home", href: "/", isLogo: true, color: "from-purple-500 to-pink-500" },
+  { id: "services", label: "Services", href: "/#services", icon: Briefcase, color: "from-blue-400 to-cyan-400" },
+  { id: "projects", label: "Projects", href: "/#projects", icon: Folder, color: "from-amber-400 to-orange-500" },
+  { id: "testimonials", label: "Testimonials", href: "/#testimonials", icon: Quote, color: "from-green-400 to-emerald-500" },
+  { id: "contact", label: "Contact", href: "/#contact", icon: Mail, color: "from-rose-400 to-red-500" },
 ];
 
 interface NavItemType {
@@ -42,7 +44,7 @@ function DockItem({ item, mouseX, activeSection }: DockItemProps) {
   const ySync = useTransform(distance, [-150, 0, 150], [0, -15, 0]);
   const y = useSpring(ySync, { mass: 0.1, stiffness: 150, damping: 12 });
 
-  const isActive = activeSection === item.id || (item.id === "home" && activeSection === "");
+  const isActive = activeSection === item.id;
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -61,28 +63,29 @@ function DockItem({ item, mouseX, activeSection }: DockItemProps) {
         )}
       </AnimatePresence>
 
-      <motion.a
-        href={item.href}
-        ref={ref}
-        style={{ scale, y }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className={`relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-2xl transition-colors duration-300 ${isActive ? "bg-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.2)]" : "bg-white/[0.03] hover:bg-white/[0.08]"
-          }`}
-      >
-        {item.isLogo ? (
-          <span className="font-satoshi text-lg sm:text-xl font-bold bg-gradient-to-br from-purple-500 to-pink-500 text-transparent bg-clip-text">
-            B
-          </span>
-        ) : (
-          item.icon && <item.icon className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-300 ${isActive ? 'text-white' : 'text-white/60'}`} />
-        )}
+      <Link href={item.href} passHref legacyBehavior scroll={true}>
+        <motion.a
+          ref={ref}
+          style={{ scale, y }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          className={`relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-2xl transition-colors duration-300 ${isActive ? "bg-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.2)]" : "bg-white/[0.03] hover:bg-white/[0.08]"
+            }`}
+        >
+          {item.isLogo ? (
+            <span className="font-satoshi text-lg sm:text-xl font-bold bg-gradient-to-br from-purple-500 to-pink-500 text-transparent bg-clip-text">
+              B
+            </span>
+          ) : (
+            item.icon && <item.icon className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-300 ${isActive ? 'text-white' : 'text-white/60'}`} />
+          )}
 
-        {/* Active Gradient Fill (Subtle) */}
-        {isActive && (
-          <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${item.color} opacity-20 pointer-events-none`} />
-        )}
-      </motion.a>
+          {/* Active Gradient Fill (Subtle) */}
+          {isActive && (
+            <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${item.color} opacity-20 pointer-events-none`} />
+          )}
+        </motion.a>
+      </Link>
 
       {/* Active Dot */}
       <div className="h-2 flex items-center mt-1">
@@ -93,10 +96,19 @@ function DockItem({ item, mouseX, activeSection }: DockItemProps) {
 }
 
 export const DockNavbar: React.FC = () => {
+  const pathname = usePathname();
   const mouseX = useMotionValue(-9999);
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
+    if (pathname !== "/") {
+      if (pathname.startsWith("/projects") || pathname.startsWith("/portfolio")) {
+        setActiveSection("projects");
+      } else {
+        setActiveSection("");
+      }
+      return;
+    }
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -123,7 +135,7 @@ export const DockNavbar: React.FC = () => {
       sections.forEach((section) => observer.unobserve(section));
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <div className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none w-full max-w-full px-4 sm:px-0 flex justify-center">
