@@ -76,32 +76,32 @@ export const Hero: React.FC = () => {
 
         {/* Client Marquee */}
         <div className="relative w-full overflow-hidden py-4 sm:py-6 bg-white backdrop-blur-md">
-          <div className="flex w-[200%] animate-marquee">
+          <div className="flex w-max animate-marquee">
             {/* First Set of Logos */}
-            <div className="flex justify-around items-center w-1/2">
+            <div className="flex items-center shrink-0 px-2 sm:px-4">
               {logos.map((logo, i) => (
-                <a key={`logo-1-${i}`} href={logo.href} target="_blank" rel="noopener noreferrer" className="relative h-10 sm:h-12 w-24 sm:w-32 mx-4 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
+                <a key={`logo-1-${i}`} href={logo.href} target="_blank" rel="noopener noreferrer" className="relative shrink-0 h-10 sm:h-12 w-28 sm:w-32 mx-4 sm:mx-6 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
                   <Image
                     src={logo.src}
                     alt={logo.alt}
                     fill
                     className="object-contain"
-                    sizes="(max-width: 768px) 96px, 128px"
+                    sizes="(max-width: 768px) 112px, 128px"
                   />
                 </a>
               ))}
             </div>
 
             {/* Second Set of Logos (for seamless looping) */}
-            <div className="flex justify-around items-center w-1/2">
+            <div className="flex items-center shrink-0 px-2 sm:px-4">
               {logos.map((logo, i) => (
-                <a key={`logo-2-${i}`} href={logo.href} target="_blank" rel="noopener noreferrer" className="relative h-10 sm:h-12 w-24 sm:w-32 mx-4 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
+                <a key={`logo-2-${i}`} href={logo.href} target="_blank" rel="noopener noreferrer" className="relative shrink-0 h-10 sm:h-12 w-28 sm:w-32 mx-4 sm:mx-6 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
                   <Image
                     src={logo.src}
                     alt={logo.alt}
                     fill
                     className="object-contain"
-                    sizes="(max-width: 768px) 96px, 128px"
+                    sizes="(max-width: 768px) 112px, 128px"
                   />
                 </a>
               ))}
