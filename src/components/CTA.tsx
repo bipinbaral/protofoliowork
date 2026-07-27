@@ -1,11 +1,68 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "./ui/Container";
-import { ArrowUpRight, FileText, Sparkles } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowUpRight, FileText, Sparkles, X, Copy, CheckCircle2, MessageCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const CTA: React.FC = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const email = "bipincreates03@gmail.com";
+  const subject = encodeURIComponent("Project Inquiry from [Company Name]");
+  const bodyText = `Hello Bipin,
+
+I hope you're doing well.
+
+I'd love to discuss a project with you. Here are the details:
+
+Company / Brand:
+Project Type: (Logo Design / Branding / UI/UX / Website / Development / Motion Graphics / Other)
+
+Project Brief:
+(Please describe your project, goals, and any references.)
+
+Budget (Optional):
+Timeline (Optional):
+
+Looking forward to hearing from you.
+
+Best Regards,
+
+[Your Name]`;
+  const body = encodeURIComponent(bodyText);
+  const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+
+  const handleStartProject = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.location.href = mailtoLink;
+    
+    const timer = setTimeout(() => {
+      if (!document.hidden) {
+        setShowModal(true);
+      }
+    }, 1500);
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        clearTimeout(timer);
+      }
+    };
+    
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    
+    setTimeout(() => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    }, 2000);
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <section id="contact" className="relative pt-12 pb-0 bg-transparent overflow-hidden">
       <Container>
@@ -50,7 +107,8 @@ export const CTA: React.FC = () => {
             >
               {/* Start a Project (solid violet) */}
               <a
-                href="mailto:bipincreates03@gmail.com?subject=Let's%20Start%20a%20Project"
+                href={mailtoLink}
+                onClick={handleStartProject}
                 className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-medium text-sm transition-all duration-300 shadow-[0_0_25px_rgba(124,58,237,0.4)] hover:shadow-[0_0_35px_rgba(139,92,246,0.6)] hover:scale-[1.03] active:scale-[0.98]"
               >
                 <Sparkles className="w-4 h-4 text-violet-200 group-hover:rotate-12 transition-transform duration-300" />
@@ -74,6 +132,55 @@ export const CTA: React.FC = () => {
           </div>
         </div>
       </Container>
+
+      {/* Fallback Modal */}
+      <AnimatePresence>
+        {showModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="relative w-full max-w-md bg-[#0e0a1f] border border-white/10 rounded-2xl p-6 shadow-2xl flex flex-col gap-6"
+            >
+              <button
+                onClick={() => setShowModal(false)}
+                className="absolute top-4 right-4 text-white/40 hover:text-white transition-colors"
+                aria-label="Close modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-xl font-satoshi font-bold text-white">Contact Info</h3>
+                <p className="text-sm text-white/60">It looks like a default email client isn't set up on this browser. You can reach out directly via email or WhatsApp.</p>
+              </div>
+              
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center justify-between p-4 rounded-xl bg-white/[0.03] border border-white/10">
+                  <span className="text-sm text-white/90">{email}</span>
+                  <button
+                    onClick={handleCopy}
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-medium transition-colors"
+                  >
+                    {copied ? <CheckCircle2 className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+                    {copied ? "Copied" : "Copy Email"}
+                  </button>
+                </div>
+
+                <a
+                  href="https://wa.me/9779843506305"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-medium text-sm transition-colors"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Contact on WhatsApp
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
