@@ -7,7 +7,7 @@ import { SectionHeading } from "./ui/SectionHeading";
 import { FaBehance, FaCalendarAlt } from "react-icons/fa";
 import { AnimatedWrapper } from "./ui/AnimatedWrapper";
 import { ProjectCard } from "./ProjectCard";
-import { projects } from "@/data/projects";
+import { projects, Project } from "@/data/projects";
 import { Button } from "./ui/Button";
 import Stats from "./Stats";
 
@@ -65,6 +65,7 @@ export const PortfolioGrid: React.FC = () => {
                 <ProjectCard
                   project={project}
                   index={idx}
+                  onClick={() => setActiveCategory(project.category)}
                 />
               </motion.div>
             ))}

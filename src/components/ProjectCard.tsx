@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ArrowUpRight, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Project } from "@/data/projects";
 import Image from "next/image";
@@ -54,18 +54,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClic
     }
   };
 
-  return (
-    <motion.a
-      href={href}
-      target={isExternal && !onClick ? "_blank" : undefined}
-      rel={isExternal && !onClick ? "noopener noreferrer" : undefined}
-      onClick={handleClick}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
-      className="flex flex-col group cursor-pointer mb-8 break-inside-avoid"
-    >
+  const content = (
+    <>
       {/* Image Block */}
       <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden mb-4 border border-white/10">
         <Image
@@ -78,13 +68,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClic
         
         {/* Darken Overlay on hover */}
         <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-        {/* External Link top-left */}
-        <div
-          className="absolute top-4 left-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-y-2 group-hover:translate-y-0 border border-white/20 hover:bg-white/40 z-30"
-        >
-          <ArrowUpRight className="w-5 h-5" />
-        </div>
 
         {/* Year Badge top-right */}
         {project.year && (
@@ -149,11 +132,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClic
         
         {/* Tech Tags */}
         {project.tags && project.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mt-auto">
+          <div className="flex flex-wrap gap-2 mt-4">
             {project.tags.map(tag => (
               <span 
                 key={tag} 
-                className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-white/70 text-xs font-sans"
+                className="px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-300 bg-white/5 text-white/70 border border-white/10 hover:bg-white/10 hover:text-white"
               >
                 {tag}
               </span>
@@ -161,6 +144,45 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClic
           </div>
         )}
       </div>
+    </>
+  );
+
+  const motionProps = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.6, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] },
+    className: "flex flex-col group cursor-pointer mb-8 break-inside-avoid",
+  };
+
+  if (onClick) {
+    return (
+      <motion.div
+        {...motionProps}
+        onClick={handleClick}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            onClick(e as any);
+          }
+        }}
+      >
+        {content}
+      </motion.div>
+    );
+  }
+
+  return (
+    <motion.a
+      href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      onClick={handleClick}
+      {...motionProps}
+    >
+      {content}
     </motion.a>
   );
 };

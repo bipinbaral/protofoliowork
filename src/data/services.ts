@@ -11,14 +11,14 @@ export const services: Service[] = [
     description: "Crafting unique, memorable brand identities that resonate with your audience — from logos to visual systems — ensuring every touchpoint reflects your brand's essence.",
   },
   {
-    id: "package-design",
-    title: "Package Design",
-    description: "Designing sleek, impactful packaging that not only looks stunning but also connects with your ideal customers — turning first impressions into lasting brand loyalty.",
+    id: "ui-ux",
+    title: "UI/UX",
+    description: "Designing intuitive and engaging user experiences that are as beautiful as they are functional, ensuring your digital products are a joy to use.",
   },
   {
     id: "graphics-design",
     title: "Graphics Design",
-    description: "Creating visually compelling graphics that communicate your message clearly and beautifully across all mediums, both digital and print.",
+    description: "Creating visuals that communicate your message clearly and beautifully across all mediums, both digital and print.",
   },
   {
     id: "ui-ux-design",

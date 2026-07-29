@@ -1,3 +1,14 @@
+export interface ProjectDetails {
+  description?: string;
+  services?: string[];
+  tools?: string[];
+  colorPalette?: { name: string; hex: string; }[];
+  gallery?: string[];
+  brandingImages?: string[];
+  logoDesigns?: string[];
+  externalLinks?: { label: string; url: string }[];
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -7,6 +18,7 @@ export interface Project {
   year?: string;
   tags?: string[];
   isCollection?: boolean;
+  details?: ProjectDetails;
 }
 
 export interface CaseStudyData {
@@ -185,62 +197,107 @@ export const categoryCollections: Record<string, DetailedProject[]> = {
 export const projects: Project[] = [
   {
     id: "logo-design",
-    title: "Logo Design",
-    category: "Destination",
+    title: "Brand Identity",
+    category: "Branding",
     image: "/images/Logos.jpg",
-    link: "/projects/logo-design",
+    link: "/projects/brand-identity",
     year: "2023",
-    tags: ["Branding", "Layout"],
+    tags: ["Logo"],
     isCollection: true,
+    details: {
+      description: "A comprehensive brand identity design focusing on modern aesthetics and timeless appeal.",
+      services: ["Brand Strategy", "Logo Design", "Visual Identity"],
+      tools: ["Illustrator", "Photoshop", "Figma"],
+      colorPalette: [
+        { name: "Primary", hex: "#1A1A1A" },
+        { name: "Accent", hex: "#FF5733" },
+        { name: "Neutral", hex: "#F4F4F4" }
+      ],
+      gallery: ["/images/Logos.jpg", "/images/uiux.png", "/images/printmedia.jpg"],
+      brandingImages: ["/images/Logos.jpg"],
+      logoDesigns: ["/images/Logos.jpg"],
+    }
   },
   {
-    id: "poster-designs",
-    title: "Poster Designs",
-    category: "Programs",
-    image: "/images/Posters.jpg",
-    link: "/projects/poster-designs",
+    id: "web-design",
+    title: "Web",
+    category: "Web Development",
+    image: "/images/uiux.png",
+    link: "/projects/web-design",
     year: "2023",
-    tags: ["UI/UX", "Web"],
+    tags: ["Web", "Frontend"],
     isCollection: true,
+    details: {
+      description: "A sleek, high-performance web experience crafted for optimal user engagement and accessibility.",
+      services: ["UI/UX Design", "Frontend Development", "Prototyping"],
+      tools: ["Figma", "React", "Tailwind CSS"],
+      gallery: ["/images/uiux.png", "/images/Path Study in USA.jpg", "/images/Logos.jpg"],
+      brandingImages: ["/images/uiux.png"],
+    }
   },
   {
     id: "print-media",
-    title: "Print Media",
-    category: "Test Prep",
+    title: "Graphic Design",
+    category: "Graphics",
     image: "/images/printmedia.jpg",
     link: "/projects/print-media",
     year: "2024",
-    tags: ["Print", "Social Media"],
+    tags: ["Posters", "Socaial Media"],
     isCollection: true,
+    details: {
+      description: "Bold and visually striking graphic design assets tailored for both print media and digital campaigns.",
+      services: ["Print Design", "Social Media Graphics", "Illustration"],
+      tools: ["Illustrator", "InDesign", "Photoshop"],
+      gallery: ["/images/printmedia.jpg", "/images/Posters.jpg", "/images/Logos.jpg"],
+      brandingImages: ["/images/printmedia.jpg"],
+    }
   },
   {
-    id: "path-study-in-usa",
-    title: "Path Study in USA",
-    category: "Destination",
+    id: "videos",
+    title: "Videos",
+    category: "Video Editing",
     image: "/images/Path Study in USA.jpg",
-    link: "/projects/path-study-in-usa",
+    link: "/projects/videos",
     year: "2024",
-    tags: ["Identity", "Digital"],
+    tags: ["Video", "Ads", "Reels"],
     isCollection: true,
+    details: {
+      description: "Dynamic video editing and motion graphics designed to capture attention and tell compelling stories.",
+      services: ["Video Editing", "Color Grading", "Sound Design"],
+      tools: ["Premiere Pro", "After Effects", "DaVinci Resolve"],
+      gallery: ["/images/Path Study in USA.jpg", "/images/Diploma Bachelor Masters AUS.jpg"],
+    }
   },
   {
     id: "uiux-design",
     title: "UI/UX Design",
-    category: "Destination",
+    category: "UI/UX",
     image: "/images/uiux.png",
     link: "/projects/uiux-design",
     year: "2022",
-    tags: ["Strategy", "Design"],
+    tags: ["UI/UX", "Web"],
     isCollection: true,
+    details: {
+      description: "Intuitive user interfaces built with a user-centric approach, balancing aesthetics with functionality.",
+      services: ["User Research", "Wireframing", "UI Design"],
+      tools: ["Figma", "Framer", "Sketch"],
+      gallery: ["/images/uiux.png", "/images/printmedia.jpg"],
+    }
   },
   {
-    id: "programs-in-aus",
-    title: "Programs in AUS",
-    category: "Programs",
+    id: "motion-design",
+    title: "Motion Design",
+    category: "Motion Design",
     image: "/images/Diploma Bachelor Masters AUS.jpg",
-    link: "/projects/programs-in-aus",
+    link: "/projects/motion-design",
     year: "2022",
-    tags: ["Illustration", "Ad"],
+    tags: ["Motion Design", "Animation"],
     isCollection: true,
+    details: {
+      description: "Fluid motion design that brings static assets to life, enhancing the overall brand experience.",
+      services: ["2D Animation", "Motion Graphics", "Lottie Animations"],
+      tools: ["After Effects", "Illustrator", "Cinema 4D"],
+      gallery: ["/images/Diploma Bachelor Masters AUS.jpg", "/images/uiux.png"],
+    }
   },
 ];
