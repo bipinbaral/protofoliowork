@@ -29,6 +29,7 @@ export const Footer: React.FC = () => {
     { label: "Home", href: "#" },
     { label: "About", href: "#about" },
     { label: "Projects", href: "#projects" },
+    { label: "Blog", href: "/blog" },
     { label: "Services", href: "#services" },
     { label: "Experience", href: "#experience" },
   ];

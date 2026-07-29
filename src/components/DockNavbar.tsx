@@ -2,7 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
-import { Briefcase, Folder, Quote, Mail, ArrowUpRight, LucideIcon } from "lucide-react";
+import { Briefcase, Folder, BookOpen, Quote, Mail, ArrowUpRight, LucideIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -10,6 +10,7 @@ const navItems = [
   { id: "home", label: "Home", href: "/", isLogo: true, color: "from-purple-500 to-pink-500" },
   { id: "services", label: "Services", href: "/#services", icon: Briefcase, color: "from-blue-400 to-cyan-400" },
   { id: "projects", label: "Projects", href: "/#projects", icon: Folder, color: "from-amber-400 to-orange-500" },
+  { id: "blog", label: "Blog", href: "/blog", icon: BookOpen, color: "from-violet-400 to-purple-500" },
   { id: "testimonials", label: "Testimonials", href: "/#testimonials", icon: Quote, color: "from-green-400 to-emerald-500" },
   { id: "contact", label: "Contact", href: "/#contact", icon: Mail, color: "from-rose-400 to-red-500" },
 ];
@@ -105,7 +106,9 @@ export const DockNavbar: React.FC = () => {
 
   useEffect(() => {
     if (pathname !== "/") {
-      if (pathname.startsWith("/projects") || pathname.startsWith("/portfolio")) {
+      if (pathname.startsWith("/blog")) {
+        setActiveSection("blog");
+      } else if (pathname.startsWith("/projects") || pathname.startsWith("/portfolio")) {
         setActiveSection("projects");
       } else {
         setActiveSection("");

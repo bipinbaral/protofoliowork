@@ -1,0 +1,74 @@
+import React from "react";
+import { Metadata } from "next";
+import DockNavbar from "@/components/DockNavbar";
+import PageBackground from "@/components/PageBackground";
+import Footer from "@/components/Footer";
+import { Container } from "@/components/ui/Container";
+import AnimatedWrapper from "@/components/ui/AnimatedWrapper";
+import BlogIndex from "@/components/blog/BlogIndex";
+import { getAllPosts, getAllCategories } from "@/lib/blog";
+
+export const metadata: Metadata = {
+  title: "Blog | Bipin Baral",
+  description:
+    "Design insights, branding strategies, and UI/UX best practices from Bipin Baral — graphic designer, UI/UX expert, and creative developer.",
+  openGraph: {
+    title: "Blog | Bipin Baral",
+    description:
+      "Design insights, branding strategies, and UI/UX best practices from Bipin Baral.",
+    url: "https://bipinbaral.com/blog",
+    type: "website",
+    images: [
+      {
+        url: "/images/Logos.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Bipin Baral Blog",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | Bipin Baral",
+    description:
+      "Design insights, branding strategies, and UI/UX best practices.",
+  },
+  alternates: {
+    canonical: "https://bipinbaral.com/blog",
+  },
+};
+
+export default function BlogPage() {
+  const posts = getAllPosts();
+  const categories = getAllCategories();
+
+  return (
+    <>
+      <DockNavbar />
+      <PageBackground />
+
+      <main className="relative z-10 flex-1 flex flex-col w-full bg-transparent overflow-x-hidden pt-32 pb-24">
+        <Container>
+          <AnimatedWrapper type="slideUp">
+            <header className="max-w-3xl mb-12">
+              <span className="inline-block text-xs font-mono uppercase tracking-[0.2em] text-white/50 mb-4">
+                Blog
+              </span>
+              <h1 className="font-satoshi text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight mb-4">
+                Insights &amp; Ideas
+              </h1>
+              <p className="text-white/60 text-lg leading-relaxed">
+                Thoughts on design, branding, and building premium digital
+                experiences—written for clarity, not clicks.
+              </p>
+            </header>
+          </AnimatedWrapper>
+
+          <BlogIndex posts={posts} categories={categories} />
+        </Container>
+      </main>
+
+      <Footer />
+    </>
+  );
+}
