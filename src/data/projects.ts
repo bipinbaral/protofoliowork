@@ -114,21 +114,31 @@ export const collectionLogoDesign: DetailedProject[] = [
     image: "/images/Logos.jpg",
     link: "Skills that travel the world",
     year: "2024",
-  },
-  {
-    id: "pacific-gateway",
-    title: "Pacific Gateway Institute",
-    category: "Higher Education",
-    image: "/images/Logos.jpg",
-    link: "Gateway to the Pacific Rim",
-    year: "2023",
   }
 ];
 
 export const collectionPosterDesigns: DetailedProject[] = [
   {
     id: "poster-sample-1",
-    title: "Sample Poster Project",
+    title: "Sample Poster Project 1",
+    category: "Design",
+    image: "/images/Posters.jpg",
+    link: "example.com",
+    year: "2023",
+    galleryImages: ["/images/Posters.jpg"]
+  },
+  {
+    id: "poster-sample-2",
+    title: "Sample Poster Project 2",
+    category: "Design",
+    image: "/images/Posters.jpg",
+    link: "example.com",
+    year: "2023",
+    galleryImages: ["/images/Posters.jpg"]
+  },
+  {
+    id: "poster-sample-3",
+    title: "Sample Poster Project 3",
     category: "Design",
     image: "/images/Posters.jpg",
     link: "example.com",
@@ -140,7 +150,25 @@ export const collectionPosterDesigns: DetailedProject[] = [
 export const collectionPrintMedia: DetailedProject[] = [
   {
     id: "print-sample-1",
-    title: "Sample Print Project",
+    title: "Sample Print Project 1",
+    category: "Print",
+    image: "/images/printmedia.jpg",
+    link: "example.com",
+    year: "2024",
+    galleryImages: ["/images/printmedia.jpg"]
+  },
+  {
+    id: "print-sample-2",
+    title: "Sample Print Project 2",
+    category: "Print",
+    image: "/images/printmedia.jpg",
+    link: "example.com",
+    year: "2024",
+    galleryImages: ["/images/printmedia.jpg"]
+  },
+  {
+    id: "print-sample-3",
+    title: "Sample Print Project 3",
     category: "Print",
     image: "/images/printmedia.jpg",
     link: "example.com",
@@ -152,7 +180,25 @@ export const collectionPrintMedia: DetailedProject[] = [
 export const collectionPathStudyInUSA: DetailedProject[] = [
   {
     id: "path-sample-1",
-    title: "Sample Path Study Project",
+    title: "Sample Path Study Project 1",
+    category: "Education",
+    image: "/images/Path Study in USA.jpg",
+    link: "example.com",
+    year: "2024",
+    galleryImages: ["/images/Path Study in USA.jpg"]
+  },
+  {
+    id: "path-sample-2",
+    title: "Sample Path Study Project 2",
+    category: "Education",
+    image: "/images/Path Study in USA.jpg",
+    link: "example.com",
+    year: "2024",
+    galleryImages: ["/images/Path Study in USA.jpg"]
+  },
+  {
+    id: "path-sample-3",
+    title: "Sample Path Study Project 3",
     category: "Education",
     image: "/images/Path Study in USA.jpg",
     link: "example.com",
@@ -164,7 +210,25 @@ export const collectionPathStudyInUSA: DetailedProject[] = [
 export const collectionUIUXDesign: DetailedProject[] = [
   {
     id: "uiux-sample-1",
-    title: "Sample UI/UX Project",
+    title: "Sample UI/UX Project 1",
+    category: "Digital",
+    image: "/images/uiux.png",
+    link: "example.com",
+    year: "2022",
+    galleryImages: ["/images/uiux.png"]
+  },
+  {
+    id: "uiux-sample-2",
+    title: "Sample UI/UX Project 2",
+    category: "Digital",
+    image: "/images/uiux.png",
+    link: "example.com",
+    year: "2022",
+    galleryImages: ["/images/uiux.png"]
+  },
+  {
+    id: "uiux-sample-3",
+    title: "Sample UI/UX Project 3",
     category: "Digital",
     image: "/images/uiux.png",
     link: "example.com",
@@ -176,7 +240,25 @@ export const collectionUIUXDesign: DetailedProject[] = [
 export const collectionProgramsInAus: DetailedProject[] = [
   {
     id: "aus-sample-1",
-    title: "Sample AUS Program Project",
+    title: "Sample AUS Program Project 1",
+    category: "Education",
+    image: "/images/Diploma Bachelor Masters AUS.jpg",
+    link: "example.com",
+    year: "2022",
+    galleryImages: ["/images/Diploma Bachelor Masters AUS.jpg"]
+  },
+  {
+    id: "aus-sample-2",
+    title: "Sample AUS Program Project 2",
+    category: "Education",
+    image: "/images/Diploma Bachelor Masters AUS.jpg",
+    link: "example.com",
+    year: "2022",
+    galleryImages: ["/images/Diploma Bachelor Masters AUS.jpg"]
+  },
+  {
+    id: "aus-sample-3",
+    title: "Sample AUS Program Project 3",
     category: "Education",
     image: "/images/Diploma Bachelor Masters AUS.jpg",
     link: "example.com",
