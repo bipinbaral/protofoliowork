@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -33,18 +33,18 @@ export const About: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           
           {/* Profile Image */}
-          <div className="lg:col-span-5 w-full flex justify-center">
-            <AnimatedWrapper type="scaleReveal" delay={0.1} className="relative w-full max-w-[320px] sm:max-w-[380px] lg:max-w-none aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 group bg-zinc-900 shadow-2xl">
+          <div className="lg:col-span-5 w-full flex justify-center items-end">
+            <AnimatedWrapper type="slideUp" delay={0.1} className="relative w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[500px] group">
               <Image
-                src="/images/bipin.jpg"
+                src="/images/profile.png"
                 alt="Bipin - Brand Identity & Package Designer"
-                fill
+                width={600}
+                height={800}
                 priority
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                quality={100}
+                className="w-full h-auto object-contain drop-shadow-[0_20px_30px_rgba(255,255,255,0.1)] transition-transform duration-700 ease-out group-hover:scale-105"
                 sizes="(max-width: 768px) 90vw, (max-width: 1024px) 400px, 500px"
               />
-              {/* Overlay shadow for depth */}
-              <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
             </AnimatedWrapper>
           </div>
 
