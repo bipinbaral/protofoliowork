@@ -13,14 +13,11 @@ import Stats from "./Stats";
 
 export const PortfolioGrid: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [activeCollectionId, setActiveCollectionId] = useState<string | null>(null);
   
   const categories = ["All", ...Array.from(new Set(projects.map(p => p.category)))];
 
   let displayProjects: any[] = [];
-  if (activeCollectionId && categoryCollections[activeCollectionId]) {
-    displayProjects = categoryCollections[activeCollectionId];
-  } else if (activeCategory === "All") {
+  if (activeCategory === "All") {
     displayProjects = projects;
   } else {
     const matched = projects.filter(p => p.category === activeCategory);
@@ -51,12 +48,9 @@ export const PortfolioGrid: React.FC = () => {
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => {
-                setActiveCategory(cat);
-                setActiveCollectionId(null);
-              }}
+              onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeCategory === cat && !activeCollectionId
+                activeCategory === cat
                   ? "bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.3)]"
                   : "bg-white/5 text-white/70 border border-white/10 hover:bg-white/10 hover:text-white"
               }`}
@@ -81,13 +75,7 @@ export const PortfolioGrid: React.FC = () => {
                 <ProjectCard
                   project={project}
                   index={idx}
-                  onClick={activeCollectionId ? undefined : () => {
-                    if (project.isCollection) {
-                      setActiveCollectionId(project.id);
-                    } else {
-                      setActiveCategory(project.category);
-                    }
-                  }}
+                  onClick={activeCategory === "All" ? () => setActiveCategory(project.category) : undefined}
                 />
               </motion.div>
             ))}
