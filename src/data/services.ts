@@ -11,9 +11,9 @@ export const services: Service[] = [
     description: "Crafting unique, memorable brand identities that resonate with your audience — from logos to visual systems — ensuring every touchpoint reflects your brand's essence.",
   },
   {
-    id: "ui-ux",
-    title: "UI/UX",
-    description: "Designing intuitive and engaging user experiences that are as beautiful as they are functional, ensuring your digital products are a joy to use.",
+    id: "packaging-design",
+    title: "Packaging Design",
+    description: "Creating packaging that stands out on the shelves and tells your brand's story, combining aesthetics with functionality.",
   },
   {
     id: "graphics-design",
@@ -31,9 +31,9 @@ export const services: Service[] = [
     description: "Bringing static designs to life with dynamic motion graphics and animations that capture attention and tell your brand's story effectively.",
   },
   {
-    id: "website-design",
-    title: "Website Design",
-    description: "Building stunning, responsive, and performant websites that serve as the perfect digital storefront for your brand.",
+    id: "web-development",
+    title: "Web Development",
+    description: "Creating stunning, fast, and scalable web applications that turn your ideas into reality.",
   },
 ];
 

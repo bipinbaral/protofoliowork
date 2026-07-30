@@ -7,18 +7,31 @@ import { SectionHeading } from "./ui/SectionHeading";
 import { FaBehance, FaCalendarAlt } from "react-icons/fa";
 import { AnimatedWrapper } from "./ui/AnimatedWrapper";
 import { ProjectCard } from "./ProjectCard";
-import { projects, Project } from "@/data/projects";
+import { projects, Project, categoryCollections } from "@/data/projects";
 import { Button } from "./ui/Button";
 import Stats from "./Stats";
 
 export const PortfolioGrid: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCollectionId, setActiveCollectionId] = useState<string | null>(null);
   
   const categories = ["All", ...Array.from(new Set(projects.map(p => p.category)))];
 
-  const filteredProjects = activeCategory === "All" 
-    ? projects 
-    : projects.filter(p => p.category === activeCategory);
+  let displayProjects: any[] = [];
+  if (activeCollectionId && categoryCollections[activeCollectionId]) {
+    displayProjects = categoryCollections[activeCollectionId];
+  } else if (activeCategory === "All") {
+    displayProjects = projects;
+  } else {
+    const matched = projects.filter(p => p.category === activeCategory);
+    matched.forEach(p => {
+      if (p.isCollection && categoryCollections[p.id]) {
+        displayProjects.push(...categoryCollections[p.id]);
+      } else {
+        displayProjects.push(p);
+      }
+    });
+  }
 
   return (
     <section id="projects" className="section-padding bg-transparent border-t border-white/5">
@@ -38,9 +51,12 @@ export const PortfolioGrid: React.FC = () => {
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => {
+                setActiveCategory(cat);
+                setActiveCollectionId(null);
+              }}
               className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeCategory === cat
+                activeCategory === cat && !activeCollectionId
                   ? "bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.3)]"
                   : "bg-white/5 text-white/70 border border-white/10 hover:bg-white/10 hover:text-white"
               }`}
@@ -53,7 +69,7 @@ export const PortfolioGrid: React.FC = () => {
         {/* Masonry Grid with CSS Columns */}
         <motion.div layout className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, idx) => (
+            {displayProjects.map((project, idx) => (
               <motion.div
                 key={project.id}
                 layout
@@ -65,7 +81,13 @@ export const PortfolioGrid: React.FC = () => {
                 <ProjectCard
                   project={project}
                   index={idx}
-                  onClick={() => setActiveCategory(project.category)}
+                  onClick={activeCollectionId ? undefined : () => {
+                    if (project.isCollection) {
+                      setActiveCollectionId(project.id);
+                    } else {
+                      setActiveCategory(project.category);
+                    }
+                  }}
                 />
               </motion.div>
             ))}
