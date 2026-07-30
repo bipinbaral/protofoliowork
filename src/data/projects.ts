@@ -40,6 +40,8 @@ export interface CaseStudyData {
 export interface DetailedProject extends Project {
   caseStudy?: CaseStudyData;
   galleryImages?: string[];
+  tools?: string[];
+  deliverables?: string[];
 }
 
 export const collectionLogoDesign: DetailedProject[] = [
@@ -97,7 +99,9 @@ export const collectionLogoDesign: DetailedProject[] = [
       "/images/Videos.jpg",
       "/images/printmedia.jpg",
       "/images/uiux.png"
-    ]
+    ],
+    tools: ["Illustrator", "Photoshop", "Figma"],
+    deliverables: ["Logo Design", "Brand Identity", "Stationery", "UI/UX"]
   },
   {
     id: "harbour-learning",

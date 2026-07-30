@@ -7,13 +7,15 @@ import { SectionHeading } from "./ui/SectionHeading";
 import { FaBehance, FaCalendarAlt } from "react-icons/fa";
 import { AnimatedWrapper } from "./ui/AnimatedWrapper";
 import { ProjectCard } from "./ProjectCard";
-import { projects, Project, categoryCollections } from "@/data/projects";
+import { projects, Project, categoryCollections, DetailedProject } from "@/data/projects";
 import { Button } from "./ui/Button";
 import Stats from "./Stats";
+import ProjectDetailView from "./ProjectDetailView";
 
 export const PortfolioGrid: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("All");
-  
+  const [activeSubProject, setActiveSubProject] = useState<DetailedProject | null>(null);
+
   const categories = ["All", ...Array.from(new Set(projects.map(p => p.category)))];
 
   let displayProjects: any[] = [];
@@ -49,11 +51,10 @@ export const PortfolioGrid: React.FC = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeCategory === cat
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeCategory === cat
                   ? "bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.3)]"
                   : "bg-white/5 text-white/70 border border-white/10 hover:bg-white/10 hover:text-white"
-              }`}
+                }`}
             >
               {cat}
             </button>
@@ -75,7 +76,7 @@ export const PortfolioGrid: React.FC = () => {
                 <ProjectCard
                   project={project}
                   index={idx}
-                  onClick={activeCategory === "All" ? () => setActiveCategory(project.category) : undefined}
+                  onClick={activeCategory === "All" ? () => setActiveCategory(project.category) : () => setActiveSubProject(project as DetailedProject)}
                 />
               </motion.div>
             ))}
@@ -95,6 +96,16 @@ export const PortfolioGrid: React.FC = () => {
         {/* Animated Stats inside the grid section */}
         <Stats />
       </Container>
+      
+      {/* Immersive Overlay Viewer */}
+      {activeSubProject && (
+        <ProjectDetailView 
+          activeProject={activeSubProject}
+          collection={displayProjects}
+          onSelect={(p) => setActiveSubProject(p)}
+          onBack={() => setActiveSubProject(null)}
+        />
+      )}
     </section>
   );
 };
