@@ -162,12 +162,12 @@ export const DockNavbar: React.FC = () => {
             href="https://wa.me/9779843506305"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex items-center justify-center gap-2 h-12 px-5 ml-1 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 hover:opacity-90 transition-opacity"
+            className="group relative flex items-center justify-center gap-2 h-12 px-5 ml-1 rounded-full bg-white hover:opacity-90 transition-opacity"
           >
             <span className="font-sans font-medium text-sm text-black whitespace-nowrap">Contact Me</span>
             <ArrowUpRight className="w-4 h-4 text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             {/* Glow */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 blur-md opacity-40 group-hover:opacity-60 transition-opacity -z-10" />
+            <div className="absolute inset-0 rounded-full bg-white blur-md opacity-20 group-hover:opacity-40 transition-opacity -z-10" />
           </a>
           <div className="h-2 flex items-center mt-1" />
         </div>

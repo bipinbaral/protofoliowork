@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect } from "react";
 import { Container } from "./ui/Container";
@@ -105,13 +105,13 @@ Best Regards,
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
             >
-              {/* Start a Project (solid violet) */}
+              {/* Start a Project (whatsapp green) */}
               <a
                 href={mailtoLink}
                 onClick={handleStartProject}
-                className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-medium text-sm transition-all duration-300 shadow-[0_0_25px_rgba(124,58,237,0.4)] hover:shadow-[0_0_35px_rgba(139,92,246,0.6)] hover:scale-[1.03] active:scale-[0.98]"
+                className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-medium text-sm transition-all duration-300 shadow-[0_0_25px_rgba(37,211,102,0.4)] hover:shadow-[0_0_35px_rgba(37,211,102,0.6)] hover:scale-[1.03] active:scale-[0.98]"
               >
-                <Sparkles className="w-4 h-4 text-violet-200 group-hover:rotate-12 transition-transform duration-300" />
+                <Sparkles className="w-4 h-4 text-white/90 group-hover:rotate-12 transition-transform duration-300" />
                 <span>Start a Project</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>

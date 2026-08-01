@@ -104,12 +104,12 @@ export const collectionLogoDesign: DetailedProject[] = [
     deliverables: ["Logo Design", "Brand Identity", "Stationery", "UI/UX"]
   },
   {
-    id: "harbour-learning",
-    title: "Harbour Learning",
+    id: "altiscalelab",
+    title: "Altiscale Lab",
     category: "International Education",
-    image: "/images/Logos.jpg",
-    link: "Where global ambitions find a home",
-    year: "2023",
+    image: "/images/altiscalelab.jpg",
+    link: "Build Smarter",
+    year: "2026",
   },
   {
     id: "southern-cross-academy",
