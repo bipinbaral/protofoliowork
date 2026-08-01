@@ -89,7 +89,7 @@ export const PortfolioGrid: React.FC = () => {
             <span className="flex items-center gap-2"><FaBehance className="w-4 h-4" /> All Projects</span>
           </Button>
           <Button variant="accent" href="#contact" className="w-full sm:w-auto px-8 py-3.5 sm:py-3 min-h-[44px]">
-            <span className="flex items-center gap-2"><FaCalendarAlt className="w-4 h-4 text-background" /> Book a Free Call</span>
+            <span className="flex items-center gap-2"><FaCalendarAlt className="w-4 h-4" /> Book a Free Call</span>
           </Button>
         </AnimatedWrapper>
 

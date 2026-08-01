@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import { motion, HTMLMotionProps } from "framer-motion";
@@ -29,7 +29,7 @@ export const Button: React.FC<ButtonProps> = ({
     secondary:
       "bg-transparent text-foreground border border-white/15 hover:bg-white/5 hover:border-white/25 px-6 py-3",
     accent:
-      "bg-gold text-background hover:opacity-90 px-6 py-3 font-bold shadow-[0_0_15px_rgba(255,215,0,0.3)]",
+      "bg-gradient-to-r from-yellow-400 to-amber-500 text-black hover:opacity-90 px-6 py-3 font-bold shadow-[0_0_15px_rgba(255,215,0,0.3)]",
     ghost:
       "bg-transparent text-foreground hover:bg-white/5 px-4 py-2",
   };

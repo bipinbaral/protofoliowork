@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -53,7 +53,7 @@ export const Hero: React.FC = () => {
 
           {/* Actions */}
           <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center w-full max-w-sm sm:max-w-none px-4 sm:px-0">
-            <Button variant="primary" href="#contact" className="w-full sm:w-auto px-8">
+            <Button variant="accent" href="#contact" className="w-full sm:w-auto px-8">
               <span className="flex items-center gap-2"><FaArrowRight className="w-4 h-4" /> Get Started Now</span>
             </Button>
             <Button variant="secondary" href="#projects" className="w-full sm:w-auto px-8">

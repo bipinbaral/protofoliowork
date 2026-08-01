@@ -44,8 +44,8 @@ export const Services: React.FC = () => {
             />
           </div>
           <div className="lg:col-span-4 flex flex-col sm:flex-row gap-4 lg:justify-end">
-            <Button variant="primary" href="#contact" className="w-full sm:w-auto px-8 py-3.5 sm:py-3 min-h-[44px]">
-              <span className="flex items-center gap-2"><FaCalendarAlt className="w-4 h-4 text-background" /> Book a Free Call</span>
+            <Button variant="accent" href="#contact" className="w-full sm:w-auto px-8 py-3.5 sm:py-3 min-h-[44px]">
+              <span className="flex items-center gap-2"><FaCalendarAlt className="w-4 h-4" /> Book a Free Call</span>
             </Button>
             <Button variant="secondary" href="#projects" className="w-full sm:w-auto px-8 py-3.5 sm:py-3 min-h-[44px]">
               <span className="flex items-center gap-2"><FaEye className="w-4 h-4" /> See Projects</span>
