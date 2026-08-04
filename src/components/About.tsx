@@ -36,7 +36,7 @@ export const About: React.FC = () => {
           <div className="lg:col-span-5 w-full flex justify-center items-end">
             <AnimatedWrapper type="slideUp" delay={0.1} className="relative w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[500px] group">
               <Image
-                src="/images/profile.png"
+                src="/images/Profile.png"
                 alt="Bipin - Brand Identity & Package Designer"
                 width={600}
                 height={800}
