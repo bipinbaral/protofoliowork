@@ -151,7 +151,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClic
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true },
-    transition: { duration: 0.6, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.6, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
     className: "flex flex-col group cursor-pointer mb-8 break-inside-avoid",
   };
 
