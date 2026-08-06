@@ -61,8 +61,8 @@ export const PortfolioGrid: React.FC = () => {
           ))}
         </div>
 
-        {/* Masonry Grid with CSS Columns */}
-        <motion.div layout className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+        {/* Grid Container */}
+        <motion.div layout className={activeCategory === "Video Editing" ? "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6" : "columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4"}>
           <AnimatePresence mode="popLayout">
             {displayProjects.map((project, idx) => (
               <motion.div
@@ -76,7 +76,14 @@ export const PortfolioGrid: React.FC = () => {
                 <ProjectCard
                   project={project}
                   index={idx}
-                  onClick={activeCategory === "All" ? () => setActiveCategory(project.category) : () => setActiveSubProject(project as DetailedProject)}
+                  aspectRatio={activeCategory === "Video Editing" ? "aspect-[9/16]" : "aspect-[16/10]"}
+                  onClick={(() => {
+                    const hasExternalLink = project.link && project.link.startsWith('http');
+                    if (hasExternalLink) return undefined;
+                    return activeCategory === "All"
+                      ? () => setActiveCategory(project.category)
+                      : () => setActiveSubProject(project as DetailedProject);
+                  })()}
                 />
               </motion.div>
             ))}

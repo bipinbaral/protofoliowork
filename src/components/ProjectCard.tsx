@@ -10,9 +10,10 @@ interface ProjectCardProps {
   project: Project;
   index: number;
   onClick?: (e: React.MouseEvent) => void;
+  aspectRatio?: string;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick, aspectRatio = "aspect-[16/10]" }) => {
   const [isLiked, setIsLiked] = useState(false);
   // Deterministic random-looking number based on index to avoid SSR hydration mismatch
   const initialLikes = 124 + (index * 13) + (project.title.length * 3);
@@ -57,13 +58,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClic
   const content = (
     <>
       {/* Image Block */}
-      <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden mb-4 border border-white/10">
+      <div className={`relative w-full ${aspectRatio} rounded-2xl overflow-hidden mb-4 border border-white/10`}>
         <Image
           src={project.image}
           alt={project.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
         />
         
         {/* Darken Overlay on hover */}
@@ -94,11 +95,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClic
             <span className="text-white/50 font-sans text-sm mt-1">
               {project.category}
             </span>
-            {project.link && !project.isCollection && (
-              <span className="text-white/70 font-sans text-xs mt-2 truncate max-w-[90%]">
-                {project.link.replace(/^https?:\/\//, '')}
-              </span>
-            )}
+
           </div>
           
           <div className="flex flex-col items-center shrink-0">

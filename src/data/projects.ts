@@ -104,20 +104,13 @@ export const collectionLogoDesign: DetailedProject[] = [
     deliverables: ["Logo Design", "Brand Identity", "Stationery", "UI/UX"]
   },
   {
-    id: "altiscalelab",
+    id: "altiscalelab-branding",
     title: "Altiscale Lab",
-    category: "International Education",
-    image: "/images/altiscalelab.jpg",
+    category: "Logo, Branding",
+    image: "/images/branding/altiscalelab/logowithbranding.jpg",
     link: "Build Smarter",
     year: "2026",
-  },
-  {
-    id: "southern-cross-academy",
-    title: "Southern Cross Academy",
-    category: "Vocational Education",
-    image: "/images/Logos.jpg",
-    link: "Skills that travel the world",
-    year: "2024",
+    tools: ["Illustrator"],
   }
 ];
 
@@ -153,31 +146,31 @@ export const collectionPosterDesigns: DetailedProject[] = [
 
 export const collectionPrintMedia: DetailedProject[] = [
   {
-    id: "print-sample-1",
-    title: "Sample Print Project 1",
-    category: "Print",
-    image: "/images/printmedia.jpg",
+    id: "graphic-social-media",
+    title: "Social Media Graphics",
+    category: "Social Media, Ads",
+    image: "/images/graphics design/social media/socialmedia2.jpg",
     link: "example.com",
     year: "2024",
-    galleryImages: ["/images/printmedia.jpg"]
+    tools: ["Illustrator", "Photoshop"]
   },
   {
-    id: "print-sample-2",
-    title: "Sample Print Project 2",
-    category: "Print",
-    image: "/images/printmedia.jpg",
+    id: "graphic-print-media",
+    title: "Print Media",
+    category: "Flex, T-shirts, Packging, Bags, Brochure, Flyers, Posters, Letterhead",
+    image: "/images/graphics design/print design/print2.jpg",
     link: "example.com",
     year: "2024",
-    galleryImages: ["/images/printmedia.jpg"]
+    tools: ["InDesign", "Illustrator"]
   },
   {
-    id: "print-sample-3",
-    title: "Sample Print Project 3",
-    category: "Print",
-    image: "/images/printmedia.jpg",
+    id: "graphic-thumbnail",
+    title: "Thumbnail Design",
+    category: "Youtube Thumbnails",
+    image: "/images/graphics design/thumbnail/thumbnail02.jpg",
     link: "example.com",
     year: "2024",
-    galleryImages: ["/images/printmedia.jpg"]
+    tools: ["Photoshop"]
   }
 ];
 
@@ -213,31 +206,31 @@ export const collectionPathStudyInUSA: DetailedProject[] = [
 
 export const collectionUIUXDesign: DetailedProject[] = [
   {
-    id: "uiux-sample-1",
-    title: "Sample UI/UX Project 1",
-    category: "Digital",
-    image: "/images/uiux.png",
+    id: "uiux-packages",
+    title: "Landing Page",
+    category: "Hero Section, Cards, FAQs, Footer",
+    image: "/images/uiux/first/Packages.jpg",
     link: "example.com",
-    year: "2022",
-    galleryImages: ["/images/uiux.png"]
+    year: "2023",
+    tools: ["Figma", "Figma Make AI"]
   },
   {
-    id: "uiux-sample-2",
-    title: "Sample UI/UX Project 2",
-    category: "Digital",
-    image: "/images/uiux.png",
+    id: "uiux-dashboard",
+    title: "Dashboard Design",
+    category: "Graphs, Chart, Summary, Listing",
+    image: "/images/uiux/second/Dashboard.jpg",
     link: "example.com",
-    year: "2022",
-    galleryImages: ["/images/uiux.png"]
+    year: "2023",
+    tools: ["Figma", "Figma Make AI"]
   },
   {
     id: "uiux-sample-3",
-    title: "Sample UI/UX Project 3",
-    category: "Digital",
-    image: "/images/uiux.png",
+    title: "Blog Content Page",
+    category: "Blogs Section, Table of content, Comments, About Author",
+    image: "/images/uiux/third/blogcontent.jpg",
     link: "example.com",
-    year: "2022",
-    galleryImages: ["/images/uiux.png"]
+    year: "2026",
+    tools: ["Figma"]
   }
 ];
 
@@ -271,13 +264,93 @@ export const collectionProgramsInAus: DetailedProject[] = [
   }
 ];
 
+export const collectionWebDesign: DetailedProject[] = [
+  {
+    id: "prerana-gyan-batika",
+    title: "Prerana Gyan Batika",
+    category: "Fullstack Development",
+    image: "/images/webdevelopment/preranagyanbatika.png",
+    link: "https://preranagyanbatika.vercel.app/",
+    year: "2026",
+    tools: ["Next.js", "TypeScript"]
+  },
+  {
+    id: "altiscalelab",
+    title: "Altiscale Lab",
+    category: "Frontend Development",
+    image: "/images/webdevelopment/altiscalelabs.png",
+    link: "https://altiscalelabs.com/",
+    year: "2026",
+    tools: ["WordPress", "JavaScript", "PHP"]
+  }
+];
+
+export const collectionVideos: DetailedProject[] = [
+  {
+    id: "reel-1",
+    title: "Interior",
+    category: "Greenscreen Shoot, Video Edit",
+    image: "/images/Videos.jpg",
+    link: "https://www.instagram.com/p/DbfEJcSAZ32/",
+    year: "2026",
+    tools: ["Premiere Pro", "After Effects"]
+  },
+  {
+    id: "reel-2",
+    title: "Instagram Reel 2",
+    category: "Instagram Reel",
+    image: "/images/Videos.jpg",
+    link: "https://www.instagram.com/p/DbfEJcSAZ32/",
+    year: "2024",
+    tools: ["Premiere Pro"]
+  },
+  {
+    id: "reel-3",
+    title: "Instagram Reel 3",
+    category: "Instagram Reel",
+    image: "/images/Videos.jpg",
+    link: "https://www.instagram.com/p/DbfEJcSAZ32/",
+    year: "2024",
+    tools: ["DaVinci Resolve"]
+  },
+  {
+    id: "reel-4",
+    title: "Instagram Reel 4",
+    category: "Instagram Reel",
+    image: "/images/Videos.jpg",
+    link: "https://www.instagram.com/p/DbfEJcSAZ32/",
+    year: "2024",
+    tools: ["Premiere Pro"]
+  },
+  {
+    id: "reel-5",
+    title: "Instagram Reel 5",
+    category: "Instagram Reel",
+    image: "/images/Videos.jpg",
+    link: "https://www.instagram.com/p/DbfEJcSAZ32/",
+    year: "2024",
+    tools: ["After Effects"]
+  },
+  {
+    id: "reel-6",
+    title: "Instagram Reel 6",
+    category: "Instagram Reel",
+    image: "/images/Videos.jpg",
+    link: "https://www.instagram.com/p/DbfEJcSAZ32/",
+    year: "2024",
+    tools: ["DaVinci Resolve", "Premiere Pro"]
+  }
+];
+
 export const categoryCollections: Record<string, DetailedProject[]> = {
+  "web-design": collectionWebDesign,
   "logo-design": collectionLogoDesign,
   "poster-designs": collectionPosterDesigns,
   "print-media": collectionPrintMedia,
   "path-study-in-usa": collectionPathStudyInUSA,
   "uiux-design": collectionUIUXDesign,
   "programs-in-aus": collectionProgramsInAus,
+  "videos": collectionVideos,
 };
 
 export const projects: Project[] = [
@@ -308,8 +381,8 @@ export const projects: Project[] = [
     id: "web-design",
     title: "Web",
     category: "Web Development",
-    image: "/images/uiux.png",
-    link: "/projects/web-design",
+    image: "/images/webdevelopment.png",
+    link: "/projects/webdevelopment",
     year: "2023",
     tags: ["Web", "Frontend"],
     isCollection: true,
@@ -325,7 +398,7 @@ export const projects: Project[] = [
     id: "print-media",
     title: "Graphic Design",
     category: "Graphics",
-    image: "/images/Graphics Design.png",
+    image: "/images/graphicss.png",
     link: "/projects/print-media",
     year: "2024",
     tags: ["Posters", "Socaial Media"],
@@ -358,7 +431,7 @@ export const projects: Project[] = [
     id: "uiux-design",
     title: "UI/UX Design",
     category: "UI/UX",
-    image: "/images/UI UX.png",
+    image: "/images/uiuxx.png",
     link: "/projects/uiux-design",
     year: "2022",
     tags: ["UI/UX", "Web"],
