@@ -149,19 +149,32 @@ export const collectionPrintMedia: DetailedProject[] = [
     id: "graphic-social-media",
     title: "Social Media Graphics",
     category: "Social Media, Ads",
-    image: "/images/graphics design/social media/socialmedia2.jpg",
+    image: "/images/graphics design/social media/socialmedia4.png",
     link: "example.com",
     year: "2024",
-    tools: ["Illustrator", "Photoshop"]
+    tools: ["Illustrator", "Photoshop"],
+    galleryImages: [
+      "/images/graphics design/social media/socialmedia1.png",
+      "/images/graphics design/social media/socialmedia2.jpg",
+      "/images/graphics design/social media/socialmedia3.png",
+      "/images/graphics design/social media/socialmedia5.jpg",
+      "/images/graphics design/social media/socialmedia6.jpg",
+      "/images/graphics design/social media/socialmedia7.png",
+      "/images/graphics design/social media/socialmedia8.jpg"
+    ]
   },
   {
     id: "graphic-print-media",
     title: "Print Media",
     category: "Flex, T-shirts, Packging, Bags, Brochure, Flyers, Posters, Letterhead",
-    image: "/images/graphics design/print design/print2.jpg",
+    image: "/images/graphics design/print design/print3.jpg",
     link: "example.com",
     year: "2024",
-    tools: ["InDesign", "Illustrator"]
+    tools: ["InDesign", "Illustrator", "Photoshop"],
+    galleryImages: [
+      "/images/graphics design/print design/print1.jpg",
+      "/images/graphics design/print design/print4.jpg"
+    ]
   },
   {
     id: "graphic-thumbnail",
@@ -170,7 +183,10 @@ export const collectionPrintMedia: DetailedProject[] = [
     image: "/images/graphics design/thumbnail/thumbnail02.jpg",
     link: "example.com",
     year: "2024",
-    tools: ["Photoshop"]
+    tools: ["Photoshop"],
+    galleryImages: [
+      "/images/graphics design/thumbnail/thumbnail02.jpg"
+    ]
   }
 ];
 

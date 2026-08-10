@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -91,7 +91,7 @@ export const ProjectViewerModal: React.FC<ProjectViewerModalProps> = ({ project,
         </div>
 
         {/* Gallery Scroll Content */}
-        <div className="flex-1 w-full max-w-5xl mx-auto px-4 pb-24 pt-12 flex flex-col gap-0">
+        <div className="flex-1 w-full max-w-5xl mx-auto px-4 pb-24 pt-12 flex flex-col gap-1">
           {project.galleryImages?.length ? (
             project.galleryImages.map((img, idx) => (
               <div
@@ -102,7 +102,7 @@ export const ProjectViewerModal: React.FC<ProjectViewerModalProps> = ({ project,
                 <img
                   src={img}
                   alt={`${project.title} presentation ${idx + 1}`}
-                  className="w-full h-auto object-contain"
+                  className="w-full h-auto object-contain block"
                   loading={idx < 2 ? "eager" : "lazy"}
                 />
               </div>
