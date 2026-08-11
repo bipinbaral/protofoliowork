@@ -19,6 +19,7 @@ export interface Project {
   tags?: string[];
   isCollection?: boolean;
   details?: ProjectDetails;
+  facebookReelUrl?: string;
 }
 
 export interface CaseStudyData {
