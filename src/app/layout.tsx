@@ -15,13 +15,16 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Bipin Baral — Graphic Designer, UI/UX & Creative Developer",
-  description: "Bipin Baral is a graphic designer, UI/UX expert, and creative developer based in Nepal, crafting premium brand identities, logos, and digital experiences.",
-  metadataBase: new URL("https://bipinbaral.com"),
+  title: "Bipin Baral — Graphic Designer, UI/UX & Web Developer in Nepal",
+  description: "Bipin Baral is a Graphic Designer, UI/UX Expert, and Web Developer in Nepal. Specializing in premium brand identities, logos, and high-performance web development.",
+  metadataBase: new URL("https://baralbipin.com.np"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Bipin Baral — Graphic Designer, UI/UX & Creative Developer",
-    description: "Crafting premium brand identities, logos, and digital experiences that elevate businesses worldwide.",
-    url: "https://bipinbaral.com",
+    title: "Bipin Baral — Graphic Designer, UI/UX & Web Developer in Nepal",
+    description: "Graphic Designer and Web Developer in Nepal crafting premium brand identities and digital experiences.",
+    url: "https://baralbipin.com.np",
     siteName: "Bipin Baral",
     locale: "en_US",
     type: "website",
@@ -30,14 +33,14 @@ export const metadata: Metadata = {
         url: "/images/Logos.jpg",
         width: 1200,
         height: 630,
-        alt: "Bipin Baral — Portfolio Preview",
+        alt: "Bipin Baral — Graphic Designer and Web Developer in Nepal",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bipin Baral — Graphic Designer, UI/UX & Creative Developer",
-    description: "Crafting premium brand identities, logos, and digital experiences.",
+    title: "Bipin Baral — Graphic Designer, UI/UX & Web Developer in Nepal",
+    description: "Graphic Designer and Web Developer in Nepal crafting premium brand identities and digital experiences.",
     images: ["/images/Logos.jpg"],
   },
   robots: {

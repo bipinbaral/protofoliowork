@@ -147,8 +147,8 @@ export const collectionPosterDesigns: DetailedProject[] = [
 export const collectionPrintMedia: DetailedProject[] = [
   {
     id: "graphic-social-media",
-    title: "Social Media Graphics",
-    category: "Social Media, Ads",
+    title: "Social Media & Packaging",
+    category: "Social Media, Packaging",
     image: "/images/graphics design/social media/socialmedia4.png",
     link: "example.com",
     year: "2024",
@@ -303,58 +303,54 @@ export const collectionWebDesign: DetailedProject[] = [
 
 export const collectionVideos: DetailedProject[] = [
   {
-    id: "reel-1",
-    title: "Interior",
-    category: "Greenscreen Shoot, Video Edit",
-    image: "/images/Videos.jpg",
-    link: "https://www.instagram.com/p/DbfEJcSAZ32/",
+    id: "reel-fb-1",
+    title: "Ai audio with caption",
+    category: "Facebook Reel",
+    image: "/images/videoediting.png",
+    link: "https://www.facebook.com/reel/1320266946530657",
+    facebookReelUrl: "https://www.facebook.com/reel/1320266946530657",
     year: "2026",
-    tools: ["Premiere Pro", "After Effects"]
+    tools: ["Video Editing"]
   },
   {
-    id: "reel-2",
-    title: "Instagram Reel 2",
-    category: "Instagram Reel",
-    image: "/images/Videos.jpg",
-    link: "https://www.instagram.com/p/DbfEJcSAZ32/",
-    year: "2024",
-    tools: ["Premiere Pro"]
+    id: "reel-fb-2",
+    title: "Green screen with stock footages",
+    category: "Facebook Reel",
+    image: "/images/videoediting.png",
+    link: "https://www.facebook.com/reel/1003153962532973",
+    facebookReelUrl: "https://www.facebook.com/reel/1003153962532973",
+    year: "2026",
+    tools: ["Video Editing"]
   },
   {
-    id: "reel-3",
-    title: "Instagram Reel 3",
-    category: "Instagram Reel",
-    image: "/images/Videos.jpg",
-    link: "https://www.instagram.com/p/DbfEJcSAZ32/",
-    year: "2024",
-    tools: ["DaVinci Resolve"]
+    id: "reel-fb-3",
+    title: "AI video generation",
+    category: "Facebook Reel",
+    image: "/images/videoediting.png",
+    link: "https://www.facebook.com/reel/853401697707176",
+    facebookReelUrl: "https://www.facebook.com/reel/853401697707176",
+    year: "2026",
+    tools: ["Video Editing"]
   },
   {
-    id: "reel-4",
-    title: "Instagram Reel 4",
-    category: "Instagram Reel",
-    image: "/images/Videos.jpg",
-    link: "https://www.instagram.com/p/DbfEJcSAZ32/",
-    year: "2024",
-    tools: ["Premiere Pro"]
+    id: "reel-fb-4",
+    title: "Green screen footage",
+    category: "Facebook Reel",
+    image: "/images/videoediting.png",
+    link: "https://www.facebook.com/reel/1077523584654138",
+    facebookReelUrl: "https://www.facebook.com/reel/1077523584654138",
+    year: "2026",
+    tools: ["Video Editing"]
   },
   {
-    id: "reel-5",
-    title: "Instagram Reel 5",
-    category: "Instagram Reel",
-    image: "/images/Videos.jpg",
-    link: "https://www.instagram.com/p/DbfEJcSAZ32/",
+    id: "reel-fb-5",
+    title: "Video transition",
+    category: "Facebook Reel",
+    image: "/images/videoediting.png",
+    link: "https://www.facebook.com/reel/1313117007072167",
+    facebookReelUrl: "https://www.facebook.com/reel/1313117007072167",
     year: "2024",
-    tools: ["After Effects"]
-  },
-  {
-    id: "reel-6",
-    title: "Instagram Reel 6",
-    category: "Instagram Reel",
-    image: "/images/Videos.jpg",
-    link: "https://www.instagram.com/p/DbfEJcSAZ32/",
-    year: "2024",
-    tools: ["DaVinci Resolve", "Premiere Pro"]
+    tools: ["Video Editing"]
   }
 ];
 
@@ -431,7 +427,7 @@ export const projects: Project[] = [
     id: "videos",
     title: "Videos",
     category: "Video Editing",
-    image: "/images/Videos.jpg",
+    image: "/images/videoediting.png",
     link: "/projects/videos",
     year: "2024",
     tags: ["Video", "Ads", "Reels"],
@@ -463,7 +459,7 @@ export const projects: Project[] = [
     id: "motion-design",
     title: "Motion Design",
     category: "Motion Design",
-    image: "/images/Diploma Bachelor Masters AUS.jpg",
+    image: "/images/motiongraphics.png",
     link: "/projects/motion-design",
     year: "2022",
     tags: ["Motion Design", "Animation"],

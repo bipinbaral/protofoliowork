@@ -7,6 +7,7 @@ import { Container } from "./ui/Container";
 import { Button } from "./ui/Button";
 import { FaArrowRight, FaEye } from "react-icons/fa";
 import { AnimatedWrapper } from "./ui/AnimatedWrapper";
+import Marquee from "./ui/Marquee";
 
 const logos = [
   { src: "/scrolling%20logos/Dream%20Study.png", alt: "Dream Study", href: "#" },
@@ -34,7 +35,7 @@ export const Hero: React.FC = () => {
         <AnimatedWrapper type="slideUp" delay={0.1} className="flex flex-col items-center w-full">
           {/* Top Label */}
           <span className="text-[10px] sm:text-xs uppercase font-mono tracking-[0.2em] sm:tracking-[0.25em] text-white/50 border border-white/10 px-3 sm:px-4 py-1.5 rounded-full bg-white/5 mb-6 sm:mb-8 select-none">
-            Crafting Unique Brand Identities
+            Graphic Designer, UI/UX & Web Developer in Nepal
           </span>
 
           {/* Headline â€“ fluid clamp */}
@@ -48,7 +49,7 @@ export const Hero: React.FC = () => {
 
           {/* Subheading */}
           <p className="mt-5 sm:mt-8 text-sm sm:text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl font-sans font-light px-2 sm:px-0">
-            Elevate your brand with custom identity and package design. Showcase your story through bold visuals and strategic design solutions.
+            Elevate your brand with custom identity and package design. Showcase your story through bold visuals and strategic web development solutions tailored for you.
           </p>
 
           {/* Actions */}
@@ -75,38 +76,20 @@ export const Hero: React.FC = () => {
         </AnimatedWrapper>
 
         {/* Client Marquee */}
-        <div className="relative w-full overflow-hidden py-4 sm:py-6 bg-white backdrop-blur-md">
-          <div className="flex w-max animate-marquee">
-            {/* First Set of Logos */}
-            <div className="flex items-center shrink-0 px-2 sm:px-4">
-              {logos.map((logo, i) => (
-                <a key={`logo-1-${i}`} href={logo.href} target="_blank" rel="noopener noreferrer" className="relative shrink-0 h-10 sm:h-12 w-28 sm:w-32 mx-4 sm:mx-6 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 768px) 112px, 128px"
-                  />
-                </a>
-              ))}
-            </div>
-
-            {/* Second Set of Logos (for seamless looping) */}
-            <div className="flex items-center shrink-0 px-2 sm:px-4">
-              {logos.map((logo, i) => (
-                <a key={`logo-2-${i}`} href={logo.href} target="_blank" rel="noopener noreferrer" className="relative shrink-0 h-10 sm:h-12 w-28 sm:w-32 mx-4 sm:mx-6 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 768px) 112px, 128px"
-                  />
-                </a>
-              ))}
-            </div>
-          </div>
+        <div className="relative w-full py-2 sm:py-3 bg-white backdrop-blur-md">
+          <Marquee pauseOnHover={true} className="[--duration:40s]" repeat={2}>
+            {logos.map((logo, i) => (
+              <a key={`logo-${i}`} href={logo.href} target="_blank" rel="noopener noreferrer" className="relative shrink-0 h-8 sm:h-10 w-24 sm:w-28 mx-4 sm:mx-6 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 block">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 112px, 128px"
+                />
+              </a>
+            ))}
+          </Marquee>
         </div>
       </div>
     </section>

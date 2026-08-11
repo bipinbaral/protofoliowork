@@ -15,8 +15,25 @@ const Footer = dynamic(() => import("@/components/Footer"));
 const RecentWorksSlider = dynamic(() => import("@/components/RecentWorksSlider"));
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Bipin Baral",
+    jobTitle: ["Graphic Designer", "Web Developer", "UI/UX Designer"],
+    url: "https://baralbipin.com.np",
+    nationality: "Nepalese",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "NP"
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Bottom Dock Navbar */}
       <DockNavbar />
 

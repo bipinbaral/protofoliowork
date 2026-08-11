@@ -4,7 +4,7 @@ description: "Dark interfaces are everywhere—but translating a brand into dark
 category: "Design"
 author: "Bipin Baral"
 publishedAt: "2026-03-01"
-featuredImage: "/blog/designing-for-dark-mode.svg"
+featuredImage: "/images/blogs/darkmodeweb.png"
 ---
 
 Great dark mode design feels effortless. Bad dark mode feels like someone flipped a switch and walked away. The difference comes down to intentional contrast, surface hierarchy, and knowing when **not** to use pure black.

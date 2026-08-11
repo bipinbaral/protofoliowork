@@ -37,7 +37,7 @@ export const About: React.FC = () => {
             <AnimatedWrapper type="slideUp" delay={0.1} className="relative w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[500px] group">
               <Image
                 src="/images/Profile.png"
-                alt="Bipin - Brand Identity & Package Designer"
+                alt="Bipin Baral - Graphic Designer and UI/UX Designer in Nepal"
                 width={600}
                 height={800}
                 priority
@@ -58,7 +58,7 @@ export const About: React.FC = () => {
 
             <AnimatedWrapper type="slideUp" delay={0.2}>
               <p className="font-sans text-sm sm:text-base lg:text-lg text-white/70 leading-relaxed font-light mb-6 sm:mb-8">
-                I&apos;m Bipin, a passionate Brand Identity &amp; Package Designer. I specialize in crafting bold visual identities and packaging that captivate and inspire, blending creativity with strategy to elevate brands.
+                I&apos;m Bipin, a passionate Graphic Designer, UI/UX Expert, and Web Developer based in Nepal. I specialize in crafting bold visual identities and web applications that captivate and inspire, blending creativity with strategy to elevate brands.
               </p>
 
               {/* Skills Tags */}

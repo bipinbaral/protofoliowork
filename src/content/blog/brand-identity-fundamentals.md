@@ -3,8 +3,8 @@ title: "Brand Identity Fundamentals Every Designer Should Know"
 description: "From logo marks to voice and visual systems—learn the core pillars of brand identity and how to build identities that scale across touchpoints."
 category: "Branding"
 author: "Bipin Baral"
-publishedAt: "2026-02-12"
-featuredImage: "/blog/brand-identity-fundamentals.svg"
+publishedAt: "2026-03-15"
+featuredImage: "/images/blogs/brandidentity.png"
 ---
 
 A logo is not a brand. It is one expression of a much larger system—a system that should feel unmistakable whether someone sees your website, packaging, or a social post.

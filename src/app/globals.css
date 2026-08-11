@@ -44,7 +44,7 @@
 }
 
 :root {
-  --background: #0d0d0d;
+  --background: #01050E;
   --foreground: #ffffff;
   --bg-card: #141414;
   --border-color: rgba(255, 255, 255, 0.1);
@@ -65,11 +65,44 @@
   --font-satoshi: "Satoshi", sans-serif;
   --font-jakarta: var(--font-jakarta), sans-serif;
   
-  --animate-marquee: marquee 30s linear infinite;
-  
+  --animate-border: border 4s linear infinite;
+  --animate-infinite-scroll: infinite-scroll 25s linear infinite;
+  --animate-marquee: marquee var(--duration) linear infinite;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  --animate-marquee-reverse: marquee-reverse var(--duration) linear infinite;
+  --animate-marquee-vertical-reverse: marquee-vertical-reverse var(--duration) linear infinite;
+
   @keyframes marquee {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-50%); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-reverse {
+    from {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  @keyframes marquee-vertical-reverse {
+    from {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+    to {
+      transform: translateY(0);
+    }
   }
 }
 
