@@ -2,6 +2,7 @@
 
 import React from "react";
 import { CalendarDays, ArrowUpRight } from "lucide-react";
+import BackToTop from "../BackToTop";
 
 interface BookNowSidebarProps {
   variant?: "mobile" | "desktop";
@@ -56,6 +57,7 @@ export default function BookNowSidebar({ variant = "desktop" }: BookNowSidebarPr
   return (
     <aside className="hidden xl:block w-72 shrink-0 sticky top-24 self-start z-10">
       <BookNowCard />
+      <BackToTop variant="static" />
     </aside>
   );
 }

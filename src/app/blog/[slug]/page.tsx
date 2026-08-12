@@ -108,10 +108,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="grid grid-cols-1 xl:grid-cols-[13rem_minmax(0,1fr)_17rem] xl:gap-10 2xl:gap-14 items-start">
               <TableOfContents headings={post.headings} variant="desktop" />
 
-              <article className="min-w-0 max-w-[800px] mx-auto xl:max-w-none xl:mx-0">
+              <article className="w-full min-w-0 max-w-[800px] mx-auto xl:max-w-none xl:mx-0 overflow-x-hidden">
                 <TableOfContents headings={post.headings} variant="mobile" />
 
-                <AnimatedWrapper type="fadeIn" delay={0.1}>
+                <AnimatedWrapper type="fadeIn" delay={0.1} className="w-full">
                   <BlogContent content={post.content} />
                 </AnimatedWrapper>
 

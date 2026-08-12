@@ -92,7 +92,7 @@ export const PortfolioGrid: React.FC = () => {
 
         {/* Footer actions inside section */}
         <AnimatedWrapper type="slideUp" delay={0.2} className="mt-12 sm:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 px-4 sm:px-0">
-          <Button variant="secondary" href="https://www.behance.net/" className="w-full sm:w-auto px-8 py-3.5 sm:py-3 min-h-[44px]">
+          <Button variant="secondary" href="https://www.behance.net/bipinbaral" className="w-full sm:w-auto px-8 py-3.5 sm:py-3 min-h-[44px]">
             <span className="flex items-center gap-2"><FaBehance className="w-4 h-4" /> All Projects</span>
           </Button>
           <Button variant="accent" href="#contact" className="w-full sm:w-auto px-8 py-3.5 sm:py-3 min-h-[44px]">

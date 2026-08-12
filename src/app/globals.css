@@ -249,6 +249,8 @@ html, body {
   color: rgba(255, 255, 255, 0.75);
   font-size: 1.0625rem;
   line-height: 1.8;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .blog-prose > * + * {
@@ -343,6 +345,7 @@ html, body {
   padding: 1.25rem 1.5rem;
   overflow-x: auto;
   margin: 1.5em 0;
+  max-width: 100%;
 }
 
 .blog-prose pre code {
@@ -381,6 +384,8 @@ html, body {
   border-radius: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   margin: 1.5em 0;
+  max-width: 100%;
+  height: auto;
 }
 
 .blog-prose hr {

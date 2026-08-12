@@ -118,7 +118,7 @@ Best Regards,
 
               {/* View Resume (frosted glass) */}
               <a
-                href="https://drive.google.com/file/d/1vN5b82Y_31hL5g8"
+                href="https://drive.google.com/file/d/10IAFTYA3X-RZHH0BmGbzn_cXozm_n6uY/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-white/10 hover:bg-white/15 text-white font-medium text-sm border border-white/20 hover:border-white/35 backdrop-blur-md transition-all duration-300 shadow-lg hover:scale-[1.03] active:scale-[0.98]"
