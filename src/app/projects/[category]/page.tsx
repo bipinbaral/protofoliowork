@@ -1,4 +1,5 @@
 import React from "react";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
@@ -13,6 +14,33 @@ interface CollectionPageProps {
   params: Promise<{
     category: string;
   }>;
+}
+
+export async function generateStaticParams() {
+  return Object.keys(categoryCollections).map((cat) => ({ category: cat }));
+}
+
+export async function generateMetadata({ params }: CollectionPageProps): Promise<Metadata> {
+  const { category } = await params;
+  const collectionInfo = projects.find((p) => p.id === category);
+  const titleName = collectionInfo?.title || category.replace(/-/g, " ");
+
+  const url = `https://www.baralbipin.com.np/projects/${category}`;
+
+  return {
+    title: `${titleName} Projects | Bipin Creates (Bipin Baral)`,
+    description: `Explore ${titleName} case studies and visual projects designed by Bipin Creates (Bipin Baral) in Kathmandu, Nepal.`,
+    openGraph: {
+      title: `${titleName} Projects | Bipin Creates (Bipin Baral)`,
+      description: `Explore ${titleName} case studies and visual projects designed by Bipin Creates (Bipin Baral) in Kathmandu, Nepal.`,
+      url,
+      type: "website",
+      images: ["/images/work-with-bipin.png"],
+    },
+    alternates: {
+      canonical: url,
+    },
+  };
 }
 
 export default async function CollectionPage({ params }: CollectionPageProps) {

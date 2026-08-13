@@ -15,33 +15,41 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Bipin Baral — Graphic Designer, UI/UX & Web Developer in Nepal",
-  description: "Bipin Baral is a Graphic Designer, UI/UX Expert, and Web Developer in Nepal. Specializing in premium brand identities, logos, and high-performance web development.",
-  metadataBase: new URL("https://baralbipin.com.np"),
+  title: "Bipin Creates (Bipin Baral) — Graphic Designer, UI/UX & Web Developer in Kathmandu, Nepal",
+  description: "Bipin Creates (Bipin Baral) is a Graphic Designer, UI/UX Expert, and Web Developer in Kathmandu, Nepal. Specializing in premium brand identities, logos, and high-performance web development.",
+  metadataBase: new URL("https://www.baralbipin.com.np"),
+  icons: {
+    icon: [
+      { url: "/images/logo-bipin-creates.png", type: "image/png" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    shortcut: "/images/logo-bipin-creates.png",
+    apple: "/images/logo-bipin-creates.png",
+  },
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Bipin Baral — Graphic Designer, UI/UX & Web Developer in Nepal",
-    description: "Graphic Designer and Web Developer in Nepal crafting premium brand identities and digital experiences.",
-    url: "https://baralbipin.com.np",
-    siteName: "Bipin Baral",
+    title: "Bipin Creates (Bipin Baral) — Graphic Designer, UI/UX & Web Developer in Kathmandu, Nepal",
+    description: "Graphic Designer and Web Developer in Kathmandu, Nepal crafting premium brand identities and digital experiences.",
+    url: "https://www.baralbipin.com.np",
+    siteName: "Bipin Creates",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/images/Logos.jpg",
+        url: "/images/work-with-bipin.png",
         width: 1200,
         height: 630,
-        alt: "Bipin Baral — Graphic Designer and Web Developer in Nepal",
+        alt: "Work with Bipin Creates (Bipin Baral) — Graphic Designer & Web Developer in Nepal",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bipin Baral — Graphic Designer, UI/UX & Web Developer in Nepal",
-    description: "Graphic Designer and Web Developer in Nepal crafting premium brand identities and digital experiences.",
-    images: ["/images/Logos.jpg"],
+    title: "Bipin Creates (Bipin Baral) — Graphic Designer, UI/UX & Web Developer in Kathmandu, Nepal",
+    description: "Graphic Designer and Web Developer in Kathmandu, Nepal crafting premium brand identities and digital experiences.",
+    images: ["/images/work-with-bipin.png"],
   },
   robots: {
     index: true,
@@ -64,6 +72,29 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Bipin Baral",
+    alternateName: "Bipin Creates",
+    jobTitle: "Graphic Designer, UI/UX Designer & Web Developer",
+    url: "https://www.baralbipin.com.np",
+    image: "https://www.baralbipin.com.np/images/logo-bipin-creates.png",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Kathmandu",
+      addressCountry: "NP",
+    },
+    sameAs: [
+      "https://facebook.com/bipincreates",
+      "https://www.instagram.com/bipinlogs",
+      "https://github.com/bipinbaral",
+      "https://www.linkedin.com/in/bipinbaral/",
+      "https://www.behance.net/bipinbaral",
+      "https://wa.me/9779843506305",
+    ],
+  };
+
   return (
     <html
       lang="en"
@@ -73,6 +104,10 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://framerusercontent.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://framerusercontent.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground scroll-smooth">
         <CustomCursor />

@@ -8,7 +8,7 @@ export interface ExperienceItem {
 export const experience: ExperienceItem[] = [
   {
     id: "1",
-    role: "UI/UX and Frontend Designer",
+    role: "UI/UX and Graphic Designer",
     company: "National and International Clients",
     period: "Currently",
   },

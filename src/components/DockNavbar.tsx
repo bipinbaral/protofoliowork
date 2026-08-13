@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
 import { Briefcase, Folder, BookOpen, Quote, Mail, ArrowUpRight, LucideIcon } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navItems = [
@@ -73,13 +74,17 @@ function DockItem({ item, mouseX, activeSection }: DockItemProps) {
         <Link
           href={item.href}
           scroll={true}
-          className={`relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-2xl transition-colors duration-300 ${isActive ? "bg-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.2)]" : "bg-white/[0.03] hover:bg-white/[0.08]"
+          className={`relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-2xl overflow-hidden transition-colors duration-300 ${isActive ? "bg-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.2)]" : "bg-white/[0.03] hover:bg-white/[0.08]"
             }`}
         >
           {item.isLogo ? (
-            <span className="font-satoshi text-lg sm:text-xl font-bold bg-gradient-to-br from-yellow-400 to-amber-500 text-transparent bg-clip-text">
-              B
-            </span>
+            <Image
+              src="/images/logo-bipin-creates.png"
+              alt="Bipin Creates Logo"
+              fill
+              sizes="(max-width: 768px) 40px, 48px"
+              className="w-full h-full object-cover p-0 m-0"
+            />
           ) : (
             item.icon && <item.icon className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-300 ${isActive ? 'text-white' : 'text-white/60'}`} />
           )}

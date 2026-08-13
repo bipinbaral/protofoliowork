@@ -1,6 +1,7 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { Container } from "./ui/Container";
 import { 
   Send, 
@@ -42,10 +43,9 @@ export const Footer: React.FC = () => {
   ];
 
   const legalLinks = [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
-    { label: "Cookie Policy", href: "#" },
-    { label: "Licenses", href: "#" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms of Service", href: "/terms-of-service" },
+    { label: "FAQ", href: "/faq" },
   ];
 
   return (
@@ -60,12 +60,23 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-5 flex flex-col items-start pr-0 lg:pr-8">
             {/* Logo & Brand Name */}
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-yellow-400 to-amber-300 flex items-center justify-center font-satoshi font-bold text-xl text-neutral-900 shadow-lg shadow-amber-500/20">
-                B
+              <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-2xl overflow-hidden shrink-0 shadow-lg shadow-blue-500/40 border border-blue-500/20">
+                <Image
+                  src="/images/logo-bipin-creates.png"
+                  alt="Bipin Creates Logo"
+                  fill
+                  sizes="44px"
+                  className="w-full h-full object-cover p-0 m-0"
+                />
               </div>
-              <span className="font-satoshi font-bold text-2xl text-white tracking-tight">
-                Bipin Baral
-              </span>
+              <div className="flex flex-col">
+                <span className="font-satoshi font-bold text-2xl text-white tracking-tight">
+                  Bipin Creates
+                </span>
+                <span className="text-xs font-mono text-white/50">
+                  by Bipin Baral
+                </span>
+              </div>
             </div>
 
             {/* Tagline */}

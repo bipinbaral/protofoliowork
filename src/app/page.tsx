@@ -19,11 +19,13 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Bipin Baral",
+    alternateName: "Bipin Creates",
     jobTitle: ["Graphic Designer", "Web Developer", "UI/UX Designer"],
-    url: "https://baralbipin.com.np",
+    url: "https://www.baralbipin.com.np",
     nationality: "Nepalese",
     address: {
       "@type": "PostalAddress",
+      addressLocality: "Kathmandu",
       addressCountry: "NP"
     }
   };

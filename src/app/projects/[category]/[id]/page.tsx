@@ -18,22 +18,35 @@ interface ProjectPageProps {
   }>;
 }
 
+export async function generateStaticParams() {
+  const params: { category: string; id: string }[] = [];
+  Object.entries(categoryCollections).forEach(([categoryKey, items]) => {
+    items.forEach((item) => {
+      params.push({ category: categoryKey, id: item.id });
+    });
+  });
+  return params;
+}
+
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const { category, id } = await params;
   const activeCollection = categoryCollections[category] || [];
   let project = activeCollection.find((p) => p.id === id);
   if (!project) project = projects.find((p) => p.id === id) as any;
 
-  if (!project) return { title: "Project | Bipin Baral" };
+  if (!project) return { title: "Project | Bipin Creates (Bipin Baral)" };
+
+  const url = `https://www.baralbipin.com.np/projects/${category}/${id}`;
 
   return {
-    title: `${project.title} | Bipin Baral`,
+    title: `${project.title} — Case Study | Bipin Creates (Bipin Baral)`,
     description: project.caseStudy?.companyBackground?.slice(0, 160) ||
-      `View the ${project.title} project by Bipin Baral — graphic designer, UI/UX expert & creative developer.`,
+      `View the ${project.title} project by Bipin Creates (Bipin Baral) — graphic designer, UI/UX expert & web developer in Kathmandu, Nepal.`,
     openGraph: {
-      title: `${project.title} | Bipin Baral`,
+      title: `${project.title} | Bipin Creates (Bipin Baral)`,
       description: project.caseStudy?.companyBackground?.slice(0, 160) ||
-        `View the ${project.title} project by Bipin Baral.`,
+        `View the ${project.title} project by Bipin Creates (Bipin Baral).`,
+      url,
       images: [
         {
           url: project.image,
@@ -46,10 +59,13 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.title} | Bipin Baral`,
+      title: `${project.title} | Bipin Creates (Bipin Baral)`,
       description: project.caseStudy?.companyBackground?.slice(0, 160) ||
-        `View the ${project.title} project by Bipin Baral.`,
+        `View the ${project.title} project by Bipin Creates (Bipin Baral).`,
       images: [project.image],
+    },
+    alternates: {
+      canonical: url,
     },
   };
 }

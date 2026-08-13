@@ -37,12 +37,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPostBySlug(slug);
 
-  if (!post) return { title: "Article | Bipin Baral" };
+  if (!post) return { title: "Article | Bipin Creates (Bipin Baral)" };
 
-  const url = `https://bipinbaral.com/blog/${slug}`;
+  const url = `https://www.baralbipin.com.np/blog/${slug}`;
 
   return {
-    title: `${post.title} | Bipin Baral`,
+    title: `${post.title} | Bipin Creates (Bipin Baral)`,
     description: post.description,
     authors: [{ name: post.author }],
     openGraph: {
@@ -82,7 +82,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const related = getRelatedPosts(slug, post.category, 3);
   const { prev, next } = getAdjacentPosts(slug);
-  const articleUrl = `https://bipinbaral.com/blog/${slug}`;
+  const articleUrl = `https://www.baralbipin.com.np/blog/${slug}`;
 
   return (
     <>

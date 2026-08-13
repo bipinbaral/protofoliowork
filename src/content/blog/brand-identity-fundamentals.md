@@ -71,7 +71,7 @@ During discovery, ask questions that reveal personality:
 | Ignoring digital-first | Design for screens, then adapt to print |
 | No written guidelines | Document decisions so the brand survives without you |
 
-Building a brand identity is an investment. Done well, it compounds—every piece of content, every product, every interaction reinforces the same story.
+Building a brand identity is an investment. If you need a complete visual identity tailored for your business, explore my professional [Brand Identity Design Services](/services/brand-identity-design) and [Graphic Design Services](/services/graphic-design). Done well, a strong brand identity compounds—every piece of content, every product, every interaction reinforces the same story.
 
 ## Color psychology and palette design
 

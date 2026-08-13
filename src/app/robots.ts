@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https://baralbipin.com.np/sitemap.xml",
+    sitemap: "https://www.baralbipin.com.np/sitemap.xml",
   };
 }

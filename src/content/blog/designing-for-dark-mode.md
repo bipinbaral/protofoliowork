@@ -69,7 +69,7 @@ Before launch, test your dark mode in:
 2. A dim room (true dark-mode use case)
 3. Multiple devices—OLED vs LCD behave differently
 
-Ship dark mode as a first-class experience, not an afterthought. Your users—and your brand—will thank you.
+Ship dark mode as a first-class experience, not an afterthought. If you are building a digital product or website, explore my specialized [UI/UX Design Services](/services/ui-ux-design) and custom [Web Development Services](/services/web-development) to craft high-converting, dark-mode-ready digital experiences. Your users—and your brand—will thank you.
 
 ## Typography in dark environments
 

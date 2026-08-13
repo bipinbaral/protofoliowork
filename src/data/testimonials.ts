@@ -44,7 +44,7 @@ export const testimonials: Testimonial[] = [
     role: "Kenzo Tea Cafe",
     quote: "Bipin handled our logo, product designs, menus, banners, flex, 3D boards, and light boards. His creative approach and attention to detail really helped strengthen our brand.",
     rating: 5.0,
-    profile: "/images/testimonials/sunil thappa.jpg",
+    profile: "/images/testimonials/sunil-thappa.jpg",
   },
   {
     id: "5",

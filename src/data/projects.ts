@@ -51,7 +51,7 @@ export const collectionLogoDesign: DetailedProject[] = [
     id: "pinak-interior",
     title: "Pinak Interior and Construction",
     category: "Construction Company",
-    image: "/images/branding/pinak/pinaklogo with branding.jpg",
+    image: "/images/branding/pinak/pinaklogo-with-branding.jpg",
     link: "pinakinterior.com.np",
     year: "2020",
     tools: ["Illustrator"]
@@ -82,7 +82,7 @@ export const collectionPosterDesigns: DetailedProject[] = [
     title: "Sample Poster Project 1",
     category: "Design",
     image: "/images/Posters.jpg",
-    link: "example.com",
+    link: "",
     year: "2023",
     galleryImages: ["/images/Posters.jpg"]
   },
@@ -91,7 +91,7 @@ export const collectionPosterDesigns: DetailedProject[] = [
     title: "Sample Poster Project 2",
     category: "Design",
     image: "/images/Posters.jpg",
-    link: "example.com",
+    link: "",
     year: "2023",
     galleryImages: ["/images/Posters.jpg"]
   },
@@ -100,7 +100,7 @@ export const collectionPosterDesigns: DetailedProject[] = [
     title: "Sample Poster Project 3",
     category: "Design",
     image: "/images/Posters.jpg",
-    link: "example.com",
+    link: "",
     year: "2023",
     galleryImages: ["/images/Posters.jpg"]
   }
@@ -111,43 +111,43 @@ export const collectionPrintMedia: DetailedProject[] = [
     id: "graphic-social-media",
     title: "Social Media & Packaging",
     category: "Social Media, Packaging",
-    image: "/images/graphics design/social media/socialmedia4.png",
-    link: "example.com",
+    image: "/images/graphics-design/social-media/socialmedia4.png",
+    link: "",
     year: "2024",
     tools: ["Illustrator", "Photoshop"],
     galleryImages: [
-      "/images/graphics design/social media/socialmedia1.png",
-      "/images/graphics design/social media/socialmedia2.jpg",
-      "/images/graphics design/social media/socialmedia3.png",
-      "/images/graphics design/social media/socialmedia5.jpg",
-      "/images/graphics design/social media/socialmedia6.jpg",
-      "/images/graphics design/social media/socialmedia7.png",
-      "/images/graphics design/social media/socialmedia8.jpg"
+      "/images/graphics-design/social-media/socialmedia1.png",
+      "/images/graphics-design/social-media/socialmedia2.jpg",
+      "/images/graphics-design/social-media/socialmedia3.png",
+      "/images/graphics-design/social-media/socialmedia5.jpg",
+      "/images/graphics-design/social-media/socialmedia6.jpg",
+      "/images/graphics-design/social-media/socialmedia7.png",
+      "/images/graphics-design/social-media/socialmedia8.jpg"
     ]
   },
   {
     id: "graphic-print-media",
     title: "Print Media",
     category: "Flex, T-shirts, Packging, Bags, Brochure, Flyers, Posters, Letterhead",
-    image: "/images/graphics design/print design/print3.jpg",
-    link: "example.com",
+    image: "/images/graphics-design/print-design/print3.jpg",
+    link: "",
     year: "2024",
     tools: ["InDesign", "Illustrator", "Photoshop"],
     galleryImages: [
-      "/images/graphics design/print design/print1.jpg",
-      "/images/graphics design/print design/print4.jpg"
+      "/images/graphics-design/print-design/print1.jpg",
+      "/images/graphics-design/print-design/print4.jpg"
     ]
   },
   {
     id: "graphic-thumbnail",
     title: "Thumbnail Design",
     category: "Youtube Thumbnails",
-    image: "/images/graphics design/thumbnail/thumbnail02.jpg",
-    link: "example.com",
+    image: "/images/graphics-design/thumbnail/thumbnail02.jpg",
+    link: "",
     year: "2024",
     tools: ["Photoshop"],
     galleryImages: [
-      "/images/graphics design/thumbnail/thumbnail02.jpg"
+      "/images/graphics-design/thumbnail/thumbnail02.jpg"
     ]
   }
 ];
@@ -158,7 +158,7 @@ export const collectionPathStudyInUSA: DetailedProject[] = [
     title: "Sample Path Study Project 1",
     category: "Education",
     image: "/images/Path Study in USA.jpg",
-    link: "example.com",
+    link: "",
     year: "2024",
     galleryImages: ["/images/Path Study in USA.jpg"]
   },
@@ -167,7 +167,7 @@ export const collectionPathStudyInUSA: DetailedProject[] = [
     title: "Sample Path Study Project 2",
     category: "Education",
     image: "/images/Path Study in USA.jpg",
-    link: "example.com",
+    link: "",
     year: "2024",
     galleryImages: ["/images/Path Study in USA.jpg"]
   },
@@ -176,7 +176,7 @@ export const collectionPathStudyInUSA: DetailedProject[] = [
     title: "Sample Path Study Project 3",
     category: "Education",
     image: "/images/Path Study in USA.jpg",
-    link: "example.com",
+    link: "",
     year: "2024",
     galleryImages: ["/images/Path Study in USA.jpg"]
   }
@@ -188,7 +188,7 @@ export const collectionUIUXDesign: DetailedProject[] = [
     title: "Landing Page",
     category: "Hero Section, Cards, FAQs, Footer",
     image: "/images/uiux/first/Packages.jpg",
-    link: "example.com",
+    link: "",
     year: "2023",
     tools: ["Figma", "Figma Make AI"]
   },
@@ -197,7 +197,7 @@ export const collectionUIUXDesign: DetailedProject[] = [
     title: "Dashboard Design",
     category: "Graphs, Chart, Summary, Listing",
     image: "/images/uiux/second/Dashboard.jpg",
-    link: "example.com",
+    link: "",
     year: "2023",
     tools: ["Figma", "Figma Make AI"]
   },
@@ -206,7 +206,7 @@ export const collectionUIUXDesign: DetailedProject[] = [
     title: "Blog Content Page",
     category: "Blogs Section, Table of content, Comments, About Author",
     image: "/images/uiux/third/blogcontent.jpg",
-    link: "example.com",
+    link: "",
     year: "2026",
     tools: ["Figma"]
   }
@@ -218,7 +218,7 @@ export const collectionProgramsInAus: DetailedProject[] = [
     title: "Sample AUS Program Project 1",
     category: "Education",
     image: "/images/Diploma Bachelor Masters AUS.jpg",
-    link: "example.com",
+    link: "",
     year: "2022",
     galleryImages: ["/images/Diploma Bachelor Masters AUS.jpg"]
   },
@@ -227,7 +227,7 @@ export const collectionProgramsInAus: DetailedProject[] = [
     title: "Sample AUS Program Project 2",
     category: "Education",
     image: "/images/Diploma Bachelor Masters AUS.jpg",
-    link: "example.com",
+    link: "",
     year: "2022",
     galleryImages: ["/images/Diploma Bachelor Masters AUS.jpg"]
   },
@@ -236,7 +236,7 @@ export const collectionProgramsInAus: DetailedProject[] = [
     title: "Sample AUS Program Project 3",
     category: "Education",
     image: "/images/Diploma Bachelor Masters AUS.jpg",
-    link: "example.com",
+    link: "",
     year: "2022",
     galleryImages: ["/images/Diploma Bachelor Masters AUS.jpg"]
   }
@@ -322,8 +322,8 @@ export const collectionMotionDesign: DetailedProject[] = [
     title: "Logo Animation",
     category: "Motion Design",
     image: "/images/motiongraphics.png",
-    link: "/images/motiondesign/02Logo Animation.mp4",
-    videoUrl: "/images/motiondesign/02Logo Animation.mp4",
+    link: "/images/motiondesign/02logo-animation.mp4",
+    videoUrl: "/images/motiondesign/02logo-animation.mp4",
     year: "2024",
     tools: ["After Effects", "Illustrator"]
   }
@@ -347,7 +347,7 @@ export const projects: Project[] = [
     title: "Brand Identity",
     category: "Branding",
     image: "/images/Branding.png",
-    link: "/projects/brand-identity",
+    link: "/projects/logo-design",
     year: "2023",
     tags: ["Logo"],
     isCollection: true,
@@ -360,9 +360,9 @@ export const projects: Project[] = [
         { name: "Accent", hex: "#FF5733" },
         { name: "Neutral", hex: "#F4F4F4" }
       ],
-      gallery: ["/images/branding/pinak/pinaklogowithbranding.jpg", "/images/branding/altiscalelab/logowithbranding.jpg", "/images/branding/lhotseaus/lhotselogowithbranding.jpg"],
-      brandingImages: ["/images/branding/pinak/pinaklogowithbranding.jpg", "/images/branding/altiscalelab/logowithbranding.jpg", "/images/branding/lhotseaus/lhotselogowithbranding.jpg"],
-      logoDesigns: ["/images/branding/pinak/pinaklogowithbranding.jpg", "/images/branding/altiscalelab/logowithbranding.jpg", "/images/branding/lhotseaus/lhotselogowithbranding.jpg"],
+      gallery: ["/images/branding/pinak/pinaklogo-with-branding.jpg", "/images/branding/altiscalelab/logowithbranding.jpg", "/images/branding/lhotseaus/lhotselogowithbranding.jpg"],
+      brandingImages: ["/images/branding/pinak/pinaklogo-with-branding.jpg", "/images/branding/altiscalelab/logowithbranding.jpg", "/images/branding/lhotseaus/lhotselogowithbranding.jpg"],
+      logoDesigns: ["/images/branding/pinak/pinaklogo-with-branding.jpg", "/images/branding/altiscalelab/logowithbranding.jpg", "/images/branding/lhotseaus/lhotselogowithbranding.jpg"],
     }
   },
   {
@@ -370,7 +370,7 @@ export const projects: Project[] = [
     title: "Web",
     category: "Web Development",
     image: "/images/webdevelopment.png",
-    link: "/projects/webdevelopment",
+    link: "/projects/web-design",
     year: "2023",
     tags: ["Web", "Frontend"],
     isCollection: true,

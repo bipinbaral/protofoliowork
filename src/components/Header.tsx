@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export const Header: React.FC = () => {
@@ -26,7 +27,16 @@ export const Header: React.FC = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
-        <Link href="/" className="group flex items-center gap-2 relative">
+        <Link href="/" className="group flex items-center gap-3 relative">
+          <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-2xl overflow-hidden shrink-0 transition-transform duration-300 group-hover:scale-105">
+            <Image
+              src="/images/logo-bipin-creates.png"
+              alt="Bipin Creates Logo"
+              fill
+              sizes="40px"
+              className="w-full h-full object-cover p-0 m-0"
+            />
+          </div>
           <span className="font-satoshi text-2xl font-bold bg-gradient-to-br from-white to-white/60 text-transparent bg-clip-text group-hover:from-purple-400 group-hover:to-pink-500 transition-all duration-300">
             Bipin Baral
           </span>

@@ -175,23 +175,25 @@ const useCanvasCursor = () => {
   };
 
   useEffect(() => {
+    const isTouchDevice =
+      typeof window !== "undefined" &&
+      ("ontouchstart" in window ||
+        navigator.maxTouchPoints > 0 ||
+        window.matchMedia("(pointer: coarse)").matches ||
+        window.innerWidth < 768);
+
+    if (isTouchDevice) return;
+
     renderCanvas();
 
     return () => {
-      ctx.running = false;
+      if (ctx) {
+        ctx.running = false;
+      }
       document.removeEventListener('mousemove', onMousemove);
       document.removeEventListener('touchstart', onMousemove);
       document.body.removeEventListener('orientationchange', resizeCanvas);
       window.removeEventListener('resize', resizeCanvas);
-      window.removeEventListener('focus', () => {
-        if (!ctx.running) {
-          ctx.running = true;
-          render();
-        }
-      });
-      window.removeEventListener('blur', () => {
-        ctx.running = true;
-      });
     };
   }, []);
 };

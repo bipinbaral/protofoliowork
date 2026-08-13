@@ -86,4 +86,6 @@ Microcopy matters. Button labels should describe outcomes ("Book a Session" not 
 
 ## The premium difference
 
-Premium UX is the sum of small decisions: consistent border radii, subtle glass effects, purposeful whitespace, and copy that respects the user's time. Ship fewer features, but ship them flawlessly.
+Premium UX is the sum of small decisions: consistent border radii, subtle glass effects, purposeful whitespace, and copy that respects the user's time. 
+
+If you are looking to elevate your web presence, check out my dedicated [UI/UX Design Services](/services/ui-ux-design), custom [Web Development Services](/services/web-development), and interactive [Motion Graphics Services](/services/motion-graphics). Ship fewer features, but ship them flawlessly.

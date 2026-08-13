@@ -9,32 +9,32 @@ import BlogIndex from "@/components/blog/BlogIndex";
 import { getAllPosts, getAllCategories } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog | Bipin Baral",
+  title: "Blog | Bipin Creates (Bipin Baral)",
   description:
-    "Design insights, branding strategies, and UI/UX best practices from Bipin Baral — graphic designer, UI/UX expert, and creative developer.",
+    "Design insights, branding strategies, and UI/UX best practices from Bipin Creates (Bipin Baral) — graphic designer, UI/UX expert, and web developer in Kathmandu, Nepal.",
   openGraph: {
-    title: "Blog | Bipin Baral",
+    title: "Blog | Bipin Creates (Bipin Baral)",
     description:
-      "Design insights, branding strategies, and UI/UX best practices from Bipin Baral.",
-    url: "https://bipinbaral.com/blog",
+      "Design insights, branding strategies, and UI/UX best practices from Bipin Creates (Bipin Baral).",
+    url: "https://www.baralbipin.com.np/blog",
     type: "website",
     images: [
       {
-        url: "/images/Logos.jpg",
+        url: "/images/work-with-bipin.png",
         width: 1200,
         height: 630,
-        alt: "Bipin Baral Blog",
+        alt: "Bipin Creates Blog",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog | Bipin Baral",
+    title: "Blog | Bipin Creates (Bipin Baral)",
     description:
       "Design insights, branding strategies, and UI/UX best practices.",
   },
   alternates: {
-    canonical: "https://bipinbaral.com/blog",
+    canonical: "https://www.baralbipin.com.np/blog",
   },
 };
 

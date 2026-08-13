@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useEffect, useState, useRef } from "react";
 import { Container } from "./ui/Container";
@@ -6,7 +6,8 @@ import { stats } from "@/data/testimonials";
 import { useInView } from "framer-motion";
 
 const AnimatedCounter = ({ endValue, suffix }: { endValue: number, suffix: string }) => {
-  const [count, setCount] = useState(0);
+  // Initialize with real endValue so server-rendered HTML contains real numbers
+  const [count, setCount] = useState(endValue);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 

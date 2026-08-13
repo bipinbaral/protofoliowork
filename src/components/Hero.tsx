@@ -10,18 +10,18 @@ import { AnimatedWrapper } from "./ui/AnimatedWrapper";
 import Marquee from "./ui/Marquee";
 
 const logos = [
-  { src: "/scrolling%20logos/Dream%20Study.png", alt: "Dream Study", href: "#" },
-  { src: "/scrolling%20logos/Evani.png", alt: "Evani", href: "https://evanieducation.com/" },
-  { src: "/scrolling%20logos/Future%20Ready%20nepal.png", alt: "Future Ready Nepal", href: "#" },
-  { src: "/scrolling%20logos/Lhotse.png", alt: "Lhotse", href: "https://www.lhotse.com.au/" },
-  { src: "/scrolling%20logos/MoneyTO%20logo.png", alt: "MoneyTO", href: "#" },
-  { src: "/scrolling%20logos/Ratomasi.png", alt: "Ratomasi", href: "https://www.ratomasi.com/" },
-  { src: "/scrolling%20logos/Sagarmatha%20Engineering%20College.png", alt: "Sagarmatha Engineering College", href: "https://sagarmatha.edu.np/" },
-  { src: "/scrolling%20logos/idyfy.png", alt: "Idyfy", href: "#" },
-  { src: "/scrolling%20logos/pinak.png", alt: "Pinak", href: "https://www.pinakinterior.com.np/" },
-  { src: "/scrolling%20logos/smart%20city%20internationall.png", alt: "Smart City International", href: "https://smartcityinternational.edu.np/" },
-  { src: "/scrolling%20logos/Jhapa%20Supercup.png", alt: "Jhapa Supercup", href: "#" },
-  { src: "/scrolling%20logos/gauko%20achar.png", alt: "Gauko Achar", href: "#" },
+  { src: "/scrolling-logos/dream-study.png", alt: "Dream Study", href: "#" },
+  { src: "/scrolling-logos/evani.png", alt: "Evani", href: "https://evanieducation.com/" },
+  { src: "/scrolling-logos/future-ready-nepal.png", alt: "Future Ready Nepal", href: "#" },
+  { src: "/scrolling-logos/lhotse.png", alt: "Lhotse", href: "https://www.lhotse.com.au/" },
+  { src: "/scrolling-logos/moneyto-logo.png", alt: "MoneyTO", href: "#" },
+  { src: "/scrolling-logos/Ratomasi.png", alt: "Ratomasi", href: "https://www.ratomasi.com/" },
+  { src: "/scrolling-logos/sagarmatha-engineering-college.png", alt: "Sagarmatha Engineering College", href: "https://sagarmatha.edu.np/" },
+  { src: "/scrolling-logos/idyfy.png", alt: "Idyfy", href: "#" },
+  { src: "/scrolling-logos/pinak.png", alt: "Pinak", href: "https://www.pinakinterior.com.np/" },
+  { src: "/scrolling-logos/smart-city-international.png", alt: "Smart City International", href: "https://smartcityinternational.edu.np/" },
+  { src: "/scrolling-logos/jhapa-supercup.png", alt: "Jhapa Supercup", href: "#" },
+  { src: "/scrolling-logos/gauko-achar.png", alt: "Gauko Achar", href: "#" },
 ];
 
 export const Hero: React.FC = () => {
@@ -35,21 +35,21 @@ export const Hero: React.FC = () => {
         <AnimatedWrapper type="slideUp" delay={0.1} className="flex flex-col items-center w-full">
           {/* Top Label */}
           <span className="text-[10px] sm:text-xs uppercase font-mono tracking-[0.2em] sm:tracking-[0.25em] text-white/50 border border-white/10 px-3 sm:px-4 py-1.5 rounded-full bg-white/5 mb-6 sm:mb-8 select-none">
-            Graphic Designer, UI/UX & Web Developer in Nepal
+            Graphic Designer, UI/UX & Web Developer in Kathmandu, Nepal
           </span>
 
-          {/* Headline â€“ fluid clamp */}
+          {/* Headline – fluid clamp */}
           <h1
-            className="font-satoshi font-bold tracking-tight text-white leading-[1.05] max-w-5xl"
-            style={{ fontSize: "clamp(2.2rem, 8vw, 6rem)" }}
+            className="font-satoshi font-bold tracking-tight text-white leading-[1.1] max-w-5xl"
+            style={{ fontSize: "clamp(2.2rem, 5vw, 8rem)" }}
           >
-            Design &amp; Build<br className="hidden sm:inline" />
+            Design & Build <br />
             Creative Products
           </h1>
 
           {/* Subheading */}
-          <p className="mt-5 sm:mt-8 text-sm sm:text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl font-sans font-light px-2 sm:px-0">
-            Elevate your brand with custom identity and package design. Showcase your story through bold visuals and strategic web development solutions tailored for you.
+          <p className="mt-5 sm:mt-8 text-sm sm:text-lg md:text-xl text-white/60 leading-relaxed max-w-3xl font-sans font-light px-2 sm:px-0">
+            Hi, I&apos;m Bipin Baral I craft high-impact brand identities, intuitive digital products, and high-performance websites for clients across Nepal and globally.
           </p>
 
           {/* Actions */}
