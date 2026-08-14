@@ -15,7 +15,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Bipin Creates (Bipin Baral) — Graphic Designer, UI/UX & Web Developer in Kathmandu, Nepal",
+  title: "Bipin Creates (Bipin Baral) — Graphics, UI/UX Designer & Web Developer in Nepal",
   description: "Bipin Creates (Bipin Baral) is a Graphic Designer, UI/UX Expert, and Web Developer in Kathmandu, Nepal. Specializing in premium brand identities, logos, and high-performance web development.",
   metadataBase: new URL("https://www.baralbipin.com.np"),
   icons: {

@@ -260,6 +260,15 @@ export const collectionWebDesign: DetailedProject[] = [
     link: "https://altiscalelabs.com/",
     year: "2026",
     tools: ["WordPress", "JavaScript", "PHP"]
+  },
+  {
+    id: "chautariresort",
+    title: "Chautari Resort",
+    category: "Fullstack Development",
+    image: "/images/webdevelopment/chautari resort.png",
+    link: "https://chautari-psi.vercel.app/",
+    year: "2026",
+    tools: ["Next.js", "TypeScript", "Tailwind CSS"]
   }
 ];
 

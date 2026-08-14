@@ -116,10 +116,10 @@ export const servicesData: ServiceDetail[] = [
         description: "Clean, responsive corporate web presence for a software engineering startup."
       },
       {
-        title: "Bipin Creates Portfolio",
-        category: "Personal Portfolio",
-        image: "/images/logo-bipin-creates.png",
-        description: "High-performance portfolio built with Next.js App Router and Framer Motion."
+        title: "Chautari Resort Website",
+        category: "Resort & Hospitality Web App",
+        image: "/images/webdevelopment/chautari resort.png",
+        description: "Modern, responsive resort website and booking platform built with Next.js."
       }
     ],
     faqs: [
