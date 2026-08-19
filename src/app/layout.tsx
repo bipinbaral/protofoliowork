@@ -115,6 +115,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <BackToTop className="xl:hidden" />
+        <Analytics />
       </body>
     </html>
   );
