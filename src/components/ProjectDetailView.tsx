@@ -92,9 +92,9 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
             
             {/* Minimal Header */}
             <div className="px-6 py-8 md:px-12 md:py-12 flex flex-col bg-[#050505]">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-satoshi font-bold text-white mb-2">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-satoshi font-bold text-white mb-2">
                 {activeProject.title}
-              </h1>
+              </h2>
               <span className="text-white/50 text-lg md:text-xl font-light">
                 {activeProject.category}
               </span>

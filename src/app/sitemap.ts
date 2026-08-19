@@ -32,7 +32,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const projectDetailEntries: MetadataRoute.Sitemap = [];
   Object.entries(categoryCollections).forEach(([categoryKey, items]) => {
     items.forEach((item) => {
-      if (item.caseStudy) {
+      const hasRealCaseStudy = Boolean(
+        item.caseStudy && (
+          item.caseStudy.companyBackground ||
+          item.caseStudy.logoStory ||
+          item.caseStudy.designChallenge ||
+          item.caseStudy.designProcess
+        )
+      );
+      if (hasRealCaseStudy) {
         projectDetailEntries.push({
           url: `${SITE_URL}/projects/${categoryKey}/${item.id}`,
           lastModified: new Date(),

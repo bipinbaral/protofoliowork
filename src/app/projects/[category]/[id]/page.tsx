@@ -38,7 +38,15 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   if (!project) return { title: `Project | ${SITE_NAME}` };
 
   const url = `${SITE_URL}/projects/${category}/${id}`;
-  const isThinContent = !project.caseStudy;
+  const hasRealCaseStudy = Boolean(
+    project.caseStudy && (
+      project.caseStudy.companyBackground ||
+      project.caseStudy.logoStory ||
+      project.caseStudy.designChallenge ||
+      project.caseStudy.designProcess
+    )
+  );
+  const isThinContent = !hasRealCaseStudy;
 
   return {
     title: `${project.title} — Case Study | ${SITE_NAME}`,
@@ -50,6 +58,9 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       googleBot: {
         index: !isThinContent,
         follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
       },
     },
     openGraph: {

@@ -57,11 +57,11 @@ export const collectionLogoDesign: DetailedProject[] = [
     tools: ["Illustrator"]
   },
   {
-    id: "altiscalelab-branding",
+    id: "altiscale-lab",
     title: "Altiscale Lab",
     category: "Logo, Branding",
     image: "/images/branding/altiscalelab/logowithbranding.jpg",
-    link: "",
+    link: "https://altiscalelabs.com/",
     year: "2026",
     tools: ["Illustrator"],
   },

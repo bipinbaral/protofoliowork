@@ -17,6 +17,18 @@ interface CollectionPageProps {
   }>;
 }
 
+const categoryTitleMap: Record<string, string> = {
+  "uiux-design": "UI/UX Design",
+  "web-design": "Web Design",
+  "logo-design": "Logo Design",
+  "print-media": "Print & Graphic Design",
+  "videos": "Video Editing",
+  "motion-design": "Motion Design",
+  "poster-designs": "Poster Design",
+  "path-study-in-usa": "Study in USA",
+  "programs-in-aus": "Study in Australia",
+};
+
 export async function generateStaticParams() {
   return Object.keys(categoryCollections).map((cat) => ({ category: cat }));
 }
@@ -24,16 +36,16 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: CollectionPageProps): Promise<Metadata> {
   const { category } = await params;
   const collectionInfo = projects.find((p) => p.id === category);
-  const titleName = collectionInfo?.title || category.replace(/-/g, " ");
+  const titleName = categoryTitleMap[category] || collectionInfo?.title || category.replace(/-/g, " ");
 
   const url = `${SITE_URL}/projects/${category}`;
 
   return {
     title: `${titleName} Projects | ${SITE_NAME}`,
-    description: `Explore ${titleName} case studies and visual projects designed by ${SITE_NAME} in Kathmandu, Nepal.`,
+    description: `Explore ${titleName} case studies, visual design portfolios, and client projects created by ${SITE_NAME} in Kathmandu, Nepal.`,
     openGraph: {
       title: `${titleName} Projects | ${SITE_NAME}`,
-      description: `Explore ${titleName} case studies and visual projects designed by ${SITE_NAME} in Kathmandu, Nepal.`,
+      description: `Explore ${titleName} case studies, visual design portfolios, and client projects created by ${SITE_NAME} in Kathmandu, Nepal.`,
       url,
       siteName: SITE_NAME,
       type: "website",
@@ -42,7 +54,7 @@ export async function generateMetadata({ params }: CollectionPageProps): Promise
     twitter: {
       card: "summary_large_image",
       title: `${titleName} Projects | ${SITE_NAME}`,
-      description: `Explore ${titleName} case studies and visual projects designed by ${SITE_NAME} in Kathmandu, Nepal.`,
+      description: `Explore ${titleName} case studies, visual design portfolios, and client projects created by ${SITE_NAME} in Kathmandu, Nepal.`,
       images: ["/images/work-with-bipin.png"],
     },
     alternates: {

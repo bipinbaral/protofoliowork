@@ -11,6 +11,30 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/projects/Build%20Smarter",
+        destination: "/projects/logo-design/altiscale-lab",
+        permanent: true,
+      },
+      {
+        source: "/projects/Build Smarter",
+        destination: "/projects/logo-design/altiscale-lab",
+        permanent: true,
+      },
+      {
+        source: "/projects/logo-design/altiscalelab-branding",
+        destination: "/projects/logo-design/altiscale-lab",
+        permanent: true,
+      },
+      {
+        source: "/projects/example.com",
+        destination: "/projects/uiux-design",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
