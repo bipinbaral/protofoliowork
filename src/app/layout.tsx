@@ -66,6 +66,7 @@ export const metadata: Metadata = {
 
 import CustomCursor from "@/components/CustomCursor";
 import BackToTop from "@/components/BackToTop";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function RootLayout({
   children,
@@ -113,6 +114,7 @@ export default function RootLayout({
         <CustomCursor />
         {children}
         <BackToTop className="xl:hidden" />
+        <Analytics />
       </body>
     </html>
   );
