@@ -1,5 +1,6 @@
 import React from "react";
 import { BlogPost } from "@/lib/blog-types";
+import { SITE_URL, SITE_NAME } from "@/lib/constants";
 
 interface BlogJsonLdProps {
   post: BlogPost;
@@ -14,20 +15,20 @@ export default function BlogJsonLd({ post, url }: BlogJsonLdProps) {
     description: post.description,
     image: post.featuredImage.startsWith("http")
       ? post.featuredImage
-      : `https://www.baralbipin.com.np${post.featuredImage}`,
+      : `${SITE_URL}${post.featuredImage}`,
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
     author: {
       "@type": "Person",
       name: "Bipin Baral",
       alternateName: "Bipin Creates",
-      url: "https://www.baralbipin.com.np",
+      url: SITE_URL,
     },
     publisher: {
       "@type": "Person",
       name: "Bipin Creates",
       alternateName: "Bipin Baral",
-      url: "https://www.baralbipin.com.np",
+      url: SITE_URL,
     },
     mainEntityOfPage: {
       "@type": "WebPage",
@@ -46,13 +47,13 @@ export default function BlogJsonLd({ post, url }: BlogJsonLdProps) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://www.baralbipin.com.np",
+        item: SITE_URL,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blog",
-        item: "https://www.baralbipin.com.np/blog",
+        item: `${SITE_URL}/blog`,
       },
       {
         "@type": "ListItem",

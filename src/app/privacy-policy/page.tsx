@@ -6,12 +6,21 @@ import DockNavbar from "@/components/DockNavbar";
 import PageBackground from "@/components/PageBackground";
 import Footer from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
+import { SITE_URL, SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Bipin Creates (Bipin Baral)",
-  description: "Privacy policy for Bipin Creates (Bipin Baral) portfolio and client services in Kathmandu, Nepal.",
+  title: `Privacy Policy | ${SITE_NAME}`,
+  description: `Privacy policy for ${SITE_NAME} portfolio and client services in Kathmandu, Nepal.`,
   alternates: {
-    canonical: "https://www.baralbipin.com.np/privacy-policy",
+    canonical: `${SITE_URL}/privacy-policy`,
+  },
+  openGraph: {
+    title: `Privacy Policy | ${SITE_NAME}`,
+    description: `Privacy policy for ${SITE_NAME} portfolio and client services in Kathmandu, Nepal.`,
+    url: `${SITE_URL}/privacy-policy`,
+    siteName: SITE_NAME,
+    type: "website",
+    images: ["/images/work-with-bipin.png"],
   },
 };
 

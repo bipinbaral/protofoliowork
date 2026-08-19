@@ -12,7 +12,8 @@ const Experience = dynamic(() => import("@/components/Experience"));
 const Testimonials = dynamic(() => import("@/components/Testimonials"));
 const CTA = dynamic(() => import("@/components/CTA"));
 const Footer = dynamic(() => import("@/components/Footer"));
-const RecentWorksSlider = dynamic(() => import("@/components/RecentWorksSlider"));
+import RecentWorksSlider from "@/components/RecentWorksSlider";
+import { SITE_URL } from "@/lib/constants";
 
 export default function Home() {
   const jsonLd = {
@@ -21,7 +22,7 @@ export default function Home() {
     name: "Bipin Baral",
     alternateName: "Bipin Creates",
     jobTitle: ["Graphic Designer", "Web Developer", "UI/UX Designer"],
-    url: "https://www.baralbipin.com.np",
+    url: SITE_URL,
     nationality: "Nepalese",
     address: {
       "@type": "PostalAddress",

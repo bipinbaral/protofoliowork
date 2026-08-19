@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
 import { categoryCollections, projects } from "@/data/projects";
 import { CollectionGallery } from "@/components/CollectionGallery";
+import { SITE_URL, SITE_NAME } from "@/lib/constants";
 
 interface CollectionPageProps {
   params: Promise<{
@@ -25,16 +26,23 @@ export async function generateMetadata({ params }: CollectionPageProps): Promise
   const collectionInfo = projects.find((p) => p.id === category);
   const titleName = collectionInfo?.title || category.replace(/-/g, " ");
 
-  const url = `https://www.baralbipin.com.np/projects/${category}`;
+  const url = `${SITE_URL}/projects/${category}`;
 
   return {
-    title: `${titleName} Projects | Bipin Creates (Bipin Baral)`,
-    description: `Explore ${titleName} case studies and visual projects designed by Bipin Creates (Bipin Baral) in Kathmandu, Nepal.`,
+    title: `${titleName} Projects | ${SITE_NAME}`,
+    description: `Explore ${titleName} case studies and visual projects designed by ${SITE_NAME} in Kathmandu, Nepal.`,
     openGraph: {
-      title: `${titleName} Projects | Bipin Creates (Bipin Baral)`,
-      description: `Explore ${titleName} case studies and visual projects designed by Bipin Creates (Bipin Baral) in Kathmandu, Nepal.`,
+      title: `${titleName} Projects | ${SITE_NAME}`,
+      description: `Explore ${titleName} case studies and visual projects designed by ${SITE_NAME} in Kathmandu, Nepal.`,
       url,
+      siteName: SITE_NAME,
       type: "website",
+      images: ["/images/work-with-bipin.png"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${titleName} Projects | ${SITE_NAME}`,
+      description: `Explore ${titleName} case studies and visual projects designed by ${SITE_NAME} in Kathmandu, Nepal.`,
       images: ["/images/work-with-bipin.png"],
     },
     alternates: {

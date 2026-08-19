@@ -6,12 +6,21 @@ import DockNavbar from "@/components/DockNavbar";
 import PageBackground from "@/components/PageBackground";
 import Footer from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
+import { SITE_URL, SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Bipin Creates (Bipin Baral)",
-  description: "Terms of service and client project agreements for Bipin Creates (Bipin Baral) in Kathmandu, Nepal.",
+  title: `Terms of Service | ${SITE_NAME}`,
+  description: `Terms of service and client project agreements for ${SITE_NAME} in Kathmandu, Nepal.`,
   alternates: {
-    canonical: "https://www.baralbipin.com.np/terms-of-service",
+    canonical: `${SITE_URL}/terms-of-service`,
+  },
+  openGraph: {
+    title: `Terms of Service | ${SITE_NAME}`,
+    description: `Terms of service and client project agreements for ${SITE_NAME} in Kathmandu, Nepal.`,
+    url: `${SITE_URL}/terms-of-service`,
+    siteName: SITE_NAME,
+    type: "website",
+    images: ["/images/work-with-bipin.png"],
   },
 };
 

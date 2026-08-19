@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { SITE_URL, SITE_NAME } from "@/lib/constants";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,7 +18,7 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Bipin Creates (Bipin Baral) — Graphics, UI/UX Designer & Web Developer in Nepal",
   description: "Bipin Creates (Bipin Baral) is a Graphic Designer, UI/UX Expert, and Web Developer in Kathmandu, Nepal. Specializing in premium brand identities, logos, and high-performance web development.",
-  metadataBase: new URL("https://www.baralbipin.com.np"),
+  metadataBase: new URL(SITE_URL),
   icons: {
     icon: [
       { url: "/images/logo-bipin-creates.png", type: "image/png" },
@@ -32,8 +33,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Bipin Creates (Bipin Baral) — Graphic Designer, UI/UX & Web Developer in Kathmandu, Nepal",
     description: "Graphic Designer and Web Developer in Kathmandu, Nepal crafting premium brand identities and digital experiences.",
-    url: "https://www.baralbipin.com.np",
-    siteName: "Bipin Creates",
+    url: SITE_URL,
+    siteName: SITE_NAME,
     locale: "en_US",
     type: "website",
     images: [

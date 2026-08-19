@@ -6,12 +6,21 @@ import DockNavbar from "@/components/DockNavbar";
 import PageBackground from "@/components/PageBackground";
 import Footer from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
+import { SITE_URL, SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions | Bipin Creates (Bipin Baral)",
-  description: "Common questions about pricing ranges, project timelines, revision policies, payment processes, and design deliverables by Bipin Creates (Bipin Baral) in Kathmandu, Nepal.",
+  title: `Frequently Asked Questions | ${SITE_NAME}`,
+  description: `Common questions about pricing ranges, project timelines, revision policies, payment processes, and design deliverables by ${SITE_NAME} in Kathmandu, Nepal.`,
   alternates: {
-    canonical: "https://www.baralbipin.com.np/faq",
+    canonical: `${SITE_URL}/faq`,
+  },
+  openGraph: {
+    title: `Frequently Asked Questions | ${SITE_NAME}`,
+    description: `Common questions about pricing ranges, project timelines, revision policies, payment processes, and design deliverables by ${SITE_NAME}.`,
+    url: `${SITE_URL}/faq`,
+    siteName: SITE_NAME,
+    type: "website",
+    images: ["/images/work-with-bipin.png"],
   },
 };
 

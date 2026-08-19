@@ -22,6 +22,7 @@ import {
   getRelatedPosts,
   getAdjacentPosts,
 } from "@/lib/blog";
+import { SITE_URL, SITE_NAME } from "@/lib/constants";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -37,18 +38,19 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPostBySlug(slug);
 
-  if (!post) return { title: "Article | Bipin Creates (Bipin Baral)" };
+  if (!post) return { title: `Article | ${SITE_NAME}` };
 
-  const url = `https://www.baralbipin.com.np/blog/${slug}`;
+  const url = `${SITE_URL}/blog/${slug}`;
 
   return {
-    title: `${post.title} | Bipin Creates (Bipin Baral)`,
+    title: `${post.title} | ${SITE_NAME}`,
     description: post.description,
     authors: [{ name: post.author }],
     openGraph: {
       title: post.title,
       description: post.description,
       url,
+      siteName: SITE_NAME,
       type: "article",
       publishedTime: post.publishedAt,
       authors: [post.author],
@@ -82,7 +84,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const related = getRelatedPosts(slug, post.category, 3);
   const { prev, next } = getAdjacentPosts(slug);
-  const articleUrl = `https://www.baralbipin.com.np/blog/${slug}`;
+  const articleUrl = `${SITE_URL}/blog/${slug}`;
 
   return (
     <>

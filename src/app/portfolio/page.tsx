@@ -1,10 +1,23 @@
-﻿import Link from "next/link";
+import { Metadata } from "next";
+import Link from "next/link";
 import { getAllCategories } from "@/data/portfolio";
 import { Container } from "@/components/ui/Container";
+import { SITE_URL, SITE_NAME } from "@/lib/constants";
 
-export const metadata = {
-  title: "Portfolio | Bipin Baral",
-  description: "Explore my latest design and branding projects.",
+export const metadata: Metadata = {
+  title: `Portfolio | ${SITE_NAME}`,
+  description: `Explore graphic design, branding, UI/UX, and web development projects by ${SITE_NAME} in Kathmandu, Nepal.`,
+  alternates: {
+    canonical: `${SITE_URL}/portfolio`,
+  },
+  openGraph: {
+    title: `Portfolio | ${SITE_NAME}`,
+    description: `Explore graphic design, branding, UI/UX, and web development projects by ${SITE_NAME}.`,
+    url: `${SITE_URL}/portfolio`,
+    siteName: SITE_NAME,
+    type: "website",
+    images: ["/images/work-with-bipin.png"],
+  },
 };
 
 export default function PortfolioPage() {

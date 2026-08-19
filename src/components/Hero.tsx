@@ -33,19 +33,19 @@ export const Hero: React.FC = () => {
 
       <Container className="flex-1 flex flex-col justify-center items-center text-center">
         <AnimatedWrapper type="slideUp" delay={0.1} className="flex flex-col items-center w-full">
-          {/* Top Label */}
-          <span className="text-[10px] sm:text-xs uppercase font-mono tracking-[0.2em] sm:tracking-[0.25em] text-white/50 border border-white/10 px-3 sm:px-4 py-1.5 rounded-full bg-white/5 mb-6 sm:mb-8 select-none">
-            Graphic Designer, UI/UX & Web Developer in Kathmandu, Nepal
-          </span>
+          {/* Keyword-Rich Primary H1 */}
+          <h1 className="text-[10px] sm:text-xs uppercase font-mono tracking-[0.2em] sm:tracking-[0.25em] text-white/70 border border-white/10 px-3 sm:px-4 py-1.5 rounded-full bg-white/5 mb-6 sm:mb-8 select-none font-normal">
+            Graphic Designer, UI/UX &amp; Web Developer in Kathmandu, Nepal
+          </h1>
 
-          {/* Headline – fluid clamp */}
-          <h1
+          {/* Sub-Headline – fluid clamp */}
+          <h2
             className="font-satoshi font-bold tracking-tight text-white leading-[1.1] max-w-5xl"
             style={{ fontSize: "clamp(2.2rem, 5vw, 8rem)" }}
           >
-            Design & Build <br />
+            Design &amp; Build <br />
             Creative Products
-          </h1>
+          </h2>
 
           {/* Subheading */}
           <p className="mt-5 sm:mt-8 text-sm sm:text-lg md:text-xl text-white/60 leading-relaxed max-w-3xl font-sans font-light px-2 sm:px-0">

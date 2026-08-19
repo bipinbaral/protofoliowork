@@ -10,6 +10,7 @@ import { Container } from "@/components/ui/Container";
 import AnimatedWrapper from "@/components/ui/AnimatedWrapper";
 
 import { Metadata } from "next";
+import { SITE_URL, SITE_NAME } from "@/lib/constants";
 
 interface ProjectPageProps {
   params: Promise<{
@@ -34,19 +35,29 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   let project = activeCollection.find((p) => p.id === id);
   if (!project) project = projects.find((p) => p.id === id) as any;
 
-  if (!project) return { title: "Project | Bipin Creates (Bipin Baral)" };
+  if (!project) return { title: `Project | ${SITE_NAME}` };
 
-  const url = `https://www.baralbipin.com.np/projects/${category}/${id}`;
+  const url = `${SITE_URL}/projects/${category}/${id}`;
+  const isThinContent = !project.caseStudy;
 
   return {
-    title: `${project.title} — Case Study | Bipin Creates (Bipin Baral)`,
+    title: `${project.title} — Case Study | ${SITE_NAME}`,
     description: project.caseStudy?.companyBackground?.slice(0, 160) ||
-      `View the ${project.title} project by Bipin Creates (Bipin Baral) — graphic designer, UI/UX expert & web developer in Kathmandu, Nepal.`,
+      `View the ${project.title} project by ${SITE_NAME} — graphic designer, UI/UX expert & web developer in Kathmandu, Nepal.`,
+    robots: {
+      index: !isThinContent,
+      follow: true,
+      googleBot: {
+        index: !isThinContent,
+        follow: true,
+      },
+    },
     openGraph: {
-      title: `${project.title} | Bipin Creates (Bipin Baral)`,
+      title: `${project.title} | ${SITE_NAME}`,
       description: project.caseStudy?.companyBackground?.slice(0, 160) ||
-        `View the ${project.title} project by Bipin Creates (Bipin Baral).`,
+        `View the ${project.title} project by ${SITE_NAME}.`,
       url,
+      siteName: SITE_NAME,
       images: [
         {
           url: project.image,
@@ -59,9 +70,9 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.title} | Bipin Creates (Bipin Baral)`,
+      title: `${project.title} | ${SITE_NAME}`,
       description: project.caseStudy?.companyBackground?.slice(0, 160) ||
-        `View the ${project.title} project by Bipin Creates (Bipin Baral).`,
+        `View the ${project.title} project by ${SITE_NAME}.`,
       images: [project.image],
     },
     alternates: {

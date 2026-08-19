@@ -67,8 +67,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClic
     }
   };
 
-  const isExternal = project.link && !project.link.startsWith('/') && !project.link.startsWith('#');
-  const href = project.link || `#`;
+  const isExternal = Boolean(project.link && (project.link.startsWith('http://') || project.link.startsWith('https://')));
+  const isValidLink = Boolean(project.link && (isExternal || project.link.startsWith('/') || project.link.startsWith('#')));
+  const href = isValidLink ? project.link! : `#`;
 
   const handleClick = (e: React.MouseEvent) => {
     if (onClick) {
@@ -132,8 +133,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClic
           <div className="flex flex-col w-full pr-4">
             <div className="flex items-center justify-between w-full">
               <h3 className="font-sans text-lg font-bold text-white relative z-20">
-                {project.link ? (
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="hover:underline transition-colors">
+                {isValidLink ? (
+                  <a href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined} onClick={(e) => e.stopPropagation()} className="hover:underline transition-colors">
                     {project.title}
                   </a>
                 ) : (

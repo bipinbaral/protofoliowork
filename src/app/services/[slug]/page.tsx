@@ -11,6 +11,7 @@ import { Container } from "@/components/ui/Container";
 import AnimatedWrapper from "@/components/ui/AnimatedWrapper";
 import { Button } from "@/components/ui/Button";
 import { getServiceBySlug, servicesData } from "@/data/serviceData";
+import { SITE_URL, SITE_NAME } from "@/lib/constants";
 
 interface ServicePageProps {
   params: Promise<{ slug: string }>;
@@ -25,10 +26,10 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   const service = getServiceBySlug(slug);
 
   if (!service) {
-    return { title: "Service | Bipin Creates (Bipin Baral)" };
+    return { title: `Service | ${SITE_NAME}` };
   }
 
-  const url = `https://www.baralbipin.com.np/services/${slug}`;
+  const url = `${SITE_URL}/services/${slug}`;
 
   return {
     title: service.metaTitle,
@@ -37,6 +38,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
       title: service.metaTitle,
       description: service.metaDescription,
       url,
+      siteName: SITE_NAME,
       type: "website",
       images: [
         {

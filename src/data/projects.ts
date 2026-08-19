@@ -52,7 +52,7 @@ export const collectionLogoDesign: DetailedProject[] = [
     title: "Pinak Interior and Construction",
     category: "Construction Company",
     image: "/images/branding/pinak/pinaklogo-with-branding.jpg",
-    link: "pinakinterior.com.np",
+    link: "https://www.pinakinterior.com.np/",
     year: "2020",
     tools: ["Illustrator"]
   },
@@ -61,7 +61,7 @@ export const collectionLogoDesign: DetailedProject[] = [
     title: "Altiscale Lab",
     category: "Logo, Branding",
     image: "/images/branding/altiscalelab/logowithbranding.jpg",
-    link: "Build Smarter",
+    link: "",
     year: "2026",
     tools: ["Illustrator"],
   },
@@ -70,7 +70,7 @@ export const collectionLogoDesign: DetailedProject[] = [
     title: "Lhotse Aus",
     category: "Logo, Branding",
     image: "/images/branding/lhotseaus/lhotselogowithbranding.jpg",
-    link: "",
+    link: "https://www.lhotse.com.au/",
     year: "2026",
     tools: ["Illustrator"],
   }

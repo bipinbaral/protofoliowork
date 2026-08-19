@@ -22,12 +22,12 @@ export const CollectionGallery: React.FC<CollectionGalleryProps> = ({ projects, 
     <>
       <div className={gridClass}>
         {projects.map((project, idx) => {
-          const hasExternalLink = project.link && project.link.startsWith('http');
+          const hasExternalLink = Boolean(project.link && project.link.startsWith('http'));
 
           return (
             <ProjectCard
               key={project.id}
-              project={{ ...project, link: project.link || `/projects/${category}/${project.id}` }}
+              project={project}
               index={idx}
               aspectRatio={isVideos ? "aspect-[9/16]" : "aspect-[16/10]"}
               onClick={hasExternalLink ? undefined : (e) => {
