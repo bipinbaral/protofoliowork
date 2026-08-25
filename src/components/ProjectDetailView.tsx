@@ -43,11 +43,10 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
     }
   }, [activeProject.id]);
 
-  // Combine cover image and gallery images for the full list
-  const allImages = [
-    activeProject.image,
-    ...(activeProject.galleryImages || [])
-  ];
+  // Combine cover image and gallery images for the full list (deduplicated)
+  const allImages = Array.from(
+    new Set([activeProject.image, ...(activeProject.galleryImages || [])])
+  ).filter(Boolean);
 
   // Navigation Logic
   const currentIndex = collection.findIndex(p => p.id === activeProject.id);

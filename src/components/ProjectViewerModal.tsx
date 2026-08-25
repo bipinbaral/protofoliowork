@@ -38,17 +38,21 @@ export const ProjectViewerModal: React.FC<ProjectViewerModalProps> = ({ project,
     };
   }, [project]);
 
+  const images = (project?.galleryImages && project.galleryImages.length > 0)
+    ? project.galleryImages
+    : (project?.image ? [project.image] : []);
+
   const handlePrev = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
-    if (!project?.galleryImages) return;
-    setLightboxIndex((prev) => (prev !== null && prev > 0 ? prev - 1 : project.galleryImages!.length - 1));
-  }, [project]);
+    if (!images.length) return;
+    setLightboxIndex((prev) => (prev !== null && prev > 0 ? prev - 1 : images.length - 1));
+  }, [images]);
 
   const handleNext = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
-    if (!project?.galleryImages) return;
-    setLightboxIndex((prev) => (prev !== null && prev < project.galleryImages!.length - 1 ? prev + 1 : 0));
-  }, [project]);
+    if (!images.length) return;
+    setLightboxIndex((prev) => (prev !== null && prev < images.length - 1 ? prev + 1 : 0));
+  }, [images]);
 
   // Keyboard navigation for lightbox
   useEffect(() => {
@@ -56,15 +60,15 @@ export const ProjectViewerModal: React.FC<ProjectViewerModalProps> = ({ project,
 
     const handleLightboxKeys = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") {
-        setLightboxIndex((prev) => (prev !== null && prev > 0 ? prev - 1 : (project?.galleryImages?.length || 1) - 1));
+        setLightboxIndex((prev) => (prev !== null && prev > 0 ? prev - 1 : images.length - 1));
       } else if (e.key === "ArrowRight") {
-        setLightboxIndex((prev) => (prev !== null && prev < (project?.galleryImages?.length || 1) - 1 ? prev + 1 : 0));
+        setLightboxIndex((prev) => (prev !== null && prev < images.length - 1 ? prev + 1 : 0));
       }
     };
 
     window.addEventListener("keydown", handleLightboxKeys);
     return () => window.removeEventListener("keydown", handleLightboxKeys);
-  }, [lightboxIndex, project]);
+  }, [lightboxIndex, images]);
 
   if (!project) return null;
 
@@ -92,8 +96,8 @@ export const ProjectViewerModal: React.FC<ProjectViewerModalProps> = ({ project,
 
         {/* Gallery Scroll Content */}
         <div className="flex-1 w-full max-w-5xl mx-auto px-4 pb-24 pt-12 flex flex-col gap-1">
-          {project.galleryImages?.length ? (
-            project.galleryImages.map((img, idx) => (
+          {images.length ? (
+            images.map((img, idx) => (
               <div
                 key={idx}
                 className="w-full relative overflow-hidden cursor-zoom-in shadow-2xl"
@@ -116,7 +120,7 @@ export const ProjectViewerModal: React.FC<ProjectViewerModalProps> = ({ project,
 
         {/* Fullscreen Lightbox Overlay */}
         <AnimatePresence>
-          {lightboxIndex !== null && project.galleryImages && (
+          {lightboxIndex !== null && images.length > 0 && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -133,7 +137,7 @@ export const ProjectViewerModal: React.FC<ProjectViewerModalProps> = ({ project,
               </button>
 
               <div className="absolute top-6 left-6 px-4 py-2 rounded-full bg-white/10 text-white font-mono text-sm tracking-widest backdrop-blur-md">
-                {lightboxIndex + 1} / {project.galleryImages.length}
+                {lightboxIndex + 1} / {images.length}
               </div>
 
               <button
@@ -149,7 +153,7 @@ export const ProjectViewerModal: React.FC<ProjectViewerModalProps> = ({ project,
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
-                src={project.galleryImages[lightboxIndex]}
+                src={images[lightboxIndex]}
                 alt={`Lightbox view ${lightboxIndex + 1}`}
                 className="max-w-[90vw] max-h-[90vh] object-contain cursor-zoom-out drop-shadow-2xl"
                 onClick={(e) => e.stopPropagation()}

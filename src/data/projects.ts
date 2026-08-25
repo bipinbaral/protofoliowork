@@ -52,27 +52,36 @@ export const collectionLogoDesign: DetailedProject[] = [
     title: "Pinak Interior and Construction",
     category: "Construction Company",
     image: "/images/branding/pinak/pinaklogo-with-branding.jpg",
-    link: "https://www.pinakinterior.com.np/",
+    link: "",
     year: "2020",
-    tools: ["Illustrator"]
+    tools: ["Illustrator"],
+    galleryImages: [
+      "/images/branding/pinak/pinaklogo-with-branding.jpg"
+    ]
   },
   {
     id: "altiscale-lab",
     title: "Altiscale Lab",
     category: "Logo, Branding",
     image: "/images/branding/altiscalelab/logowithbranding.jpg",
-    link: "https://altiscalelabs.com/",
+    link: "",
     year: "2026",
     tools: ["Illustrator"],
+    galleryImages: [
+      "/images/branding/altiscalelab/logowithbranding.jpg"
+    ]
   },
   {
     id: "lhotse-aus",
     title: "Lhotse Aus",
     category: "Logo, Branding",
     image: "/images/branding/lhotseaus/lhotselogowithbranding.jpg",
-    link: "https://www.lhotse.com.au/",
+    link: "",
     year: "2026",
     tools: ["Illustrator"],
+    galleryImages: [
+      "/images/branding/lhotseaus/lhotselogowithbranding.jpg"
+    ]
   }
 ];
 
