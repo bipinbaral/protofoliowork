@@ -196,19 +196,25 @@ export const collectionUIUXDesign: DetailedProject[] = [
     id: "uiux-packages",
     title: "Landing Page",
     category: "Hero Section, Cards, FAQs, Footer",
-    image: "/images/uiux/first/Packages.jpg",
+    image: "/images/uiux/first/cover image.jpg",
     link: "",
     year: "2023",
-    tools: ["Figma", "Figma Make AI"]
+    tools: ["Figma", "Figma Make AI"],
+    galleryImages: [
+      "/images/uiux/first/Packages.jpg"
+    ]
   },
   {
     id: "uiux-dashboard",
     title: "Dashboard Design",
     category: "Graphs, Chart, Summary, Listing",
-    image: "/images/uiux/second/Dashboard.jpg",
+    image: "/images/uiux/second/cover image.png",
     link: "",
     year: "2023",
-    tools: ["Figma", "Figma Make AI"]
+    tools: ["Figma", "Figma Make AI"],
+    galleryImages: [
+      "/images/uiux/second/Dashboard.jpg"
+    ]
   },
   {
     id: "uiux-sample-3",
@@ -217,7 +223,37 @@ export const collectionUIUXDesign: DetailedProject[] = [
     image: "/images/uiux/third/blogcontent.jpg",
     link: "",
     year: "2026",
-    tools: ["Figma"]
+    tools: ["Figma"],
+    galleryImages: [
+      "/images/uiux/third/blogcontent.jpg"
+    ]
+  },
+  {
+    id: "uiux-splito-app",
+    title: "Splito - Expense Management App",
+    category: "Mobile App, Overview, Activity, Insights, Settings",
+    image: "/images/uiux/fourth/Cover 01.jpg",
+    link: "",
+    year: "2026",
+    tools: ["Figma", "Mobile UI", "Prototyping"],
+    galleryImages: [
+      "/images/uiux/fourth/Overview 02.jpg",
+      "/images/uiux/fourth/Activity 03.jpg",
+      "/images/uiux/fourth/Insights 04.jpg",
+      "/images/uiux/fourth/Setting 05.jpg"
+    ]
+  },
+  {
+    id: "uiux-splito-case-study",
+    title: "Splito Product Design Case Study",
+    category: "Complete UI/UX Case Study, Research & Wireframes",
+    image: "/images/uiux/fifth/Case Study Design.svg",
+    link: "",
+    year: "2026",
+    tools: ["Figma", "UX Research", "Case Study"],
+    galleryImages: [
+      "/images/uiux/fifth/Case Study Design.svg"
+    ]
   }
 ];
 
@@ -359,6 +395,79 @@ export const categoryCollections: Record<string, DetailedProject[]> = {
   "motion-design": collectionMotionDesign,
 };
 
+export const recentWorks: Project[] = [
+  {
+    id: "recent-splito",
+    title: "Splito - Expense Management App",
+    category: "UI/UX Design",
+    image: "/images/recentwork/Cover 01.jpg",
+    link: "/projects/uiux-design",
+    year: "2026",
+    tags: ["UI/UX", "Mobile App", "Figma"],
+    details: {
+      description: "AI-powered mobile expense management application with rich financial data visualization and intuitive navigation.",
+      services: ["UI/UX Design", "Wireframing", "Prototyping"],
+      tools: ["Figma", "Mobile UI"]
+    }
+  },
+  {
+    id: "recent-chautari",
+    title: "Chautari Resort",
+    category: "Web Development",
+    image: "/images/recentwork/chautari resort.png",
+    link: "https://chautari-psi.vercel.app/",
+    year: "2026",
+    tags: ["Fullstack", "Next.js", "Tailwind CSS"],
+    details: {
+      description: "Modern resort and hospitality platform featuring immersive visual showcase and seamless booking inquiries.",
+      services: ["Web Development", "UI/UX Design", "Responsive Layout"],
+      tools: ["Next.js", "TypeScript", "Tailwind CSS"]
+    }
+  },
+  {
+    id: "recent-graphics",
+    title: "Graphic Design & Branding",
+    category: "Graphics",
+    image: "/images/recentwork/graphicss.png",
+    link: "/projects/print-media",
+    year: "2024",
+    tags: ["Graphics", "Branding", "Print"],
+    details: {
+      description: "High-impact visual communication, marketing creatives, social media campaigns, and print branding.",
+      services: ["Graphic Design", "Social Media Graphics", "Print Design"],
+      tools: ["Photoshop", "Illustrator"]
+    }
+  },
+  {
+    id: "recent-uiux",
+    title: "UI/UX Design Systems",
+    category: "UI/UX",
+    image: "/images/recentwork/uiuxx.png",
+    link: "/projects/uiux-design",
+    year: "2026",
+    tags: ["UI/UX", "Web Design", "App Design"],
+    details: {
+      description: "User-centric digital experiences, wireframes, interaction design, and scalable design systems.",
+      services: ["User Research", "Wireframing", "UI/UX Design"],
+      tools: ["Figma", "Framer"]
+    }
+  },
+  {
+    id: "recent-webdev",
+    title: "Web Development & Frontend",
+    category: "Web Development",
+    image: "/images/recentwork/webdevelopment.png",
+    link: "/projects/web-design",
+    year: "2026",
+    tags: ["Web", "Fullstack", "React"],
+    details: {
+      description: "Performant, SEO-optimized modern web applications and responsive interactive websites.",
+      services: ["Frontend Development", "Fullstack Development", "SEO"],
+      tools: ["Next.js", "React", "TypeScript", "Tailwind CSS"]
+    }
+  }
+];
+
 export const projects: Project[] = [
   {
     id: "logo-design",
@@ -446,7 +555,13 @@ export const projects: Project[] = [
       description: "Intuitive user interfaces built with a user-centric approach, balancing aesthetics with functionality.",
       services: ["User Research", "Wireframing", "UI Design"],
       tools: ["Figma", "Framer", "Sketch"],
-      gallery: ["/images/uiux.png", "/images/printmedia.jpg"],
+      gallery: [
+        "/images/uiux/first/cover image.jpg",
+        "/images/uiux/second/cover image.png",
+        "/images/uiux/third/blogcontent.jpg",
+        "/images/uiux/fourth/Cover 01.jpg",
+        "/images/uiux/fifth/Case Study Design.svg"
+      ],
     }
   },
   {

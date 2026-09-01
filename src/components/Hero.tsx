@@ -10,18 +10,18 @@ import { AnimatedWrapper } from "./ui/AnimatedWrapper";
 import Marquee from "./ui/Marquee";
 
 const logos = [
-  { src: "/scrolling-logos/dream-study.png", alt: "Dream Study", href: "#" },
-  { src: "/scrolling-logos/evani.png", alt: "Evani", href: "https://evanieducation.com/" },
-  { src: "/scrolling-logos/future-ready-nepal.png", alt: "Future Ready Nepal", href: "#" },
-  { src: "/scrolling-logos/lhotse.png", alt: "Lhotse", href: "https://www.lhotse.com.au/" },
-  { src: "/scrolling-logos/moneyto-logo.png", alt: "MoneyTO", href: "#" },
-  { src: "/scrolling-logos/Ratomasi.png", alt: "Ratomasi", href: "https://www.ratomasi.com/" },
-  { src: "/scrolling-logos/sagarmatha-engineering-college.png", alt: "Sagarmatha Engineering College", href: "https://sagarmatha.edu.np/" },
-  { src: "/scrolling-logos/idyfy.png", alt: "Idyfy", href: "#" },
-  { src: "/scrolling-logos/pinak.png", alt: "Pinak", href: "https://www.pinakinterior.com.np/" },
-  { src: "/scrolling-logos/smart-city-international.png", alt: "Smart City International", href: "https://smartcityinternational.edu.np/" },
-  { src: "/scrolling-logos/jhapa-supercup.png", alt: "Jhapa Supercup", href: "#" },
-  { src: "/scrolling-logos/gauko-achar.png", alt: "Gauko Achar", href: "#" },
+  { src: "/images/scrolling-logos/dream-study.png", alt: "Dream Study", href: "#" },
+  { src: "/images/scrolling-logos/Evani.png", alt: "Evani", href: "https://evanieducation.com/" },
+  { src: "/images/scrolling-logos/future-ready-nepal.png", alt: "Future Ready Nepal", href: "#" },
+  { src: "/images/scrolling-logos/Lhotse.png", alt: "Lhotse", href: "https://www.lhotse.com.au/" },
+  { src: "/images/scrolling-logos/moneyto-logo.png", alt: "MoneyTO", href: "#" },
+  { src: "/images/scrolling-logos/Ratomasi.png", alt: "Ratomasi", href: "https://www.ratomasi.com/" },
+  { src: "/images/scrolling-logos/sagarmatha-engineering-college.png", alt: "Sagarmatha Engineering College", href: "https://sagarmatha.edu.np/" },
+  { src: "/images/scrolling-logos/idyfy.png", alt: "Idyfy", href: "#" },
+  { src: "/images/scrolling-logos/pinak.png", alt: "Pinak", href: "https://www.pinakinterior.com.np/" },
+  { src: "/images/scrolling-logos/smart-city-international.png", alt: "Smart City International", href: "https://smartcityinternational.edu.np/" },
+  { src: "/images/scrolling-logos/jhapa-supercup.png", alt: "Jhapa Supercup", href: "#" },
+  { src: "/images/scrolling-logos/gauko-achar.png", alt: "Gauko Achar", href: "#" },
 ];
 
 export const Hero: React.FC = () => {

@@ -95,6 +95,92 @@ export const portfolioData: PortfolioCategory[] = [
       },
     ],
   },
+  {
+    id: "cat-3",
+    title: "UI/UX Design",
+    slug: "uiux-design",
+    description: "User interfaces, web applications, mobile apps, and case studies.",
+    projects: [
+      {
+        id: "proj-uiux-1",
+        title: "Landing Page",
+        description: "Conversion-optimized landing page structure and components.",
+        thumbnail: "/images/uiux/first/cover image.jpg",
+        year: "2023",
+        galleries: [
+          {
+            categoryName: "Landing Page",
+            images: [
+              { id: "img-uiux-1-1", src: "/images/uiux/first/Packages.jpg", alt: "Landing Page UI" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "proj-uiux-2",
+        title: "Dashboard Design",
+        description: "Dark-mode data visualization dashboard with intuitive charts.",
+        thumbnail: "/images/uiux/second/cover image.png",
+        year: "2023",
+        galleries: [
+          {
+            categoryName: "Dashboard",
+            images: [
+              { id: "img-uiux-2-1", src: "/images/uiux/second/Dashboard.jpg", alt: "Dashboard UI" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "proj-uiux-3",
+        title: "Blog Content Page",
+        description: "Reader-focused editorial layout with floating table of contents.",
+        thumbnail: "/images/uiux/third/blogcontent.jpg",
+        year: "2026",
+        galleries: [
+          {
+            categoryName: "Blog Content",
+            images: [
+              { id: "img-uiux-3-1", src: "/images/uiux/third/blogcontent.jpg", alt: "Blog Content Design" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "proj-4",
+        title: "Splito - Expense Management App",
+        description: "AI-powered mobile expense management application with rich data visualization.",
+        thumbnail: "/images/uiux/fourth/Cover 01.jpg",
+        year: "2026",
+        galleries: [
+          {
+            categoryName: "App Screens",
+            images: [
+              { id: "img-uiux-4-1", src: "/images/uiux/fourth/Overview 02.jpg", alt: "Overview Screen" },
+              { id: "img-uiux-4-2", src: "/images/uiux/fourth/Activity 03.jpg", alt: "Activity Screen" },
+              { id: "img-uiux-4-3", src: "/images/uiux/fourth/Insights 04.jpg", alt: "Insights Screen" },
+              { id: "img-uiux-4-4", src: "/images/uiux/fourth/Setting 05.jpg", alt: "Settings Screen" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "proj-5",
+        title: "Splito Product Design Case Study",
+        description: "Comprehensive end-to-end UI/UX product design case study.",
+        thumbnail: "/images/uiux/fifth/Case Study Design.svg",
+        year: "2026",
+        galleries: [
+          {
+            categoryName: "Case Study",
+            images: [
+              { id: "img-uiux-5-1", src: "/images/uiux/fifth/Case Study Design.svg", alt: "Splito Case Study Design" },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export function getAllCategories() {

@@ -1,8 +1,8 @@
-﻿"use client";
+"use client";
 
 import React, { useRef, useState, useEffect } from "react";
 import { Container } from "./ui/Container";
-import { projects } from "@/data/projects";
+import { recentWorks } from "@/data/projects";
 import { ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 import { Lightbox } from "./ui/Lightbox";
 
@@ -86,7 +86,7 @@ export const RecentWorksSlider: React.FC = () => {
               className="flex gap-6 overflow-x-auto pb-12 pt-4 snap-x snap-mandatory px-4 md:px-8"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
-              {projects.map((project, idx) => (
+              {recentWorks.map((project, idx) => (
                 <div
                   key={`${project.id}-${idx}`}
                   onClick={() => openLightbox(idx)}
@@ -127,7 +127,7 @@ export const RecentWorksSlider: React.FC = () => {
       <Lightbox
         isOpen={lightboxOpen}
         onClose={() => setLightboxOpen(false)}
-        projects={projects}
+        projects={recentWorks}
         currentIndex={lightboxIndex}
         onNavigate={setLightboxIndex}
       />

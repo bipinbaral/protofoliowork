@@ -166,13 +166,13 @@ export const servicesData: ServiceDetail[] = [
       {
         title: "SaaS Landing Page System",
         category: "UI/UX Design",
-        image: "/images/uiux/first/Packages.jpg",
+        image: "/images/uiux/first/cover image.jpg",
         description: "Conversion-optimized landing page structure featuring hero section, pricing grid, and FAQs."
       },
       {
         title: "Analytics Dashboard UI",
         category: "Web Application",
-        image: "/images/uiux/second/Dashboard.jpg",
+        image: "/images/uiux/second/cover image.png",
         description: "Dark-mode data visualization dashboard with intuitive charts and activity summaries."
       },
       {
@@ -180,6 +180,18 @@ export const servicesData: ServiceDetail[] = [
         category: "Content Experience",
         image: "/images/uiux/third/blogcontent.jpg",
         description: "Reader-focused editorial layout with floating table of contents and engagement blocks."
+      },
+      {
+        title: "Splito - Expense Management App",
+        category: "Mobile Application",
+        image: "/images/uiux/fourth/Cover 01.jpg",
+        description: "AI-powered mobile expense tracker with multi-screen interface, spend breakdown, and activity flows."
+      },
+      {
+        title: "Splito Product Design Case Study",
+        category: "Product Design",
+        image: "/images/uiux/fifth/Case Study Design.svg",
+        description: "End-to-end product design case study showcasing research, wireframing, architecture, and high-fidelity prototype."
       }
     ],
     faqs: [

@@ -43,10 +43,10 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
     }
   }, [activeProject.id]);
 
-  // Combine cover image and gallery images for the full list (deduplicated)
-  const allImages = Array.from(
-    new Set([activeProject.image, ...(activeProject.galleryImages || [])])
-  ).filter(Boolean);
+  // Use gallery images when available without displaying the cover thumbnail; fallback to cover image only if no gallery exists
+  const allImages = (activeProject.galleryImages && activeProject.galleryImages.length > 0)
+    ? activeProject.galleryImages
+    : [activeProject.image].filter(Boolean);
 
   // Navigation Logic
   const currentIndex = collection.findIndex(p => p.id === activeProject.id);
